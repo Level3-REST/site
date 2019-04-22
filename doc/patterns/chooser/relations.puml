@@ -1,0 +1,22 @@
+@startuml
+!include ../../copyright.iuml
+
+title Chooser Pattern
+
+rectangle Chooser [
+  <&info> | <&aperture> Chooser
+  ....
+  "" type: radio | checks""
+]
+rectangle Choice [
+  <&arrow-circle-right> Choice
+  ....
+  "" checked: true | false""
+]
+rectangle "<&question-mark> Description" as Description
+
+Chooser 0-->> "0..N" Choice: "choice"
+Choice 0-->> Chooser: "choice-for"
+Choice 0-->> Description: "description"
+
+@enduml

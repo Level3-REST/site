@@ -1,0 +1,12 @@
+@startuml
+!include ../../copyright.iuml
+
+title Content Metadata Pattern
+
+rectangle "<&data-transfer-download> Content" as Content
+rectangle "<&info> Metadata" as Metadata
+
+Content 0-->> Metadata: "metadata"
+Metadata 0-->> Content: "content"
+
+@enduml

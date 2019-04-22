@@ -1,0 +1,27 @@
+@startuml
+!include ../../copyright.iuml
+
+title Immediate Async Response
+
+actor Client
+participant "<&project> Async" as Async
+
+Client -> Async: PUT / POST / PATCH / DELETE
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Prefer"" | ""respond=async"" |
+end note
+hnote over Async #lightsteelblue
+  ""    payload""
+  //omitted for DELETE//
+end note
+Async --> Client: 202 Accepted
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | *""Location"" | //URL// |
+  | ""Preference-Applied"" | ""respond=async"" |
+
+  // *""POST"" only//
+end note
+
+@enduml

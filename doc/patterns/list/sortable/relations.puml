@@ -1,0 +1,15 @@
+@startuml
+!include ../relations.puml
+
+title Sortable List Pattern
+rectangle "<&info> Sort Info" as Sort
+rectangle Sorter [
+  <&spreadsheet> Sorter
+  ....
+  "" [ { property, direction } ]""
+]
+
+List 0-->> Sort: "sort-info"
+Sort 0-->> Sorter: "sorter"
+Sorter 0-->> List: "sorts-list"
+@enduml

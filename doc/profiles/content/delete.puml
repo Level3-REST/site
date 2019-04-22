@@ -1,0 +1,12 @@
+@startuml
+!include ../../copyright.iuml
+
+title Delete Content
+
+actor Client
+participant "<&data-transfer-download> Content" as Content
+
+Client -> Content: DELETE
+Content --> Client: 204 No Content
+
+@enduml

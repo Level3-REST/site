@@ -1,0 +1,16 @@
+@startuml
+!include ../relations.puml
+
+title Filterable List Pattern
+rectangle "<&info> Filter Info" as Filtering
+rectangle Filtration [
+  <&question-mark> Filtration
+  ....
+  "" [ { property, operand, value } ]""
+]
+
+
+List 0-->> Filtering: "filter-info"
+Filtering 0-->> Filtration: "filter"
+Filtration 0-->> List: "filters-list"
+@enduml

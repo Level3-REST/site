@@ -1,0 +1,17 @@
+@startuml
+!include ../../copyright.iuml
+
+title Discovery
+
+actor Client
+participant "<&info> Info" as Info
+
+Client -> Info: HEAD
+Info --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Allow"" | ""HEAD,GET"" |
+  | ""Profile"" | ""<http://level3.rest/profiles/info>"" |
+end note
+
+@enduml

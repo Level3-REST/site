@@ -1,0 +1,10 @@
+@startuml
+!include ../copyright.iuml
+
+rectangle "One" as One
+rectangle "Two" as Two
+
+One 0-->> Two: "relation"
+Two 0~~>> One: "//optional relation//"
+
+@enduml

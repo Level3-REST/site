@@ -1,0 +1,23 @@
+@startuml
+!include ../../copyright.iuml
+
+title Modify Content
+
+actor Client
+participant "<&data-transfer-download> Content" as Content
+
+Client -> Content: PUT
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Type"" | //media-type// |
+end note
+hnote over Content #lightsteelblue: ""...bytes...""
+Content --> Client: 204 No Content
+group failure: Upload rejected
+  Content -->o Client: 411 Length Required
+  Content -->o Client: 413 Payload Too Large
+  Content -->o Client: 415 Unsupported Media Type
+end
+
+@enduml

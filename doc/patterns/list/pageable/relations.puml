@@ -1,0 +1,23 @@
+@startuml
+!include ../relations.puml
+
+title Pageable List Pattern
+
+rectangle Page [
+  <&info> Page Info
+  ....
+  "" current""
+  "" pages""
+  "" size""
+]
+rectangle Pagination [
+  <&spreadsheet> Pagination
+  ....
+  "" size""
+  "" start""
+]
+List 0-->> List: "previous, next"
+List 0-->> Page: "page-info"
+Page 0-->> Pagination: "paginator"
+Pagination 0-->> List: "paginates-list"
+@enduml

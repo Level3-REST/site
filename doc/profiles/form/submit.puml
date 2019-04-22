@@ -1,0 +1,33 @@
+@startuml
+!include ../../copyright.iuml
+
+title Submit Form
+
+actor Client
+participant "<&spreadsheet> Form" as Form
+
+Client -> Form: GET
+Form --> Client: 200 OK
+hnote over Client #darkseagreen: schema or ""{ template }""
+note over Client
+  //Client constructs form with schema//
+  //or fills in template//
+end note
+...
+Client -> Form: POST
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Type"" | //media-type// |
+end note
+hnote over Form #lightsteelblue: ""{ form }""
+Form --> Client: 201 Created / 204 No Content
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //Resource URL// |
+end note
+group failure: form rejected
+  Form -->o Client: 400 Bad Request
+  Form -->o Client: 422 Unprocessable Entity
+end
+
+@enduml

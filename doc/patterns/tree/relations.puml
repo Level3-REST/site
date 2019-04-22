@@ -1,0 +1,13 @@
+@startuml
+!include ../../copyright.iuml
+
+title Tree Pattern
+
+rectangle "<&info> | <&aperture> Tree" as Tree
+rectangle "<&question-mark> Node" as Node
+
+Tree 0-->> "0..N" Node: "child"
+Node 0~~>> Tree: "top"
+Node 0~~>> Node: "parent, child (0..N)"
+
+@enduml

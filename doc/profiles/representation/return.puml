@@ -1,0 +1,21 @@
+@startuml
+!include ../../copyright.iuml
+
+title Return Representation
+
+actor Client
+participant "<&transfer> Representation" as Representation
+
+Client -> Representation: PUT / POST / PATCH
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Prefer"" | ""return=representation"" |
+end note
+Representation --> Client: 200 OK / 201 Created
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Preference-Applied"" | ""return=representation"" |
+end note
+hnote over Client #darkseagreen: ""payload""
+
+@enduml

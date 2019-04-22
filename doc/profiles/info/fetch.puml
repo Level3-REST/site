@@ -1,0 +1,13 @@
+@startuml
+!include ../../copyright.iuml
+
+title Fetch Info
+
+actor Client
+participant "<&info> Info" as Info
+
+Client -> Info: GET
+Info --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ info }""
+
+@enduml

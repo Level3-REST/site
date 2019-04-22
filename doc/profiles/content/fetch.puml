@@ -1,0 +1,20 @@
+@startuml
+!include ../../copyright.iuml
+
+title Fetch Content
+
+actor Client
+participant "<&data-transfer-download> Content" as Content
+
+Client -> Content: GET
+Content --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Accept-Ranges"" | ""bytes"" //or// ""none"" |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Type"" | //media-type// |
+  | ""Content-Disposition"" | //disposition// |
+end note
+hnote over Client #darkseagreen: ""...bytes...""
+
+@enduml

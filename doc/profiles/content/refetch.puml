@@ -1,0 +1,56 @@
+@startuml
+!include ../../copyright.iuml
+
+title Refetch Content Range
+
+actor Client
+participant "<&data-transfer-download><&badge> Content + Entity" as Content
+
+Client -> Content: GET / HEAD
+Content --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Accept-Ranges"" | ""bytes"" |
+  | ""ETag"" | //entity-tag// |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Type"" | //media-type// |
+  | ""Last-Modified"" | //HTTP-date// |
+  | ""Content-Disposition"" | //disposition// |
+  | ""Profile"" | ""<http://level3.rest/profiles/content>,"" |
+  | | ""<http://level3.rest/profiles/mixins/entity>"" |
+end note
+|||
+Client -> Content: GET
+note left
+  Only changed
+  headers displayed
+end note
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""If-Range"" | //entity-tag or HTTP-date// |
+  | ""Range"" | ""bytes=""//byte-range// |
+end note
+Content --> Client: 206 Partial Content
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Range"" | ""bytes"" //byte-range//""/""//total// |
+end note
+hnote over Client #darkseagreen: ""...partial bytes...""
+group changed: refetch
+  Content --> Client: 200 OK
+  rnote left #lightgreen
+    <#lightgreen,lightgreen>|= Header |= Value |
+    | ""Content-Length"" | //byte-count// |
+  end note
+  hnote over Client #darkseagreen: ""...all bytes...""
+end
+group failure: rejected
+  Content -->o Client: 416 Range Not Satisfiable
+  rnote left #lightgreen
+    <#lightgreen,lightgreen>|= Header |= Value |
+    | ""Content-Range"" | ""bytes */""//total// |
+  end note
+end
+
+@enduml

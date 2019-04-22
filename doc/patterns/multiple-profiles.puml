@@ -1,0 +1,6 @@
+@startuml
+!include ../copyright.iuml
+
+rectangle "<&info> | <&aperture> Info or Nexus Profile" as Multiple
+
+@enduml

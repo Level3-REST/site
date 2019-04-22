@@ -1,0 +1,23 @@
+@startuml
+!include ../../copyright.iuml
+
+title Preflight Request
+
+start
+#lightblue:""Expect: 100-continue""
+//Headers to preflight// ]
+
+if (Response) then (acceptance)
+  fork
+    :100 Continue;
+  fork again
+    :417 Expectation Failed;
+  end fork
+  :Send full request;
+  end;
+else (rejection)
+  :4XX status code;
+endif
+end
+
+@enduml

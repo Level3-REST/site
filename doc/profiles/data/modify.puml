@@ -1,0 +1,23 @@
+@startuml
+!include ../../copyright.iuml
+
+title Modify Data
+
+actor Client
+participant "<&code> Data" as Data
+
+Client -> Data: PATCH
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Type"" | //media-type// |
+end note
+hnote over Data #lightsteelblue: ""+ patch -""
+Data --> Client: 204 No Content
+group failure: rejected
+  Data -->o Client: 400 Bad Request
+  Data -->o Client: 409 Conflict
+  Data -->o Client: 422 Unprocessable Entity
+  Data -->o Client: 428 Precondition Required
+end
+
+@enduml

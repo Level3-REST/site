@@ -1,0 +1,21 @@
+@startuml
+!include ../../copyright.iuml
+
+title Replace Data
+
+actor Client
+participant "<&code> Data" as Data
+
+Client -> Data: PUT
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Type"" | //media-type// |
+end note
+hnote over Data #lightsteelblue: ""{ data }""
+Data --> Client: 204 No Content
+group failure: rejected
+  Data -->o Client: 400 Bad Request
+  Data -->o Client: 422 Unprocessable Entity
+end
+
+@enduml

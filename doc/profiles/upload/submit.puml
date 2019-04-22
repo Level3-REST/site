@@ -1,0 +1,32 @@
+@startuml
+!include ../../copyright.iuml
+
+title Submit Content
+
+actor Client
+participant "<&data-transfer-upload> Upload" as Upload
+
+Client -> Upload: POST
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Type"" | //media-type// |
+  | *""Slug"" | //slugtext// |
+
+  // *optional//
+end note
+hnote over Upload #lightsteelblue: ""...bytes...""
+Upload --> Client: 201 Created
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""ETag"" | //entity-tag// |
+  | ""Location"" | //Content URL// |
+  | ""Last-Modified"" | //HTTP-date// |
+end note
+group failure: Upload rejected
+  Upload -->o Client: 411 Length Required
+  Upload -->o Client: 413 Payload Too Large
+  Upload -->o Client: 415 Unsupported Media Type
+end
+
+@enduml

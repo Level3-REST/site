@@ -1,0 +1,30 @@
+@startuml
+!include ../../copyright.iuml
+
+title Preflight Request
+
+actor Client
+participant "<&check> Preflight" as Preflight
+
+
+Client -> Preflight: POST / PUT / PATCH
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Expect"" | ""100-continue"" |
+  // Headers to preflight//
+end note
+Preflight --> Client: 100 Continue
+Client -> Preflight: Send full request
+group ""Expect"" header not supported
+  Preflight --> Client: 417 Expectation Failed
+  note left
+    Client sends full request
+    without ""Expect"" header
+  end note
+  Client -> Preflight: Send full request
+end
+group failure: Continuation rejected
+  Preflight -->o Client: 4XX status code
+end
+
+@enduml

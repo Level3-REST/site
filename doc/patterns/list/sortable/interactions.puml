@@ -1,0 +1,15 @@
+@startuml
+!include ../../../copyright.iuml
+
+title Configure Sorting
+actor Client
+participant "<&spreadsheet> Sorter" as Sorter
+
+Client -> Sorter: POST
+hnote over Sorter #lightsteelblue: ""{ sort-order }""
+Sorter --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //Sorted List URL// |
+end note
+@enduml

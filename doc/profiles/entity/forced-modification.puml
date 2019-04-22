@@ -1,0 +1,31 @@
+@startuml
+!include ../../copyright.iuml
+
+title Forced Modification
+
+actor Client
+participant "<&badge> Entity" as Entity
+
+Client -> Entity: PUT / DELETE
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""If-Match"" | ""*"" |
+end note
+hnote over Entity #lightsteelblue
+  ""    payload""
+  //omitted for DELETE//
+end note
+Entity --> Client: 204 No Content
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""ETag"" | //entity-tag// |
+  | ""Last-Modified"" | //HTTP-date// |
+
+  // omitted for DELETE//
+end note
+group failure: resource does not exist
+  Entity -->o Client: 404 Not Found
+  Entity -->o Client: 410 Gone
+end
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+!include ../../copyright.iuml
+
+title Discovery
+
+actor Client
+participant "<&code> Data" as Data
+
+Client -> Data: GET
+Data --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ data }""
+
+@enduml

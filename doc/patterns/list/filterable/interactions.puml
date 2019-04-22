@@ -1,0 +1,15 @@
+@startuml
+!include ../../../copyright.iuml
+
+title Configure Filtering
+actor Client
+participant "<&spreadsheet> Filtration" as Filtration
+
+Client -> Filtration: POST
+hnote over Filtration #lightsteelblue: ""{ filters }""
+Filtration --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //Filtered List URL// |
+end note
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+!include ../../copyright.iuml
+
+title Trigger Action
+
+actor Client
+participant "<&arrow-circle-right> Action" as Action
+
+Client -> Action: POST
+Action --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //URL// |
+end note
+
+@enduml

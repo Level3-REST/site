@@ -1,0 +1,13 @@
+@startuml
+!include ../../copyright.iuml
+
+title Fetch Nexus
+
+actor Client
+participant "<&aperture> Nexus" as Nexus
+
+Client -> Nexus: HEAD
+Nexus --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ state }""
+
+@enduml

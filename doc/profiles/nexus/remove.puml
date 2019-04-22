@@ -1,0 +1,22 @@
+@startuml
+!include ../../copyright.iuml
+
+title Remove Nexus
+
+actor Client
+participant "<&aperture> Nexus" as Nexus
+
+Client -> Nexus: DELETE
+Nexus --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ state }""
+...
+Client -> Nexus: GET
+group Gone
+Nexus --> Client: 410 Gone
+end group
+group Terminal State
+Nexus --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ state }""
+end group
+
+@enduml

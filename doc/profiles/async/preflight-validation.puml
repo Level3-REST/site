@@ -1,0 +1,42 @@
+@startuml
+!include ../../copyright.iuml
+
+title Async Preflight Mixin
+
+actor Client
+participant "<&project><&check> Async + Preflight" as Async
+
+Client -> Async: PUT / POST / PATCH / DELETE
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Expect"" | ""100-continue"" |
+  // Headers to preflight//
+end note
+group Preflight: header validation failed
+  Async -->o Client: 4XX status code
+  rnote left #lightgreen
+    // Validation failure headers//
+  end note
+end group
+|||
+Async --> Client: 100 Continue
+Client -> Async: PUT / POST / PATCH / DELETE
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Prefer"" | *""respond=async"" |
+  // *Can include wait time //
+end note
+hnote over Async #lightsteelblue
+  ""    payload""
+  //omitted for DELETE//
+end note
+Async --> Client: 202 Accepted
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | *""Location"" | //URL// |
+  | ""Preference-Applied"" | ""respond=async"" |
+
+  // *""POST"" only//
+end note
+
+@enduml

@@ -1,0 +1,6 @@
+title: Level 3 REST
+remote_theme: pmarsceill/just-the-docs
+search_enabled: true
+aux_links:
+  "DRAFT 2019":
+    - "https://github.com/level3-rest/site"

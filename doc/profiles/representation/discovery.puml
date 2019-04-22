@@ -1,0 +1,17 @@
+@startuml
+!include ../../copyright.iuml
+
+title Discovery
+
+actor Client
+participant "<&transfer> Representation" as Representation
+
+Client -> Representation: HEAD
+Representation --> Client
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Profile"" | ""<http://level3.rest/profiles/mixins/representation>"", |
+  | | ""<other-profile>"" |
+end note
+
+@enduml

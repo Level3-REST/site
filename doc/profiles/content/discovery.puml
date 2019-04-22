@@ -1,0 +1,23 @@
+@startuml
+!include ../../copyright.iuml
+
+title Discovery
+
+actor Client
+participant "<&data-transfer-download> Content" as Content
+
+Client -> Content: HEAD
+Content --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Accept-Ranges"" | ""bytes"" //or// ""none"" |
+  | ""Allow"" | ""HEAD,GET,""*""PUT,""*""DELETE"" |
+  | ""Content-Length"" | //byte-count// |
+  | ""Content-Type"" | //media-type// |
+  | ""Content-Disposition"" | //disposition// |
+  | ""Profile"" | ""<http://level3.rest/profiles/content>"" |
+  | | |
+  | | //*optional//|
+end note
+
+@enduml

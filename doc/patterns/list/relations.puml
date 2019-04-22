@@ -1,0 +1,16 @@
+@startuml
+!include ../../copyright.iuml
+
+title List Pattern
+
+rectangle List [
+  <&info> | <&aperture> List
+  ....
+  "" count""
+]
+rectangle "<&question-mark> Entry" as Entry
+
+List 0-->> "0..N" Entry: "list-entry"
+Entry 0~~>> List: "//list//"
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+!include ../../copyright.iuml
+
+title Fetch Root
+
+actor Client
+participant "<&home> Root" as Root
+
+Client -> Root: HEAD
+Root --> Client: 204 No Content
+
+@enduml
