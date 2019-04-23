@@ -7,16 +7,9 @@ actor Client
 participant "<&aperture> Nexus" as Nexus
 
 Client -> Nexus: DELETE
-Nexus --> Client: 200 OK
-hnote over Client #darkseagreen: ""{ state }""
+Nexus --> Client: 204 No Content
 ...
 Client -> Nexus: GET
-group Gone
-Nexus --> Client: 410 Gone
-end group
-group Terminal State
-Nexus --> Client: 200 OK
-hnote over Client #darkseagreen: ""{ state }""
-end group
+Nexus --> Client: 404 Not Found\n410 Gone
 
 @enduml
