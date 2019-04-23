@@ -8,6 +8,7 @@ permalink: /profiles/mixins
 ---
 # Mixin Profiles
 
-Mixin profiles add behavior and capabilities to other profiles. A Client can use mixin profiles to alter the responses from a resource in different ways. The available mixin profiles are discovered in the `Profile` header list. Level 3 profiles have specified their possible mixins so a client will know how to interact with the profile’s mixins successfully in the context of the resource they are working with.
+Mixin profiles add behaviour and capabilities to other profiles. A resource offers additional capabilities to clients by adding additional `Profile` headers indicating the presence of a mixin. A client uses mixin profiles to interpret the responses from a resource as well as create requests that utilize the mixin's capabilities.
+Level 3 profiles specify their possible mixins in a Mixin section. This section teaches a client how to interact with the profile’s mixins in the context of the resource.
 
 {% include footer.html %}
