@@ -9,7 +9,7 @@ permalink: /profiles/root
 
 ##### `Profile: <http://level3.rest/profiles/root>`
 
-The Root resource is the top-level resource for a graph of related resources. 
+The Root resource is the top resource for a graph of related resources. Roots cannot be deleted or edited in any way.
 
 ### Discovery
 
