@@ -10,23 +10,23 @@ permalink: /profiles/mixins/representation
 
 ##### `Profile: <http://level3.rest/profiles/mixins/representation>`
 
-Resources that accept `POST`, `PUT` or `PATCH` requests may or may not return a representation in the response. The Client might want the response returned, however, to save a subsequent `GET` request, or to omit a returned representation to save delivery time. The Representation profile gives a Client the ability to specify that they prefer the created or modified representation returned with the response or omitted from the response.
+Resources that accept `POST`, `PUT` or `PATCH` requests may or may not return a representation in the response. The Client might want the response returned, however, to save a subsequent `GET` request, or to omit a returned representation to save transmission time. The Representation profile gives a Client the ability to specify that they prefer the created or modified representation returned with the response or omitted from the response.
 
 ### Discovery
 
-Resources that support the Representation profile will include in the Representation profile header it it's list of profile headers.
+Resources that support the Representation profile include the Representation profile header in its list of profile headers.
 
 ![](representation/discovery.svg){: .center-image}
 
 ### Return Representation
 
-The client sends a `Prefer: return=representation` header indicating that they want the content of the created or modified representation returned with the response. This saves them from having to issue a `GET` request to fetch the changed state. The resource will return a status of `200 OK` instead of `204 No Content`.
+The client sends a `Prefer: return=representation` header indicating that they want the content of the created or modified representation returned with the response. This header saves them from having to issue a `GET` request to fetch the changed state. The resource returns a status of `200 OK` instead of `204 No Content` for `PUT` and `PATCH` operations.
 
 ![](representation/return.svg){: .center-image}
 
 ### Omit Representation
 
-The Prefer header parameter `return` also accepts the value `minimal`  which tells the resource to not send a representation back.
+The Prefer header parameter `return` also accepts the value `minimal`  which tells the resource to omit a response representation.
 
 ![](representation/minimal.svg){: .center-image}
 
