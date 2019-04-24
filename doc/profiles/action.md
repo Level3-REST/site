@@ -9,7 +9,7 @@ permalink: /profiles/action
 
 ##### `Profile: <http://level3.rest/profiles/action>`
 
-Action resources are a hypermedia control that trigger a state change. They act like buttons to execute an action. They do not accept a payload. All the action’s identifying information is found in it’s URL. 
+An Action resource is a hypermedia control that triggers a state change. They act like buttons to execute an action on the server. Actions do not accept a payload; the URL contains all the Action’s identifying information.
 
 ### Discovery
 
@@ -19,7 +19,7 @@ The Action profile presents the required `Profile` and `Allow` headers.
 
 ### Trigger Action
 
-Clients trigger an Action by `POST`ing to it. The resource will respond with `200 OK` and the `Location` header will point to the state that was changed by the triggered action.
+Clients trigger an Action by `POST`ing to it. The resource responds with `204 No Content` and the `Location` header points to the state that was changed by the triggered action.
 
 ![](action/trigger.svg){: .center-image}
 
@@ -33,7 +33,6 @@ The [Representation profile](representation.md) mixin enables the Client to rece
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
-- 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 
 {% include footer.html %}
