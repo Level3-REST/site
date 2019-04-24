@@ -10,51 +10,53 @@ permalink: /profiles/mixins/entity
 
 ##### `Profile: <http://level3.rest/profiles/mixins/entity>`
 
-Resources often have identifiably-distinct instances of themselves defined by unique URIs. These instances are known as [Entities](https://wikipedia.org/wiki/entity) in the real world. An entity must exist in order to be operated with, and operations on them should be performed with an awareness of their current state.
+Resources often have identifiably-distinct instances of themselves defined by unique URIs. These instances are known as [Entities](https://wikipedia.org/wiki/entity) in the real world. An entity must exist to accept operations, and clients should perform operations on them with an awareness of their current state.
 
-The HTTP specification has some important features to support Entity operations. These features take the form of validation headers, and they are used for both caching and state modification management. Thanks to these headers, clients enjoy the performance benefits of cached response payloads by using these same headers in `GET` requests. Also, Clients can safely operate with an Entity resource by knowing the version they are working with has not changed since they last interacted with it.
+The HTTP specification has some essential features to support Entity operations. These features take the form of validation headers which manage both caching and safe state modifications. Thanks to these headers, clients enjoy the performance benefits of cached response payloads by using these same headers in `GET` requests. Also, clients can safely operate with an Entity resource by knowing the version they are working with has not changed since they last interacted with it.
 
-The header values `ETag` and `Last-Modified` are often transparently managed by HTTP clients, especially in browsers. A client should learn about conditional request support in their http client library and enable these features.
+The header values `ETag` and `Last-Modified` are often transparently managed by HTTP clients, especially in browsers. A client should learn about conditional request support in their HTTP client library and enable these features.
 
-Almost every Level 3 resource profile can use the Entity mixin to improve the Client's performance and reliable usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort because of the Client’s gains.
+Almost every Level 3 profile can use the Entity mixin to improve the Client's performance and safe usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort.
 
 ### Discovery
 
-A `HEAD` request will return the headers described in the table below. An Entity resource may not be able to provide both `ETag` and `Last-Modified`, but at least one must be provided for `HEAD` and `GET` requests.
+A `HEAD` request returns the headers described in the table below. An Entity resource may not be able to provide both `ETag` and `Last-Modified`, but at least one must be provided for `HEAD` and `GET` requests.
 
 ![](entity/discovery.svg){: .center-image}
 
 | Header        | Value                                                        |
 | ------------- | ------------------------------------------------------------ |
-| Profile       | `<http://level3.rest/profiles/mixin/entity>`                 |
 | ETag          | An [*entity-tag*](https://tools.ietf.org/html/rfc7232#section-2.3) identifying the entity version |
 | Last-Modified | The [*HTTP-date*](https://tools.ietf.org/html/rfc7231#section-7.1.1.1) the entity was last modified |
+| Profile       | `<http://level3.rest/profiles/mixin/entity>`                 |
 
 ### Cache-Aware Fetch
 
-When a client makes subsequent fetch requests for a resource that has been previously fetched, they can send validator headers to indicate the version of the representation they already possess. If the resource has not changed, then the resource responds with `304 Not Modified` and the already-fetched response payload can be reused.
+When a client makes subsequent fetch requests for an already-fetched resource, they can send validator headers to indicate the version of the representation they possess. If the resource has not changed, then the resource responds with `304 Not Modified`, and the client can reuse already-fetched response payload.
 
 ![](entity/cached-fetch.svg){: .center-image}
 
 ### Conditional Operation
 
-A client can modify an Entity resource's state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their own request. This problem, known as the "lost update" problem, is solved by reusing the validator headers from the fetch request. The client will send the `ETag` value in the `If-Match` header and the `Last-Modified` value in the `If-Unmodified-Since` header with their operation.
+A client can modify an Entity resource's state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their request. 
+
+This problem, known as the "lost update" problem, is solved by reusing the validator headers from the fetch request. The client sends the `ETag` value in the `If-Match` header and the `Last-Modified` value in the `If-Unmodified-Since` header with their operation.
 
 ![](entity/cond-operation.svg){: .center-image}
 
-If the client's version of the resource does not match the resource's version, or it has been modified after the client's version, the resource will respond with `412 Precondition Failed`. The client must fetch the resource again and attempt the operation with new values for `If-Match` and `If-Unmodified-Since`.
+If the client's version of the resource does not match the resource's version and modification date, the resource responds with `412 Precondition Failed`. The client must fetch the resource again and attempt the operation with new values for `If-Match` and `If-Unmodified-Since`.
 
-If the client does not send `If-Match` or `If-Unmodified-Since` headers, and the resource requires them for the operations, it will send back `428 Precondition Required` to indicate this requirement. The client should `GET` the resource, evaluate it's state and then send a conditional operation request with the new data. For `DELETE` operations the client may use `HEAD` instead to collect the most-current validation values as a payload is not sent.
+If the client does not send `If-Match` or `If-Unmodified-Since` headers, and the resource requires them for the operations, it sends back `428 Precondition Required` to indicate this requirement. The client should `GET` the resource, evaluate it's state and then send a conditional operation request with the new data. For `DELETE` operations the client may use `HEAD` instead to collect the most-current validation values.
 
 Once the client's operation is successful, the resource sends back the new `ETag` and `Last-Modified` values in the response for `PUT` and `PATCH` operations. `POST` operations also return these headers, but they refer to the newly-created resource if it is an Entity resource. `DELETE` operations do not return validation headers.
 
-Entity resources do not send back the representation payload on success, but rather `204 No Content`. It is reasonable to assume the client which just sent the modification request already has this payload locally and need not receive it again.
+Entity resources do not send back the representation payload on success, but rather `204 No Content`. It is reasonable to assume the client who just sent the modification request already has this payload locally and need not receive it again.
 
 ### Forced Modification
 
-A client may decide that they are not concerned with working from the most-current version of the resource, as their change must override other client's changes. To force a modification or deletion of an Entity resource, the client will send an `If-Match: *` header with their `PUT` or `DELETE` operation. Any the existing resource state will be overwritten or deleted. However, if the Entity does not exist, the operation fails. One cannot create a nonexistent resource with `PUT`.
+A client may decide that their change must override other client's changes; they are not concerned with working from the most current version of the resource. To force a modification or deletion of an Entity resource, the client sends an `If-Match: *` header with their `PUT` or `DELETE` operation. Any current resource state is overwritten or deleted. However, if the Entity does not exist, the operation fails. One cannot create a nonexistent resource with `PUT`.
 
-`PATCH` is not supported as `PATCH` requires contextual markers in the payload to facilitate the modification. Similarly, `POST` is also not supported because the payload of the `POST` will have been fetched from the resource as content. A change in that content is relevant and must be re-fetched before being used in the `POST`. 
+`PATCH` is not supported as `PATCH` requires contextual markers in the payload to facilitate the modification. Similarly, `POST` is also not supported because it's semantics are specific to the resource profile.
 
 ![](entity/forced-modification.svg){: .center-image}
 
@@ -67,7 +69,7 @@ An Entity resource can mix in the [Preflight](preflight.md) profile to give the 
 | If-Match            | entity-tag, * | 404, 410, 412 (for entity-tag) |
 | If-Unmodified-Since | HTTP-date     | 404, 410, 412                  |
 
-Once the resource responds with `100 Continue` then the client can send a full request including a payload. 
+Once the resource responds with `100 Continue`, then the client can send the full request including a payload. 
 
 ## Specifications
 

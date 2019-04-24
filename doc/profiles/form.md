@@ -9,19 +9,19 @@ permalink: /profiles/form
 
 ##### `Profile: <http://level3.rest/profiles/form>`
 
-Form is a hypermedia control that provides a form for the client to fill in and then accepts that form back in a `POST` request. Anyone who has ever filled out and submitted a paper form in the real world already knows how the Form profile works. The basic concept with Form is to `GET` it's representation, fill it in, and `POST` it back.
+A Form is a hypermedia control that provides a form for the client to fill in and then accepts that form back in a `POST` request. Anyone who has ever filled out and submitted a paper form in the real world already knows how the Form profile works. The basic concept with Form is to `GET` the representation, fill it in, and `POST` it back.
 
-HTML has had `<form>` controls since the beginning and they have proven useful for capturing information and state from users in many applications. Over time, HTML forms have added valuable capabilities like client-side field validation and semantic field presentations like "password" and "email". In a similar spirit, Level 3 forms can supply Client-oriented schemas to assist the Client with creating user presentations and valid form payloads.
+HTML has had `<form>` controls since the beginning, and they have proven useful for capturing information and state from users in many applications. Over time, HTML forms have added valuable capabilities like client-side field validation and semantic field presentations like "password" and "email." In a similar spirit, Level 3 forms can supply Client-oriented schemas to assist the Client in creating user presentations and valid form payloads.
 
-Forms often create new resources, but can also be used to direct a client to a pre-existing resource that matches the submitted form's content. A Form resource can also represent an API command that changes system state. 
+Forms often create new resources, but can also be used to direct a client to a pre-existing resource that matches the submitted form's content. A Form resource can also represent an API command that changes the system state.
 
 ##### Form Content
 
-Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or prepopulated. The other is to supply a form schema that the client uses to construct a form payload to submit. The Client can learn what representation is being provided during Discovery.
+Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or prepopulated. The other is to supply a form schema that the client uses to construct a form payload to submit. The client can learn the form representation during Discovery by reviewing the `Content-Type` header.
 
 ### Discovery
 
-The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` indicating the type of the request payload. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html),  [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The Client will need to understand the content type and how to use the schema to produce a submission payload from it. 
+The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` indicating the type of the request payload. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html),  [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The client must understand the content type and how to use the schema to produce a submission payload.
 
 Alternately the Form can send a template object with empty fields, which is a sufficient approach for simple forms. In this case the `Content-Type` will reflect the format of the template object, like `application/json` or `application/xml`.
 
@@ -29,13 +29,13 @@ Alternately the Form can send a template object with empty fields, which is a su
 
 ### Form Submission
 
-A Client will `GET` the representation from the Form resource. The representation could be a schema definition or a template object with empty fields. The form template include default or existing values.
+First, a client `GET`s the representation from the Form resource. The representation could be a schema definition or a template object with empty fields. Both the schema and form template can include default values.
 
-If the representation is a schema then it should be used to construct a form object. If the representation is a template object then it should be filled in by the Client. The completed object is then `POST`ed back to the Form resource.
+If the representation is a schema, then it should be used to construct a form object. If the representation is a template object, then it should be filled in by the client. The completed object is then `POST`ed back to the Form resource.
 
-Clients should always `GET` the representation for every request rather than reusing the schema or form template from a previous request. The Form’s data requirements may have changed since the Client last fetched the representation.
+Clients should always `GET` the representation for every request rather than reusing the schema or form template from a previous request. The Form’s data requirements may have changed since the client last fetched the representation.
 
-Once the form has been submitted, the resource will respond with a success message and a `Location` header pointing to a relevant resource. If the submission was unacceptable, then the resource will respond with a client error status code and error messages indicating the problem. Common problems include missing required fields, or incorrect data in the fields.
+Once the client submits the form, the resource responds with a success message and a `Location` header pointing to a relevant resource. If the submission was unacceptable, then the resource responds with a client error status code and error messages indicating the problem. Common problems include missing required fields or incorrect data in the fields.
 
 ##### Rejections
 
@@ -50,11 +50,11 @@ Once the form has been submitted, the resource will respond with a success messa
 
 ## Representation Mixin
 
-Form can provide the [Representation profile](representation.md) as a mixin so the client can receive the relevant `Location`'s representation in the submission response.
+A Form resource can provide the [Representation profile](representation.md) as a mixin so the client can receive the relevant `Location`'s representation in the submission response.
 
 ## Entity Mixin
 
-Forms can provide the [Entity profile](entity.md) as a mixin so the client can benefit from cached Form requests as well as stable submission schema via the [Conditional Operation](entity.md#conditional-operation) flow. The client can be sure the Form's schema and requirements have not changed since the form was fetched.
+A Form can provide the [Entity profile](entity.md) as a mixin so the client can benefit from cached Form requests as well as a stable submission schema via the [Conditional Operation](entity.md#conditional-operation) flow. If the Form's schema and requirements have not changed, the client receives a `304 Not Modified` status code.
 
 ## Specifications
 

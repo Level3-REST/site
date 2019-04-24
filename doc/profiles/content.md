@@ -19,23 +19,25 @@ A `HEAD` request will return the following response. The headers are explained i
 
 | Header              | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
-| Profile             | `<http://level3.rest/profiles/content>`                      |
+| Accept-Ranges       | `bytes` means the resource accepts [range requests](#range-requests). `none` means this resource cannot accept range requests, or the resource accepts range requests, but the current Entity validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) |
 | Content-Length      | The number of bytes in the content                           |
 | Content-Type        | The [*media-type*](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the content |
 | Content-Disposition | `inline` or `attachment; filename="<filename>"`See [RFC 6266](https://tools.ietf.org/html/rfc6266) for possible disposition statements |
-| Accept-Ranges       | `bytes` means the resource accepts [range requests](#range-requests). `none` means this resource cannot accept range requests, or the resource accepts range requests, but the current Entity validators are not considered [strong](https://tools.ietf.org/html/rfc7232#section-2.1). |
+| Profile             | `<http://level3.rest/profiles/content>`                      |
 
 ### Fetch Content
 
-Fetch the Content resource with a `GET` request. The content bytes will be delivered in the body of the response. The resource will provide a `Content-Disposition` header indicating what a client should do with the content after it is fetched. See [RFC 6266](https://tools.ietf.org/html/rfc6266) for details.
+Fetch the Content resource with a `GET` request. The body of the response contains the content bytes. The resource provides a `Content-Disposition` header indicating what a client should do with the content. See [RFC 6266](https://tools.ietf.org/html/rfc6266) for details.
 
 ![](content/fetch.svg){: .center-image}
 
 ### Change Content
 
-A client can change the content’s bytes by sending a `PUT` request with the new content. The resource may reject the operation if the payload is too large or of the wrong media type. Content resources do not support the `PATCH` or `POST` operations.
+A client can change the content’s bytes by sending a `PUT` request with the new content. The resource may reject the operation if the payload is too large or of the wrong media type.
 
 ![](content/modify.svg){: .center-image}
+
+Content resources do not support the `PATCH` or `POST` operations.
 
 ### Delete Content
 
@@ -47,7 +49,7 @@ A client can delete the Content resource by sending a `DELETE` request.
 
 ## Preflight Mixin
 
-The [Preflight profile](preflight.md) mixin allows a client to validate content modification before sending a payload. the client must send `Content-Length` and `Content-Type` as preflight headers.
+The [Preflight profile](preflight.md) mixin allows a client to validate content modification before sending a payload. The client must send `Content-Length` and `Content-Type` as preflight headers.
 
 ## Representation Mixin
 
@@ -55,9 +57,9 @@ Content resources can provide the [Representation profile](representation.md) as
 
 ## Entity Mixin
 
-When a Content resource mixes in the Entity profile it will include the Entity profile's [validation headers](entity.md#discovery) in fetch requests. These headers enable Entity's [Cache-Aware Fetch](entity.md#cache-aware-fetch) flow. These headers also enable [range requests](#range-requests), so the `Accept-Ranges: bytes` header will indicate that the resource can accept range requests.
+When a Content resource mixes in the Entity profile, it includes the Entity profile's [validation headers](entity.md#discovery) in fetch requests. These headers enable Entity's [Cache-Aware Fetch](entity.md#cache-aware-fetch) flow. These headers also enable [range requests](#range-requests). The `Accept-Ranges: bytes` header indicates that the resource can accept range requests.
 
-The Entity mixin allows a Content resource to use Entity's modification behaviors, including the option of preflighting operations based on validation headers:
+The Entity mixin allows a Content resource to use Entity's modification behaviours, including the option of preflighting operations based on validation headers:
 
 - [Conditional Operation](entity.md#conditional-operation)
 - [Forced Modification](entity.md#forced-modification)
@@ -65,27 +67,27 @@ The Entity mixin allows a Content resource to use Entity's modification behavior
 
 ### Range Requests
 
-A client can download a portion of the content using a range request. This is useful for resuming interrupted downloads, jumping to a midway point in the content or downloading the content in stages.
+A client can download a portion of the content using a range request. They are useful for resuming interrupted downloads, jumping to a midway point in the content or downloading the content in stages.
 
-The client has two options for range requests, and a Content resource must support both. One option ([Fail-Fast](#fail-fast)) will fail the range request if the Entity validation headers do not match, and the other ([Refetch](#refetch)) will switch to downloading the entire content if the validations do not match. A range request depends on validators to ensure the content's bytes are exactly the same from the previous request.
+The client has two options for range requests, and a Content resource must support both. One option ([Fail-Fast](#fail-fast)) fails the range request if the Entity validation headers do not match, and the other ([Refetch](#refetch)) switches to downloading the entire content if the validations do not match. A range request depends on validators to ensure the content's bytes are the same from the previous request.
 
-For both options the client [discovers](#discovery) the range and validator information with either a `HEAD` request or a incomplete `GET` request. The client then sends a `GET` request with the [byte range](https://tools.ietf.org/html/rfc7233#section-2.1) of the content they would like to receive in a `Range` header. If the content range cannot be met, a `416 Requested Range Not Satisfiable` will be returned with the total number of available bytes in the `Content-Range` header. This condition occurs when the client requests a content range that goes beyond the size of the content itself.
+For both options the client [discovers](#discovery) the range and validator information with either a `HEAD` request or an incomplete `GET` request. The client then sends a `GET` request with the [byte range](https://tools.ietf.org/html/rfc7233#section-2.1) of the content they would like to receive in a `Range` header. If the content range cannot be delivered, a `416 Requested Range Not Satisfiable` is returned with the total number of available bytes in the `Content-Range` header. This condition occurs when the client requests a content range that goes beyond the size of the content itself.
 
 ##### Fail-Fast
 
-Fail-Fast give the client an option to perform range requests without triggering a full download if the client changes. The client follows the Entity  [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header as described above. If the content is the same then the client will receive as `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client will receive a `409 Conflict` status. In this case the client may choose to [fetch the content](#fetch-content) without validation headers.
+Fail-Fast gives the client an option to perform range requests without triggering a full download if the client changes. The client follows the Entity  [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header as described above. If the content is the same, then the client receives a `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client receives a `409 Conflict` status. In this case, the client may choose to [fetch the content](#fetch-content) without validation headers.
 
 ![](content/fail-fast.svg){: .center-image}
 
 ##### Refetch
 
-Refetch allows the client automatically restart a download if the content has changed from a previous attempt, but without processing a `409 Conflict` status code. The client sends the `ETag` value, or `Last-Modified` value if ETag is unavailable, in an `If-Match` header; it an contain either value, but not both. This single header validates the content has not changed. If the content has changed, or if the validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) then the full content is returned instead of the range. In this case the resource will respond as a [Fetch Content](#fetch-content) request.
+Refetch allows the client to automatically restart a download if the content has changed from a previous attempt, but without processing a `409 Conflict` status code. The client sends the `ETag` value, or `Last-Modified` value if ETag is unavailable, in an `If-Match` header; it can contain either value, but not both. This single header validates the content has not changed. If the content has changed, or if the validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) then the full content is returned instead of the range. In this case, the resource responds as a [Fetch Content](#fetch-content) request.
 
 ![](content/refetch.svg){: .center-image}
 
 ##### No Multipart Ranges
 
-The HTTP/1.1 Range Request specification allows for multiple ranges to be requested in the `Range` header, and the ranges are delivered in a multipart-formatted response. However, the Content profile does not support these multiple range requests because they are complicated to support and increasingly-unnecessary given [HTTP/2's ability to parallelize requests](https://hpbn.co/http2/#request-and-response-multiplexing). Clients that wish to fetch multiple parts should make multiple range requests and let HTTP/2 take care of the multiplexing.
+The HTTP/1.1 Range Request specification allows requests to specify multiple ranges in the `Range` header, with the ranges delivered in a multipart-formatted response. However, the Content profile does not support these multiple range requests because they are complicated to support and increasingly-unnecessary given [HTTP/2's ability to parallelize requests](https://hpbn.co/http2/#request-and-response-multiplexing). Clients that wish to fetch multiple parts should make multiple range requests and let HTTP/2 take care of the multiplexing.
 
 ## Specifications
 
