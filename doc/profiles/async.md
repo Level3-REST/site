@@ -10,39 +10,39 @@ permalink: /profiles/mixins/async
 
 ##### `Profile: <http://level3.rest/profiles/mixins/async>`
 
-Resources that accept `POST`, `PUT`, `DELETE` or `PATCH` requests will block on the request until the operation is completed. A Client may not want to wait, so a resource can offer the Async profile to give the Client control over if they wait at all or time out after a specified number of seconds. Async profile lets the Client “fire and forget” the state change operation.
+Resources that accept `POST`, `PUT`, `DELETE` or `PATCH` requests block on the request until the operation completes. A client may not want to wait, so a resource can offer the Async profile to give the client control over if they wait at all or time out after a specified number of seconds. Async profile lets the client “fire and forget” the state change operation.
 
-The Async resource will accept the state change request and the affected resource may eventually reflect the state modification in the request. Async `POST` operations will return a `Location` header, while async `PUT`, `DELETE` and `PATCH` operations will not. This profile offers no guarantees or timelines as to how long it will take for the operation to complete, nor offer any channel to communicate success or failure of the operation. A Client must determine eventual success by examining the state of the changed/deleted resource, ideally via [Entity](entity.md) validation headers, or examining the `Location` in `POST` operation.
+The Async resource accepts the state change request, and the affected resource may eventually reflect the state modification in the request. Async `POST` operations return a `Location` header, while async `PUT`, `DELETE` and `PATCH` operations will not. This profile offers no guarantees or timelines as to how long it takes for the operation to complete, nor offer any channel to communicate success or failure of the operation. A client must determine eventual success by examining the state of the changed/deleted resource, ideally via [Entity](entity.md) validation headers, or examining the `Location` in `POST` operation.
 
-The Async profile is intended for situations where an operation may take a long time to complete and the client merely does not want to wait. The Async resource should make an effort to validate the request, including header validation (for example, when [Entity](entity.md) or [Preflight](preflight.md) profiles are mixed in) and body syntax checking, if relevant. The Client must know if they have made a mistake with their request before the async operation is initiated.
+Clients use the Async profile in situations where an operation may take a long time to complete, and the client merely does not want to wait. The Async resource validates the request, including header validation (for example, when [Entity](entity.md) or [Preflight](preflight.md) profiles are mixed in) and body syntax checking, if relevant. The client must know if they have made a mistake with their request before the async operation initiates.
 
-Async profile is not used for batch- or job-style APIs where normal behavior is to submit a state change that will be processed some time in the future. That API should have semantics that manage the job and provide job status over time.
+Batch- or job-style APIs, where normal behaviour is to submit a state change that is processed sometime in the future, should not use the Async profile. That API should have semantics that manages the job and provides job status over time.
 
 ### Discovery
 
-Resources that support the Async profile will include in the Async profile header it it's list of `Profile` headers.
+Resources that support the Async profile include in the Async profile header in it's list of `Profile` headers.
 
 ![](async/discovery.svg){: .center-image}
 
 ### Immediate Async Response
 
-In this flow, the Client does not want to wait for the operation to complete or [time out](#response-with-async-timeout); they simply get an acceptance of the operation from the resource. The Client sends a `Prefer: respond-async` header to tell the resource to return as soon as it can confirm the operation has been accepted. The resource returns a status of `202 Accepted`.
+In this flow, the client does not want to wait for the operation to complete or [time out](#response-with-async-timeout); they get an immediate acceptance of the operation from the resource. The client sends a `Prefer: respond-async` header to tell the resource to return as soon as it can confirm the operation's acceptance. The resource returns a status of `202 Accepted`.
 
 ![](async/immediate.svg){: .center-image}
 
 ### Response with Async Timeout
 
-The client sends a `Prefer: respond-async; wait=#seconds` header indicating that they want to wait for a set number of seconds for a complete response. If the `wait` time is exceeded and the operation is still ongoing, the resource will respond with `202 Accepted`. The wait time is suggestive, not an accurate service level.
+The client sends a `Prefer: respond-async; wait=#seconds` header indicating that they want to wait for a set number of seconds for a complete response. If the operation exceeds the `wait` time and the operation is still ongoing, the resource responds with `202 Accepted`. The wait time is suggestive, not a guaranteed service level.
 
 ![](async/timeout.svg){: .center-image}
 
 ## Mixins With Validations
 
-When Async is mixed in with [Entity](entity.md) or [Preflight](preflight.md) profiles, the Client can expect header validation to occur before the async operation response is returned. This ensures the Client’s request is valid from the perspective of the mixins before the request is considered Accepted. If a mixin’s header validation fails, the request fails with their specific status response.
+When Async is mixed in with [Entity](entity.md) or [Preflight](preflight.md) profiles, the Client can expect header validation to occur before the async operation response returns. The Client’s request is valid from the perspective of the mixins before the request is considered Accepted. If a mixin’s header validation fails, the request fails with their specific status response.
 
 ### Preflight Mixin
 
-The Preflight mixin has a two-step flow. The Client preflights the request with `Expect` and omitting `Prefer`. On success the Client will send the async request in the second call. The first call (continue) cannot be asynchronously accepted.
+The Preflight mixin has a two-step flow. The Client preflights the request with `Expect` and omitting `Prefer`. On success, the Client sends the async request in the second call. The first call cannot be asynchronously accepted.
 
 ![](async/preflight-validation.svg){: .center-image}
 

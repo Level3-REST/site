@@ -53,13 +53,13 @@ The Filter Info resource describes the filtering configuration used in the curre
 
 A filtering declaration in the `filters` array has these properties:
 
-| Property   | Purpose                                                   |
-| ---------- | --------------------------------------------------------- |
-| `property` | The Entity property being filtered by                     |
-| `operand`  | The filtering operand                                     |
-| `value`    | Operation value TODO is there a better term than "value"? |
+| Property   | Purpose                               |
+| ---------- | ------------------------------------- |
+| `property` | The Entity property being filtered by |
+| `operand`  | The filtering operand                 |
+| `value`    | Filter value                          |
 
-Each additional filter declaration futher filters the elements by that declaration. The array of declarations `AND`s together to create an element list that matches every filter. Consider this filters array:
+Each additional filter declaration further filters the elements by that declaration. The array of declarations `AND`s together to create an element list that matches every filter. Consider this filters array:
 
 ```json
 { 
@@ -100,11 +100,11 @@ The Filtration resource affordances change the list's filtration configuration. 
 
 The Form will create a filters array. This array will have objects with these properties:
 
-| Property   | Purpose                                                   |
-| ---------- | --------------------------------------------------------- |
-| `property` | The Entity property being filtered by                     |
-| `operand`  | The filtering operand                                     |
-| `value`    | Operation value TODO is there a better term than "value"? |
+| Property   | Purpose                               |
+| ---------- | ------------------------------------- |
+| `property` | The Entity property being filtered by |
+| `operand`  | The filtering operand                 |
+| `value`    | Filter value                          |
 
 ### filters-list
 
