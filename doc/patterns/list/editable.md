@@ -36,7 +36,7 @@ Leads to an [Empty List](#empty-list-resource) action that empties the list when
 rel="http://level3.rest/patterns/list/editable#add-entry"
 ```
 
-Points to an Add Entry resource to add an entry to the list.
+Points to an Add Entry resource that adds an entry to the list.
 
 ## Empty List Resource
 
