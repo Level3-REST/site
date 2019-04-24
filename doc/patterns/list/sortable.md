@@ -40,10 +40,10 @@ The Sort Info resource describes the ordering configuration used in the current 
 
 A sorting declaration in the `sort-order` array has these properties:
 
-| Property    | Purpose                            |
-| ----------- | ---------------------------------- |
-| `property`  | The Entry property being sorted by |
-| `direction` | Either `ascending` or `descending` |
+| Property    | Purpose                             |
+| ----------- | ----------------------------------- |
+| `property`  | The Entry property being sorted by. |
+| `direction` | Either `ascending` or `descending`. |
 
 Each additional sorting declaration sub-sorts the elements by that declaration. Consider this sort order array:
 
@@ -83,10 +83,10 @@ The Sorter resource is an affordance to change the order configuration of the li
 
 The Form creates a sorting declaration array. This array has objects with these properties:
 
-| Property    | Purpose                            |
-| ----------- | ---------------------------------- |
-| `property`  | The Entry property being sorted by |
-| `direction` | Either `ascending` or `descending` |
+| Property    | Purpose                             |
+| ----------- | ----------------------------------- |
+| `property`  | The Entry property being sorted by. |
+| `direction` | Either `ascending` or `descending`. |
 
 ### sorts-list
 

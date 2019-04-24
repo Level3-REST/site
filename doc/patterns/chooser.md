@@ -25,7 +25,7 @@ The Choice resource presents either the [Info](../profiles/info.md) or [Nexus](.
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |
-| `type`   | `radio` for single selections, `checks` for 0 or more selections |
+| `type`   | `radio` for single selections, `checks` for 0 or more selections. |
 
 If the Chooser resource presents the [Nexus](../profiles/nexus.md) profile, then it can be deleted with a `DELETE` operation. The Choice resources are deleted as well. The Description resources may not be part of the domain, and if they are not, then they are not deleted.
 
@@ -45,7 +45,7 @@ The Choice resource presents the [Action](../profiles/action.md) profile. It has
 
 | Property  | Purpose                                                      |
 | --------- | ------------------------------------------------------------ |
-| `checked` | Indicates the selected state of the choice with `true` or `false` |
+| `checked` | Indicates the selected state of the choice with `true` or `false`. |
 
 ### choice-for
 

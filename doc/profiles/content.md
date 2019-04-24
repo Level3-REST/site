@@ -19,10 +19,10 @@ A `HEAD` request will return the following response. The headers are explained i
 
 | Header              | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
-| Accept-Ranges       | `bytes` means the resource accepts [range requests](#range-requests). `none` means this resource cannot accept range requests, or the resource accepts range requests, but the current Entity validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) |
-| Content-Length      | The number of bytes in the content                           |
-| Content-Type        | The [*media-type*](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the content |
-| Content-Disposition | `inline` or `attachment; filename="<filename>"`See [RFC 6266](https://tools.ietf.org/html/rfc6266) for possible disposition statements |
+| Accept-Ranges       | `bytes` means the resource accepts [range requests](#range-requests). `none` means this resource cannot accept range requests, or the resource accepts range requests, but the current Entity validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1). |
+| Content-Length      | The number of bytes in the content.                          |
+| Content-Type        | The [*media-type*](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the content. |
+| Content-Disposition | `inline` or `attachment; filename="<filename>"`See [RFC 6266](https://tools.ietf.org/html/rfc6266) for possible disposition statements. |
 | Profile             | `<http://level3.rest/profiles/content>`                      |
 
 ### Fetch Content

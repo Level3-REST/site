@@ -26,8 +26,8 @@ A `HEAD` request returns the headers described in the table below. An Entity res
 
 | Header        | Value                                                        |
 | ------------- | ------------------------------------------------------------ |
-| ETag          | An [*entity-tag*](https://tools.ietf.org/html/rfc7232#section-2.3) identifying the entity version |
-| Last-Modified | The [*HTTP-date*](https://tools.ietf.org/html/rfc7231#section-7.1.1.1) the entity was last modified |
+| ETag          | An [*entity-tag*](https://tools.ietf.org/html/rfc7232#section-2.3) identifying the entity version. |
+| Last-Modified | The [*HTTP-date*](https://tools.ietf.org/html/rfc7231#section-7.1.1.1) the entity was last modified. |
 | Profile       | `<http://level3.rest/profiles/mixin/entity>`                 |
 
 ### Cache-Aware Fetch

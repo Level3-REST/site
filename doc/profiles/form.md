@@ -41,8 +41,8 @@ Once the client submits the form, the resource responds with a success message a
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The forms's syntax is malformed                              |
-| `422 Unprocessable Entity` | Values in the form are not accepted by business validation rules |
+| `400 Bad Request`          | The forms's syntax is malformed.                             |
+| `422 Unprocessable Entity` | Values in the form are not accepted by business validation rules. |
 
 ![](form/submit.svg){: .center-image}
 
