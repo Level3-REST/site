@@ -64,6 +64,6 @@ Add Entry resource adds an entry to the list. The profile is undefined, but it i
 rel="http://level3.rest/patterns/list/editable#adds-to-list"
 ```
 
-Links to the list that is the target of the Add Entry resource.
+Links to the list into which the Add Entry resource adds entries.
 
 {% include footer.html %}
