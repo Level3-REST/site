@@ -14,7 +14,7 @@ Extends [List](../list.md) pattern by adding filtration affordances. A filtered 
 
 ### Operands
 
-Filter declarations use logical operands to describe how to filter the entries in a list by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule. The resource implementation might also not accept all operands listed.
+Filter declarations use logical operands to describe how to filter the entries in a list by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule based on the field's semantics. The resource's data types guide the applicability of the listed operands to filtered fields.
 
 | Operand | Purpose                          |
 | ------- | -------------------------------- |
@@ -35,7 +35,7 @@ Filter declarations use logical operands to describe how to filter the entries i
 
 `Profile: <http://level3.rest/patterns/list/filterable#list-resource>`
 
-The filterable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements. The profile choice has no effect on filtering options.
+The filterable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements. The profile choice does not effect filtering options.
 
 ### filter-info
 
@@ -49,17 +49,17 @@ Points to a [Filter Info](#filter-info-resource) resource that describes the con
 
 `Profile: <http://level3.rest/patterns/list/filterable#filter-info-resource>`
 
-The Filter Info resource describes the filtering configuration used in the current List. The configuration consists of an array of filter declarations. This array is assigned to a top-level `filters` element in the representation.
+The Filter Info resource describes the filtering configuration used in the current List. The configuration representation consists of an array of filter declarations assigned to a top-level `filters` element.
 
 A filtering declaration in the `filters` array has these properties:
 
-| Property   | Purpose                               |
-| ---------- | ------------------------------------- |
-| `property` | The Entity property being filtered by |
-| `operand`  | The filtering operand                 |
-| `value`    | Filter value                          |
+| Property   | Purpose                                |
+| ---------- | -------------------------------------- |
+| `property` | The Entity property being filtered by. |
+| `operand`  | The filtering operand.                 |
+| `value`    | Filter value.                          |
 
-Each additional filter declaration further filters the elements by that declaration. The array of declarations `AND`s together to create an element list that matches every filter. Consider this filters array:
+Each filter declaration further filters the elements by that declaration. The array of declarations `AND`s together to create an element list that matches every filter. Consider this filters array:
 
 ```json
 { 
@@ -70,9 +70,9 @@ Each additional filter declaration further filters the elements by that declarat
 }
 ```
 
-The list will be filtered by `age` (>= 30) and a `team` of either "Bruins" or "Canucks".
+The list contains entries filtered by `age` (>= 30) and a `team` of either "Bruins" or "Canucks."
 
-The XML representation would look like this:
+The XML representation looks like this:
 
 ```xml
 <filters>
@@ -96,15 +96,15 @@ Points to a Filtration resource that can configure the entry filters of the list
 
 `Profile: <http://level3.rest/patterns/list/filterable#filtration-resource>`
 
-The Filtration resource affordances change the list's filtration configuration. It is a Form resource that starts with the current configuration in it's schema representation, or in it's template object if the form does not use a schema. If only a subset of the Entry properties are filterable then the Filtration resource should present a schema to help the client submit a successful filtration change.
+The Filtration resource affordances change the list's filtration configuration. It is a Form resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the Entry properties is filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
 
-The Form will create a filters array. This array will have objects with these properties:
+The Form creates a filters array. This array has objects with these properties:
 
-| Property   | Purpose                               |
-| ---------- | ------------------------------------- |
-| `property` | The Entity property being filtered by |
-| `operand`  | The filtering operand                 |
-| `value`    | Filter value                          |
+| Property   | Purpose                                |
+| ---------- | -------------------------------------- |
+| `property` | The Entity property being filtered by. |
+| `operand`  | The filtering operand.                 |
+| `value`    | Filter value.                          |
 
 ### filters-list
 
@@ -112,6 +112,6 @@ The Form will create a filters array. This array will have objects with these pr
 rel="http://level3.rest/patterns/list/filterable#filters-list"
 ```
 
-Points to the List that this Filtration resource filters. The URL may not be the same after the Filtration resource's controls are executed.
+Points to the List that this Filtration resource filters. The URL may not be the same after the Filtration resource's controls execute.
 
 {% include footer.html %}
