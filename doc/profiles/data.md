@@ -29,7 +29,7 @@ A client uses the  `GET` operation to fetch the Data’s representation.
 
 ### Replace Data
 
-A Client can use the `PUT` operation to replace the data in a Data resource. However, a client cannot create (or recreate) a Data resource with the `PUT` operation. The URL must point to an existing data resource.
+A client can use the `PUT` operation to replace the data in a Data resource. However, a client cannot create (or recreate) a Data resource with the `PUT` operation. The URL must point to an existing data resource.
 
 ##### Rejections
 
@@ -42,7 +42,7 @@ A Client can use the `PUT` operation to replace the data in a Data resource. How
 
 ### Modify Data
 
-A Client can use the `PATCH` operation to modify portions of the data in a Data resource. The Client must use a patch format supported by the resource (as discovered in the `Accept-Patch` header) and construct a patch payload to submit with the `PATCH` operation. The client should send a `Content-Type` header indicating the patch format. If the resource supports more than one patch media type, it may require this header for disambiguation.
+A client can use the `PATCH` operation to modify portions of the data in a Data resource. The client must use a patch format supported by the resource (as discovered in the `Accept-Patch` header) and construct a patch payload to submit with the `PATCH` operation. The client should send a `Content-Type` header indicating the patch format. If the resource supports more than one patch media type, it may require this header for disambiguation.
 
 If the patch cannot be applied successfully, the resource returns `409 Conflict`. The client should re-fetch the data resource and rebuild the patch payload. If the patch is applicable, but the resulting data values violate business validation rules, the resource sends back `422 Unprocessable Entity`.
 
@@ -65,11 +65,11 @@ The [Entity](entity.md) mixin gives Data fetch cacheability and safe modificatio
 
 ## Async Mixin
 
-The [Async](async.md) mixin provides a Client with “fire-and-forget” data modifications.
+The [Async](async.md) mixin provides a client with “fire-and-forget” data modifications.
 
 ## Representation Mixin
 
-The [Representation](representation.md) mixin allows the Client to receive the modified data representation in the `PUT` or `PATCH` response.
+The [Representation](representation.md) mixin allows the client to receive the modified data representation in the `PUT` or `PATCH` response.
 
 ## Specifications
 

@@ -8,9 +8,9 @@ permalink: /patterns/list/editable
 ---
 # Editable List Pattern
 
-Extends [List](../list.md) pattern by adding editing controls. Not all editing controls are enabled in every editable list. An editable list can choose to omit a control, like [Add Entry](#add-entry-resource), in favor of another approach that is more intuitive to the semantics of the list. This diagram includes the existing List resources [List](../list.md#list-resource) and [Entry](../list.md#entry-resource), then adds additional relationships to new resources to make it an editable list. The List resource's Profiles includes both the [editable/list-resource](#list-resource) profile and the base [list-resource](../list.md#list-resource) Profile.
+Extends [List](../list.md) pattern by adding editing controls. Not all editing controls are enabled in every editable list. An editable list can choose to omit a control, like [Add Entry](#add-entry-resource), in favor of another approach that is more intuitive to the semantics of the list. This diagram includes the existing List resources [List](../list.md#list-resource) and [Entry](../list.md#entry-resource), then adds additional relationships to new resources to make it an editable list. The List resource's profiles includes both the [editable/list-resource](#list-resource) profile and the base [list-resource](../list.md#list-resource) profile.
 
-The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource), and has no extension Profile.
+The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource), and has no extension profile.
 
 ![](editable/relations.svg){: .center-image}
 
@@ -18,7 +18,7 @@ The Entry resource in the diagram is unchanged from the base list's [Entry](../l
 
 `Profile: <http://level3.rest/patterns/list/editable#list-resource>`
 
-The Editable List resource inherits the base [List](../list.md#list-resource) resource's Profile requirements. If the List is a [Nexus](../../profiles/nexus.md) resource, it will accept a `DELETE` operation to remove the list.
+The Editable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements. If the List is a [Nexus](../../profiles/nexus.md) resource, it will accept a `DELETE` operation to remove the list.
 
 ### *empty-list*
 
@@ -54,7 +54,7 @@ Link to the List that will be emptied by this action.
 
 `Profile: <http://level3.rest/patterns/list/editable#add-entry-resource>`
 
-A resource that will add an entry to the list. The Profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
+A resource that will add an entry to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
 
 ### adds-to-list
 

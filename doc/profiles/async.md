@@ -38,11 +38,11 @@ The client sends a `Prefer: respond-async; wait=#seconds` header indicating that
 
 ## Mixins With Validations
 
-When Async is mixed in with [Entity](entity.md) or [Preflight](preflight.md) profiles, the Client can expect header validation to occur before the async operation response returns. The Client’s request is valid from the perspective of the mixins before the request is considered Accepted. If a mixin’s header validation fails, the request fails with their specific status response.
+When Async is mixed in with [Entity](entity.md) or [Preflight](preflight.md) profiles, the client can expect header validation to occur before the async operation response returns. The client’s request is valid from the perspective of the mixins before the request is considered Accepted. If a mixin’s header validation fails, the request fails with their specific status response.
 
 ### Preflight Mixin
 
-The Preflight mixin has a two-step flow. The Client preflights the request with `Expect` and omitting `Prefer`. On success, the Client sends the async request in the second call. The first call cannot be asynchronously accepted.
+The Preflight mixin has a two-step flow. The client preflights the request with `Expect` and omitting `Prefer`. On success, the client sends the async request in the second call. The first call cannot be asynchronously accepted.
 
 ![](async/preflight-validation.svg){: .center-image}
 

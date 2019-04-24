@@ -7,13 +7,13 @@ permalink: /patterns/chooser
 ---
 # Chooser Pattern
 
-Chooser is a hypermedia control that presents one or more choices for Clients to select from. A [Chooser](#chooser-resource) has two types that determine how many selections are possible. The types are patterned after HTML's selection `<input>` formats. The  `radio` type accepts a single selection. The `checks` type can accept multiple choices.
+Chooser is a hypermedia control that presents one or more choices for clients to select from. A [Chooser](#chooser-resource) has two types that determine how many selections are possible. The types are patterned after HTML's selection `<input>` formats. The  `radio` type accepts a single selection. The `checks` type can accept multiple choices.
 
-A Client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice action resource. The result of the `POST` to choice will change the state of the Choice. If the Choice's `checked` property was `false`, it will be `true` after the action. If the Choice's `checked` property was `true` then it will be `false` after the action.
+A client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice action resource. The result of the `POST` to choice will change the state of the Choice. If the Choice's `checked` property was `false`, it will be `true` after the action. If the Choice's `checked` property was `true` then it will be `false` after the action.
 
 ![](chooser/relations.svg){: .center-image}
 
-The Choice's state is changed on the action, as is the the state of the Chooser overall. For a `radio` Chooser, selecting a Choice will "uncheck" another Choice if it had been previously selected. For a  `checks` Chooser, the overall chooser's state may change, depending on the business rules the Chooser is representing. For this reason, the `Location` response header from Choice actions will point to the Chooser resource so that the Client can refetch the overall Chooser state again.
+The Choice's state is changed on the action, as is the the state of the Chooser overall. For a `radio` Chooser, selecting a Choice will "uncheck" another Choice if it had been previously selected. For a  `checks` Chooser, the overall chooser's state may change, depending on the business rules the Chooser is representing. For this reason, the `Location` response header from Choice actions will point to the Chooser resource so that the client can refetch the overall Chooser state again.
 
 ![](chooser/interactions.svg){: .center-image}
 
@@ -35,7 +35,7 @@ If the Chooser resource presents the [Nexus](../profiles/nexus.md) profile then 
 rel="http://level3.rest/patterns/chooser#choice"
 ```
 
-A Chooser resource will have 0 or more `choice` links pointing to [Choice](#choice-resource) resources in it's list. The ordering of the links is intentional, meaning they should be considered the presentation order of the choices. The HTTP specification requires header order to be maintained so Clients can expect consistent link order.
+A Chooser resource will have 0 or more `choice` links pointing to [Choice](#choice-resource) resources in it's list. The ordering of the links is intentional, meaning they should be considered the presentation order of the choices. The HTTP specification requires header order to be maintained so clients can expect consistent link order.
 
 ## Choice Resource
 

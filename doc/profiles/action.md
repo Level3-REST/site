@@ -27,7 +27,7 @@ Clients trigger an Action by `POST`ing to it. The resource responds with `204 No
 
 ## Representation Mixin
 
-The [Representation profile](representation.md) mixin enables the Client to receive the target representation in the Action response.
+The [Representation profile](representation.md) mixin enables the client to receive the target representation in the Action response.
 
 ## Specifications
 

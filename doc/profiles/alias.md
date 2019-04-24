@@ -30,9 +30,9 @@ The Alias resource includes both its profile as well as the profile of the targe
 
 ### Operate Alias
 
-A Client can operate an Alias resource as if it were the target resource as long as their client supports automatic redirection. The Client essentially operates against the target resource through the Alias resource.
+A client can operate an Alias resource as if it were the target resource as long as their client supports automatic redirection. The client essentially operates against the target resource through the Alias resource.
 
-If the Client does not support automatic redirection, then they need to be aware of the Alias resource and make operations directly against the URL in the `Location` header. Clients need to examine the response code and act accordingly. For status code `307 Temporary Redirect`, the client should re-operate against the Alias URL for every request to work with the latest target URL. For status code `308 Permanent Redirect`, the client can memoize the `Location` URL and reuse it for subsequent operations.
+If the client does not support automatic redirection, then they need to be aware of the Alias resource and make operations directly against the URL in the `Location` header. Clients need to examine the response code and act accordingly. For status code `307 Temporary Redirect`, the client should re-operate against the Alias URL for every request to work with the latest target URL. For status code `308 Permanent Redirect`, the client can memoize the `Location` URL and reuse it for subsequent operations.
 
 Some complications may arise in the automatic redirect experience if the target URL points to a different domain. Some of the request headers might be stripped away on the second request. The API server needs to configure [CORS](https://www.w3.org/TR/cors/) to allow necessary headers to apply to the cross-origin request.
 

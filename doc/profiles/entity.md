@@ -16,7 +16,7 @@ The HTTP specification has some essential features to support Entity operations.
 
 The header values `ETag` and `Last-Modified` are often transparently managed by HTTP clients, especially in browsers. A client should learn about conditional request support in their HTTP client library and enable these features.
 
-Almost every Level 3 profile can use the Entity mixin to improve the Client's performance and safe usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort.
+Almost every Level 3 profile can use the Entity mixin to improve the client's performance and safe usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort.
 
 ### Discovery
 

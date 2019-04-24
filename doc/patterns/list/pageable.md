@@ -10,11 +10,11 @@ permalink: /patterns/list/pageable
 
 Extends [List](../list.md) pattern by adding pagination affordances. A paginated [List](#list-resource) has a [Page Info](#page-info-resource) resource that describes the pagination configuration. The List also has cursor links to the `previous` and `next` pages of the list. Clients can change the pagination configuration with the [Pagination](#pagination-resource) resource.
 
-The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource), and has no extension Profile.
+The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource), and has no extension profile.
 
 ![](pageable/relations.svg){: .center-image}
 
-The Client changes page configuration by `POST`ing a new configuration form to the [Pagination](#pagination-resource) resource. This changes the URL of the [List](#list-resource) resource, so Pagination returns the updated List URL in it's `Location` response header.
+The client changes page configuration by `POST`ing a new configuration form to the [Pagination](#pagination-resource) resource. This changes the URL of the [List](#list-resource) resource, so Pagination returns the updated List URL in it's `Location` response header.
 
 ![](pageable/interactions.svg){: .center-image}
 
@@ -22,7 +22,7 @@ The Client changes page configuration by `POST`ing a new configuration form to t
 
 `Profile: <http://level3.rest/patterns/list/pageable#list-resource>`
 
-The Pageable List resource inherits the base [List](../list.md#list-resource) resource's Profile requirements. The Profile choice has no effect on pagination.
+The Pageable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements. The profile choice has no effect on pagination.
 
 ### page-info
 
@@ -52,12 +52,12 @@ Points to another [List](#list-resource) resource that contains the previous pag
 
 `Profile: <http://level3.rest/patterns/list/pageable#page-info-resource>`
 
-The Page Info resource describes the pagination configuration used in the current List. This resource should have relevant state fields describing the current page, page size and other information that will help the Client determine which page the related Paginated List resource is representing.
+The Page Info resource describes the pagination configuration used in the current List. This resource should have relevant state fields describing the current page, page size and other information that will help the client determine which page the related Paginated List resource is representing.
 
 | Property  | Purpose                                                      |
 | --------- | ------------------------------------------------------------ |
 | `current` | The current page. Page numbers are 1-based.                  |
-| `pages`   | The number of pages in the paginated list. May be unknown, so a Client will need to accept text statements in this property. |
+| `pages`   | The number of pages in the paginated list. May be unknown, so a client will need to accept text statements in this property. |
 | `size`    | The number of Entries per page.                              |
 
 ### paginator
@@ -72,7 +72,7 @@ Points to a Pagination resource that can configure the pagination for the list.
 
 `Profile: <http://level3.rest/patterns/list/pageable#pagination-resource>`
 
-The Pagination resource is an affordance to change the pagination configuration of the list. It is a Form resource containing the current configuration. The Client can change the page size or the starting page so the Client can select a different page to view. Once the form is submitted, the Client will be redirected to a List resource configured with this pagination configuration.
+The Pagination resource is an affordance to change the pagination configuration of the list. It is a Form resource containing the current configuration. The client can change the page size or the starting page so the client can select a different page to view. Once the form is submitted, the client will be redirected to a List resource configured with this pagination configuration.
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |

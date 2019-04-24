@@ -8,7 +8,7 @@ permalink: /patterns/list/filterable
 ---
 # Filterable List Pattern
 
-Extends [List](../list.md) pattern by adding filtration affordances. A filtered [List](#list-resource) has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The Entries in the list should share the filterable properties for the filltered List to make sense to the Client.
+Extends [List](../list.md) pattern by adding filtration affordances. A filtered [List](#list-resource) has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The Entries in the list should share the filterable properties for the filtered List to make sense to the client.
 
 ![](filterable/relations.svg){: .center-image}
 
@@ -35,7 +35,7 @@ Filter declarations use logical operands to describe how to filter the entries i
 
 `Profile: <http://level3.rest/patterns/list/filterable#list-resource>`
 
-The filterable List resource inherites the base [List](../list.md#list-resource) resource's Profile requirements. The Profile choice has no effect on filtering options.
+The filterable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements. The profile choice has no effect on filtering options.
 
 ### filter-info
 
@@ -96,7 +96,7 @@ Points to a Filtration resource that can configure the entry filters of the list
 
 `Profile: <http://level3.rest/patterns/list/filterable#filtration-resource>`
 
-The Filtration resource affordances change the list's filtration configuration. It is a Form resource that starts with the current configuration in it's schema representation, or in it's template object if the form does not use a schema. If only a subset of the Entry properties are filterable then the Filtration resource should present a schema to help the Client submit a successful filtration change.
+The Filtration resource affordances change the list's filtration configuration. It is a Form resource that starts with the current configuration in it's schema representation, or in it's template object if the form does not use a schema. If only a subset of the Entry properties are filterable then the Filtration resource should present a schema to help the client submit a successful filtration change.
 
 The Form will create a filters array. This array will have objects with these properties:
 

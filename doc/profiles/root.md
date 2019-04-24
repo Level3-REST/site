@@ -19,7 +19,7 @@ The Root profile presents the required `Profile` and `Allow` headers.
 
 ### Fetch Root
 
-A Client can fetch the Root with a `GET` request. The `Link` header will contain links to other resources.
+A client can fetch the Root with a `GET` request. The `Link` header will contain links to other resources.
 
 ![](root/fetch.svg){: .center-image}
 

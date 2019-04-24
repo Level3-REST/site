@@ -27,7 +27,7 @@ The Tree resource shares the [`child`](#child) relationship with Node resource.
 
 `Profile: <http://level3.rest/patterns/tree#node-resource>`
 
-A Node resource has no required Profile. If the node's Profile supports the `DELETE` operation, a Client can remove the node from the tree by `DELETE`ing the node. This will delete all `child` nodes and their children as well.
+A Node resource has no required profile. If the node's profile supports the `DELETE` operation, a client can remove the node from the tree by `DELETE`ing the node. This will delete all `child` nodes and their children as well.
 
 ### top
 
@@ -43,7 +43,7 @@ The `top` link points to the [Tree](#tree-resource) the node is a part of.
 rel="http://level3.rest/patterns/tree#child"
 ```
 
-Tree and Node resources have 0 or more `child` links pointing to direct child [Node](#node-resource) resources. The ordering of the links is intentional, meaning they should be considered the sibling order. [HTTP header sequence rules](https://tools.ietf.org/html/rfc7230#section-3.2.2) ensure the Client can rely on this order to be consistent with the Resources ordering intentions.
+Tree and Node resources have 0 or more `child` links pointing to direct child [Node](#node-resource) resources. The ordering of the links is intentional, meaning they should be considered the sibling order. [HTTP header sequence rules](https://tools.ietf.org/html/rfc7230#section-3.2.2) ensure the client can rely on this order to be consistent with the resource's ordering intentions.
 
 ### parent
 
