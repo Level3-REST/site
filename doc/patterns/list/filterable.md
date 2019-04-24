@@ -8,7 +8,7 @@ permalink: /patterns/list/filterable
 ---
 # Filterable List Pattern
 
-Extends [List](../list.md) pattern by adding filtration affordances. A filtered [List](#list-resource) has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The Entries in the list should share the filterable properties for the filtered List to make sense to the client.
+Extends [List](../list.md) pattern by adding filtration affordances. A filtered list has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The entries in the list should share the filterable properties for the filtered list to make sense to the client.
 
 ![](filterable/relations.svg){: .center-image}
 

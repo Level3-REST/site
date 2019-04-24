@@ -8,7 +8,7 @@ permalink: /patterns/list/pageable
 ---
 # Pageable List Pattern
 
-Extends [List](../list.md) pattern by adding pagination affordances. A paginated [List](#list-resource) has a [Page Info](#page-info-resource) resource that describes the pagination configuration. The List also has cursor links to the `previous` and `next` pages of the list. Clients can change the pagination configuration with the [Pagination](#pagination-resource) resource.
+Extends [List](../list.md) pattern by adding pagination affordances. A paginated list has a [Page Info](#page-info-resource) resource that describes the pagination configuration. The list also has cursor links to the `previous` and `next` pages of the list. Clients can change the pagination configuration with the [Pagination](#pagination-resource) resource.
 
 The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource) and has no extension profile.
 
