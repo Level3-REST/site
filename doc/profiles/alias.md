@@ -9,9 +9,9 @@ permalink: /profiles/alias
 
 ##### `Profile: <http://level3.rest/profiles/alias>`
 
-Alias redirects to another resource. Alias resources act as a stable reference to another resource. That other resource may be unstable and thus not the same on every request. For instance, Alias can be used to point to the current cell tower a mobile phone is connected to, or the airport gate a flight is currently parked.
+Alias resources act as a stable reference to another resource by redirecting operations to the other resource. That other resource may be unstable and thus not the same on every request. For instance, Alias can be used to point to the current cell tower a mobile phone has joined, or the airport gate a flight is currently parked.
 
-Alias can also redirect to moved resources, which provides a way to support old versions of a resource in a way that helps the Client learn about the new version. All operations are supported in by an Alias resource in the same way—a `3xx` status code is returned with a `Location` header pointing to the new resource.
+The Alias can also redirect to resources that have moved, thus providing a way to support old versions of a resource in a way that helps the client learn about the new version. All operations are supported in by an Alias resource in the same way—a `3xx` status code returns with a `Location` header pointing to another URL.
 
 Alias supports two kinds of redirection:
 
@@ -20,19 +20,21 @@ Alias supports two kinds of redirection:
 | Stable URL, dynamic resource | `307 Temporary Redirect` |
 | Permanent change             | `308 Permanent Redirect` |
 
-An Alias resource supports all the operations of the target resource: `HEAD`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`.
+An Alias resource supports all the operations of the target resource, including`HEAD`, `GET`, `PUT`, `POST`, `PATCH` and `DELETE`.
 
 ### Discovery
 
-The Alias profile offers it's `Profile` header as well as the profile of the target resource. The `Location` header points to the aliased resource. It also shows the `Allow` header <u>for the target resource</u>. The status code matches the intent of the Alias--dynamic or permanent redirect.
+The Alias resource includes both its profile as well as the profile of the target resource in the `Profile` header. The `Location` header points to the aliased resource. It also shows the `Allow` header <u>for the target resource</u>. The status code matches the intent of the Alias—dynamic or permanent redirect.
 
 ![](alias/discovery.svg){: .center-image}
 
 ### Operate Alias
 
-A Client can operate an Alias resource as if it were the target resource if their client supports automatic redirection. The Client will essentially be operating against the target resource through the Alias resource. If the Client does not support automatic redirection then they will need to be aware of the Alias resource and make the operation directly against the URL in the `Location` header. Clients will need to be aware of the response code and act accordingly. For status code `307`, the Client should re-operate against the Alias URL for every request so as to work with the latest target URL. For status code `308`, the client can memoize the `Location` URL and reuse it for subsequent operations.
+A Client can operate an Alias resource as if it were the target resource as long as their client supports automatic redirection. The Client essentially operates against the target resource through the Alias resource.
 
-Some complications may arise in the automatic redirect experience if the target URL points to a different domain, such that the headers of the second request are stripped away. The API server may need to configure [CORS](https://www.w3.org/TR/cors/) to allow necessary headers to be applied to the cross-origin request.
+If the Client does not support automatic redirection, then they need to be aware of the Alias resource and make operations directly against the URL in the `Location` header. Clients need to examine the response code and act accordingly. For status code `307 Temporary Redirect`, the client should re-operate against the Alias URL for every request to work with the latest target URL. For status code `308 Permanent Redirect`, the client can memoize the `Location` URL and reuse it for subsequent operations.
+
+Some complications may arise in the automatic redirect experience if the target URL points to a different domain. Some of the request headers might be stripped away on the second request. The API server needs to configure [CORS](https://www.w3.org/TR/cors/) to allow necessary headers to apply to the cross-origin request.
 
 ![](alias/operate.svg){: .center-image}
 
