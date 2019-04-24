@@ -14,7 +14,7 @@ Extends [List](../list.md) pattern by adding filtration affordances. A filtered 
 
 ### Operands
 
-Filter declarations use logical operands to describe how to filter the entries in a list by property values.
+Filter declarations use logical operands to describe how to filter the entries in a list by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule. The resource implementation might also not accept all operands listed.
 
 | Operand | Purpose                          |
 | ------- | -------------------------------- |
@@ -24,6 +24,10 @@ Filter declarations use logical operands to describe how to filter the entries i
 | `lte`   | Less then or equal               |
 | `gt`    | Greater than                     |
 | `gte`   | Greater than or equal            |
+| `px`    | String prefix                    |
+| `npx`   | Not this string prefix           |
+| `sx`    | String suffix                    |
+| `nsx`   | Not this string suffix           |
 | `in`    | In a list of possible values     |
 | `nin`   | Not in a list of possible values |
 
@@ -61,7 +65,7 @@ Each additional filter declaration futher filters the elements by that declarati
 { 
   "filters": [
     { "property": "age", "operand": "gte", "value": 30 }, 
-    { "property": "team", "operand": "in": "value": ["Bruins", "Canucks"] }
+    { "property": "team", "operand": "in", "value": ["Bruins", "Canucks"] }
   ]
 }
 ```

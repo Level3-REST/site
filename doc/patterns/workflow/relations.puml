@@ -1,0 +1,15 @@
+@startuml
+!include ../../copyright.iuml
+
+title Workflow Pattern
+
+rectangle "<&info> | <&aperture> Workflow" as Workflow
+rectangle "<&info> Step" as Step
+rectangle "<&question-mark> Blocker" as Blocker
+
+Workflow 0-->> "1..N" Step: "step"
+Step 0~~>> Workflow: "workflow"
+Blocker 0~~>> Step: "blocks"
+Step 0~~>> Blocker: "blocked-by"
+
+@enduml
