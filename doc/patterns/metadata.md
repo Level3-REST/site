@@ -7,11 +7,11 @@ permalink: /patterns/metadata
 ---
 # Content Metadata Pattern
 
-[Content profile](../profiles/content.md) resources are difficult to inspect because they contain metadata that is only discoverable after the content is downloaded to the client. The Content Metdata pattern solves this by linking a [Content](#content-resource) resource to a [Metadata](#metadata) resource containing metadata describing the content. A client can examine the metadata and then decide to download all the content.
+[Content profile](../profiles/content.md) resources are difficult to inspect because they contain metadata that is only discoverable after the client downloads the content. The Content Metadata pattern solves this by linking a [Content](#content-resource) resource to a [Metadata](#metadata-resource) resource containing metadata describing the content. A client can examine the metadata and then decide to download all the content.
 
-If the Content resource changes, the metadata may change as well to reflect new metadata values. If the Content resource is deleted, the related Metadata resource will also be deleted.
+If the Content resource changes, the metadata may change as well to reflect new metadata values. If the client deletes a Content resource, it also deletes the related Metadata resource.
 
-Metadata's [Info](../profiles/info.md) profile means it cannot be edited or deleted directly. An API may wish to add user-editable resources like descriptions, tags or other information and link it to the Content resource. These additional resource relationships are outside the scope of this pattern.
+Metadata's [Info](../profiles/info.md) profile means the client cannot edit or delete the metadata directly. An API may wish to add user-editable resources like descriptions, tags or other information and link it to the Content resource. These additional resource relationships are outside the scope of this pattern.
 
 ![](metadata/relations.svg){: .center-image}
 
@@ -33,9 +33,9 @@ The `metadata` link relation is similar to IANA's “[describedby](https://www.w
 
 `Profile: <http://level3.rest/patterns/metadata#metadata-resource>`
 
-The Metadata resource presents the [Info profile](../profiles/info.md) and contains relevant details about the Content resource, depending on the type of content. Images can have metadata about the dimensions, resolution and color model. Documents may contain metadata about the page count and author. 
+The Metadata resource presents the [Info profile](../profiles/info.md) and contains relevant details about the Content resource, depending on the type of content. Images can have metadata about the dimensions, resolution and colour model. Documents may contain metadata about the page count and author. 
 
-Metadata should be used in other API contexts like search results or directory listings as they provide useful information for the client to select which Content resource they would like to interact with. The `content` link gives the client navigability to the actual Content data should they choose to consume it.
+Metadata should be used in other API contexts like search results or directory listings as they provide useful information for the client to select a Content resource. The `content` link gives the client navigability to the actual Content data should they choose to consume it.
 
 ### content
 
