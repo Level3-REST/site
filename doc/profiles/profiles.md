@@ -10,7 +10,7 @@ permalink: /profiles
 A profile is a client-centric interaction definition that gives an API client information on how to use a resource. The HTTP `Profile` header declares the Level 3 profiles that a resource supports. The profiles link to documentation describing the profile's interaction model and semantics. 
 
 ### Mixins
-Resource implementations can support multiple Level 3 profiles in a single resource. Each profile definition encourages implementations to support related "mixin" profiles. For example, the [Content profile](content.md) recommends supporting the [Preflight profile](preflight.md) to provide a better user upload experience. These mixin profiles are defined to be used in conjunction with other profiles to improve their capabilities but do not make sense as standalone resource profiles.
+Resource implementations can support multiple Level 3 profiles in a single resource. Each profile definition encourages implementations to support related mixin profiles. For example, the [Content profile](content.md) recommends supporting the [Preflight profile](preflight.md) to provide a better user upload experience. These mixin profiles are defined to be used in conjunction with other profiles to improve their capabilities but do not make sense as standalone resource profiles.
 
 ### Diagram Headers
 

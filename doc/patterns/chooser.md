@@ -13,7 +13,7 @@ A client examines the [Description](#description-resource) resource of each [Cho
 
 ![](chooser/relations.svg){: .center-image}
 
-The Choice's state is changed on the action, as is the state of the Chooser overall. For a `radio` chooser, selecting a choice will "uncheck" a previously-selected choice. For a  `checks` chooser, the overall chooser's state may change, depending on the business rules the chooser is representing. For this reason, the `Location` response header from choice actions points to the Chooser resource so that the client can fetch the overall chooser state again.
+The Choice's state is changed on the action, as is the state of the Chooser overall. For a `radio` chooser, selecting a choice deselects a previously-selected choice. For a  `checks` chooser, the overall chooser's state may change, depending on the business rules the chooser is representing. For this reason, the `Location` response header from choice actions points to the Chooser resource so that the client can fetch the overall chooser state again.
 
 ![](chooser/interactions.svg){: .center-image}
 
@@ -61,7 +61,7 @@ This link points to the [Chooser](#chooser-resource) to which this Choice belong
 rel="http://level3.rest/patterns/chooser#description"
 ```
 
-This link points to a [Description](#description-resource) that describes this Choice. This relation is similar to the registered IANA relation "describedby".
+This link points to a [Description](#description-resource) that describes this Choice. This relation is similar to the registered IANA relation "describedby."
 
 ## Description Resource
 

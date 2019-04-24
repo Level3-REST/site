@@ -62,7 +62,7 @@ The links between resources are not guaranteed to be present on every request an
 
 ### Backtrace to Root
 
-Every resource is traceable back to the root resource of the API. The root is the "home page" of an API, and the first place clients visit when learning about an API. Every resource should be eventually [discoverable](#discoverability) from the root resource by following links. Naturally, other considerations like access rights and availability may restrict a consumer's actual navigation, but the design of Level 3 API shows that every resource traces back to the root resource by reverse-navigating the links from every leaf resource.
+Every resource is traceable back to the root resource of the API. The root is the “home page” of an API, and the first place clients visit when learning about an API. Every resource should be eventually [discoverable](#discoverability) from the root resource by following links. Naturally, other considerations like access rights and availability may restrict a consumer's actual navigation, but the design of Level 3 API shows that every resource traces back to the root resource by reverse-navigating the links from every leaf resource.
 
 ### URL Templates are not Affordances
 

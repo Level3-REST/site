@@ -1,0 +1,15 @@
+@startuml
+!include ../../copyright.iuml
+
+title Process Pattern
+
+rectangle "<&info> | <&aperture> Process" as Process
+rectangle "<&info> Activity" as Activity
+rectangle "<&question-mark> Blocker" as Blocker
+
+Process 0-->> "1..N" Activity: "activity"
+Activity 0~~>> Process: "process"
+Blocker 0~~>> Activity: "blocks"
+Activity 0~~>> Blocker: "blocked-by"
+
+@enduml

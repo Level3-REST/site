@@ -20,7 +20,7 @@ Resources that support the Preflight profile include the Preflight profile heade
 
 ### Preflight Modification
 
-A client uses preflight modification to check if a resource accepts the content of a `PUT`, `POST` or `PATCH` request before actually sending the entire content. Also known as "look before you leap," this approach takes two requests to complete but saves time overall given an unacceptable modification request. The client can skip sending the content if the preflight request fails. The client initiates the preflight request sequence by sending the requested operation with a `Expect: 100-continue` header, the headers to be preflighted, and an empty body. The resource may require specific headers to be preflighted and reject the preflight request with an appropriate status code.
+A client uses preflight modification to check if a resource accepts the content of a `PUT`, `POST` or `PATCH` request before actually sending the entire content. Also known as “look before you leap,” this approach takes two requests to complete but saves time overall given an unacceptable modification request. The client can skip sending the content if the preflight request fails. The client initiates the preflight request sequence by sending the requested operation with a `Expect: 100-continue` header, the headers to be preflighted, and an empty body. The resource may require specific headers to be preflighted and reject the preflight request with an appropriate status code.
 
 ![](preflight/preflight.svg){: .center-image}
 
