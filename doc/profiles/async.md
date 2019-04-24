@@ -6,7 +6,7 @@ grand_parent: Profiles
 nav_order: 4
 permalink: /profiles/mixins/async
 ---
-# Async (Mixin)
+# Async Profile (Mixin)
 
 ##### `Profile: <http://level3.rest/profiles/mixins/async>`
 

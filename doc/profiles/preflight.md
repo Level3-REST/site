@@ -6,7 +6,7 @@ grand_parent: Profiles
 nav_order: 2
 permalink: /profiles/mixins/preflight
 ---
-# Preflight (Mixin)
+# Preflight Profile (Mixin)
 
 ##### `Profile: <http://level3.rest/profiles/mixins/preflight>`
 

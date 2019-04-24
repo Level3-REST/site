@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 1
 permalink: /profiles/root
 ---
-# Root
+# Root Profile
 
 ##### `Profile: <http://level3.rest/profiles/root>`
 

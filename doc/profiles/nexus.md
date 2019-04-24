@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 2
 permalink: /profiles/nexus
 ---
-# Nexus
+# Nexus Profile
 
 ##### `Profile: <http://level3.rest/profiles/nexus>`
 

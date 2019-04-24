@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 7
 permalink: /profiles/action
 ---
-# Action
+# Action Profile
 
 ##### `Profile: <http://level3.rest/profiles/action>`
 

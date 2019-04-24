@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 5
 permalink: /profiles/content
 ---
-# Content
+# Content Profile
 
 ##### `Profile: <http://level3.rest/profiles/content>`
 

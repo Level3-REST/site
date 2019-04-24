@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 4
 permalink: /profiles/data
 ---
-# Data
+# Data Profile
 
 ##### `Profile: <http://level3.rest/profiles/data>`
 

@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 9
 permalink: /profiles/alias
 ---
-# Alias
+# Alias Profile
 
 ##### `Profile: <http://level3.rest/profiles/alias>`
 

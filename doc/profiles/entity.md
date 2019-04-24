@@ -6,7 +6,7 @@ grand_parent: Profiles
 nav_order: 1
 permalink: /profiles/mixins/entity
 ---
-# Entity (Mixin)
+# Entity Profile (Mixin)
 
 ##### `Profile: <http://level3.rest/profiles/mixins/entity>`
 

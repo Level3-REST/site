@@ -6,7 +6,7 @@ grand_parent: Profiles
 nav_order: 3
 permalink: /profiles/mixins/representation
 ---
-# Representation (Mixin)
+# Representation Profile (Mixin)
 
 ##### `Profile: <http://level3.rest/profiles/mixins/representation>`
 

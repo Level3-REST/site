@@ -5,7 +5,7 @@ parent: Profiles
 nav_order: 8
 permalink: /profiles/upload
 ---
-# Upload
+# Upload Profile
 
 ##### `Profile: <http://level3.rest/profiles/upload>`
 
