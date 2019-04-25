@@ -1,7 +1,7 @@
 @startuml
 !include ../../copyright.iuml
 
-title Checkout Process Example
+title Sequential Checkout Process
 
 rectangle "Add to Cart" as AddCart
 rectangle "Select Shipping Address" as Shipping
@@ -9,8 +9,7 @@ rectangle "Set Payment" as Payment
 rectangle "Complete Order" as Order
 
 AddCart --> Shipping: blocks
-AddCart --> Payment: blocks
-Shipping --> Order: blocks
+Shipping --> Payment: blocks
 Payment --> Order: blocks
 
 @enduml
