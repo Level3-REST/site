@@ -75,7 +75,7 @@ rel="http://level3.rest/patterns/process#blocked-by"
 
 The `blocked-by` link points to an activity that blocks this activity. The client should execute the `blocked-by` resource before executing this activity.
 
-This relationship is similar to the IANA-registered `blocked-by` relationship. Unfortunately that relationship desribes legal obstacles rather than process flow obstacles.
+This relationship is similar to the IANA-registered `blocked-by` relationship. Unfortunately, that relationship describes legal obstacles rather than process flow obstacles.
 
 ## Specifications
 
