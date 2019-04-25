@@ -6,8 +6,8 @@ title Process Pattern
 rectangle "<&info> | <&aperture> Process" as Process
 rectangle "<&question-mark> Activity" as Activity
 
-Process 0-->> "1..N" Activity: "activity"
+Process 0-->> "1..N" Activity: "activity, blocked-by"
 Activity 0-->> Process: "process"
-Activity 0~~>> Activity: "blocks, blocked-by"
+Activity 0-->> Activity: "blocks, blocked-by"
 
 @enduml
