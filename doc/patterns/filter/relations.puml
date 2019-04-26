@@ -1,0 +1,17 @@
+@startuml
+!include ../../copyright.iuml
+
+title Filter Pattern
+rectangle "<&question-mark> Filtered" as Filtered
+rectangle "<&info> Filter Info" as Filtering
+rectangle Filtration [
+  <&spreadsheet> Filtration
+  ....
+  "" [ { property, operand, value } ]""
+]
+
+
+Filtered 0-->> Filtering: "filter-info"
+Filtering 0-->> Filtration: "filter"
+Filtration 0-->> Filtered: "filters"
+@enduml

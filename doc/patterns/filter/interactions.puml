@@ -1,5 +1,5 @@
 @startuml
-!include ../../../copyright.iuml
+!include ../../copyright.iuml
 
 title Configure Filtering
 actor Client
@@ -10,6 +10,6 @@ hnote over Filtration #lightsteelblue: ""{ filters }""
 Filtration --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Filtered List URL// |
+  | ""Location"" | //Filtered Resource URL// |
 end note
 @enduml
