@@ -17,3 +17,25 @@
     display: block;
   }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+<div id="vssue"></div>
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+<script>
+  new Vue({
+    el: '#vssue',
+
+    render: h => h('Vssue', {
+      props: {
+        // here set the title of issue of current page
+        title: 'Comment',
+        options: {
+          owner: 'Level3-REST',
+          repo: 'site',
+          clientId: '1a6d5387d2fad1dcf62b',
+          clientSecret: '870412df559c61bfaf57135bb6b627f69024cfa1'
+        }
+      }
+    })
+  })
+</script>
