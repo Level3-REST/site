@@ -11,11 +11,13 @@ Wikipedia describes a [process](https://en.wikipedia.org/wiki/Process) as “…
 
 ![](process/relations.svg){: .center-image}
 
-The Process resource acts as the locus of one or more Activity resources representing steps or actions that are part of the overall process. Activities present controls like [Chooser](chooser.md) or [Forms](../profiles/form.md) that accept state change operations to complete the activity. When an activity completes, the result's `Location` header points to the Process resource.
+The Process resource acts as the locus of one or more Activity resources representing steps or actions that are part of the overall process. Activities present controls like [Chooser](chooser.md) or [Forms](../profiles/form.md) that accept state change operations to complete the activity.
 
 These activities can be dynamically added to a process, depending on other activity results. For instance, imagine a service signup process that allows both adults and minors, with their guardian's permission, to join the service. One activity uses an age check form that asks for the person's age. If the person indicates they are underage, a new activity called "guardian permission" joins the process to collect the guardian's consent for the signup.
 
-Activities can block other activities to control sequence and activity flow. A blocking activity resource attaches to another activity with a `blocks` link to indicate a sequential activity requirement to unblock the next activity in a flow. This blocking activity also attaches a `blocked-by` link to the process resource so the client can inspect all the activities blocking the process.
+### Activity Blocking Controls Process Flow
+
+Activities can block other activities to control sequence and activity flow. A blocking activity resource attaches to another activity with a `blocks` link to indicate a sequential activity requirement to unblock the next activity in a flow. This blocking activity also attaches a `blocked-by` link to the process resource so the client can inspect all the activities blocking the process. Clients find messages in the blocking activity's content that explain the blockage.
 
 Activity blocking can model both sequential and parallel activities in a process. Consider a commerce Checkout process. Suppose the API can support parallel checkout activities. The client can execute the “Select Shipping Address” activity or the “Set Payment” activity in either order. However, neither can start until “Add to Cart” has unblocked them. Similarly, “Complete Order” cannot start until the shipping and payment activities are complete.
 
@@ -25,7 +27,9 @@ The same checkout process can present a sequence of activities by chaining the `
 
 ![](process/example-sequential.svg){: .center-image}
 
-A Process finishes when all the blocking activities complete and the last activity produces a `Location` to the final result.
+Parallel activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a "cash" payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
+
+A Process finishes when all the blocking activities complete. The last activity may produce a `Location` to the a result resource, or the process itself is the completed resource.
 
 ## Process Resource
 
