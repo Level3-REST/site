@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sort
-parent: Sort
+parent: Patterns
 nav_order: 7
 permalink: /patterns/sort
 ---
@@ -37,18 +37,18 @@ The Sort Info resource describes the ordering configuration used in the sorted r
 
 A sorting declaration in the `sort-order` array has these properties:
 
-| Property    | Purpose                             |
-| ----------- | ----------------------------------- |
-| `property`  | The property being sorted by.       |
-| `direction` | Either `ascending` or `descending`. |
+| Property    | Purpose                       |
+| ----------- | ----------------------------- |
+| `property`  | The property being sorted by. |
+| `direction` | Either `ascend` or `descend`. |
 
 Each additional sorting declaration sub-sorts the elements by that declaration. Consider this sort order array:
 
 ```json
 { 
   "sort-order": [
-    { "property": "age", "direction": "descending" }, 
-    { "property": "last-name", "direction": "ascending" }
+    { "property": "age", "direction": "descend" }, 
+    { "property": "last-name", "direction": "ascend" }
   ]
 }
 ```
@@ -59,8 +59,8 @@ The XML representation would look like this:
 
 ```xml
 <sort-order>
-  <sort-by property="age" direction="descending"/> 
-  <sort-by property="last-name" direction="ascending"/> 
+  <sort-by property="age" direction="descend"/> 
+  <sort-by property="last-name" direction="ascend"/> 
 </sort-order>
 ```
 
@@ -80,10 +80,10 @@ The Sorter resource is an affordance to change the Sorted resource's sorting con
 
 The Form creates a sorting declaration array. This array has objects with these properties:
 
-| Property    | Purpose                             |
-| ----------- | ----------------------------------- |
-| `property`  | The property being sorted by.       |
-| `direction` | Either `ascending` or `descending`. |
+| Property    | Purpose                       |
+| ----------- | ----------------------------- |
+| `property`  | The property being sorted by. |
+| `direction` | Either `ascend` or `descend`. |
 
 ### sorts
 
