@@ -1,5 +1,5 @@
 @startuml
-!include ../../../copyright.iuml
+!include ../../copyright.iuml
 
 title Configure Sorting
 actor Client
@@ -10,6 +10,6 @@ hnote over Sorter #lightsteelblue: ""{ sort-order }""
 Sorter --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Sorted List URL// |
+  | ""Location"" | //Sorted Resource URL// |
 end note
 @enduml

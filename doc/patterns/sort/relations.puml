@@ -1,7 +1,8 @@
 @startuml
-!include ../relations.puml
+!include ../../copyright.iuml
 
-title Sortable List Pattern
+title Sort Pattern
+rectangle "<&question-mark> Sorted" as Sorted
 rectangle "<&info> Sort Info" as Sort
 rectangle Sorter [
   <&spreadsheet> Sorter
@@ -9,7 +10,7 @@ rectangle Sorter [
   "" [ { property, direction } ]""
 ]
 
-List 0-->> Sort: "sort-info"
+Sorted 0-->> Sort: "sort-info"
 Sort 0-->> Sorter: "sorter"
-Sorter 0-->> List: "sorts-list"
+Sorter 0-->> Sorted: "sorts"
 @enduml

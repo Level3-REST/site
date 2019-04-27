@@ -7,7 +7,7 @@ permalink: /patterns/filter
 ---
 # Filter Pattern
 
-The Filter pattern by provides filtration affordances. It often complements List and Tree patterns but can also be used to filter another resource with filterable aspects. A filtered resource has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The elements in the resource should share the filterable properties for the filtered resource to make sense to the client.
+The Filter pattern provides filtration affordances. It often complements List and Tree patterns but can also be used to filter any resource with filterable aspects. The Filter pattern has a [Filter Info](#filter-info-resource) resource that describes the filter configuration. Clients can change the filter configuration with the [Filtration](#filtration-resource) resource. The elements in the resource should share the filterable properties for the filtered resource to make sense to the client.
 
 ![](filter/relations.svg){: .center-image}
 
