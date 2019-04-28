@@ -9,7 +9,7 @@ permalink: /patterns
 
 A Level 3 pattern combines two or more resources into a more-useful whole. These patterns solve common interaction problems API designers face and give the client consistent experiences across different API domains. The pattern descriptions have a joint presentation format, which includes `Profile` and `Link` headers.
 
-Patterns can offer extensions that expand the capabilities of the pattern. For example, the [List pattern](list.md) has a [Pageable List](list/pageable.md) pattern extension that provides pagination controls for the List. The extension patterns mix into the main pattern by adding additional `Profile` and `Link` headers.
+Patterns can offer extensions that expand the capabilities of the pattern. For example, the [List pattern](list.md) has a [Pageable List](pageable.md) pattern extension that provides pagination controls for the List. The extension patterns mix into the main pattern by adding additional `Profile` and `Link` headers.
 
 Pattern resources occasionally include properties that the client can expect to find and utilize. These properties are minimal, not exhaustive, meaning implementations of a pattern might include more properties, but they must include the properties defined in the pattern.
 
@@ -47,5 +47,9 @@ IANA's [link relation registry](https://www.iana.org/assignments/link-relations/
 ## Pattern Pages are Link Targets
 
 The pattern descriptions are link targets in `Link` and `Profile` headers so that clients can inspect a running API, follow the links to this site and learn the specifics of the profile or link relations. These URIs utilize fragments to point to a relevant part of the pattern on the page.
+
+## Patterns can be Combined
+
+Level 3 resource patterns can overlap and are simultaneously utilizable. When the patterns are combined, changes in one pattern configuration does not reset the other pattern's configurations. For instance, the [List](list.md) pattern can combine the [Filter](filter.md), [Page](page.md) and [Sort](sort.md) patterns to create a full-featured list API. If a client is sorting the list by a "first-name" property, and then changes the page number in the [Pagination](page.md#pagination-resource) control, the "first-name" sort ordering still applies to the list.
 
 {% include footer.html %}

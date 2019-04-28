@@ -1,8 +1,9 @@
 @startuml
-!include ../relations.puml
+!include ../../copyright.iuml
 
-title Pageable List Pattern
+title Page Pattern
 
+rectangle "<&question-mark> Paged" as Paged
 rectangle Page [
   <&info> Page Info
   ....
@@ -16,8 +17,9 @@ rectangle Pagination [
   "" size""
   "" start""
 ]
-List 0-->> List: "previous, next"
-List 0-->> Page: "page-info"
+
+Paged 0-->> Paged: "previous, next"
+Paged 0-->> Page: "page-info"
 Page 0-->> Pagination: "paginator"
-Pagination 0-->> List: "paginates-list"
+Pagination 0-->> Paged: "paginates"
 @enduml

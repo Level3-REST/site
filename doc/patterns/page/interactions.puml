@@ -1,5 +1,5 @@
 @startuml
-!include ../../../copyright.iuml
+!include ../../copyright.iuml
 
 title Configure Pagination
 actor Client
@@ -9,6 +9,6 @@ Client -> Pagination: POST
 Pagination --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Paginated List URL// |
+  | ""Location"" | //Paged Resource URL// |
 end note
 @enduml
