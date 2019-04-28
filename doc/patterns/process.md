@@ -2,7 +2,7 @@
 layout: default
 title: Process
 parent: Patterns
-nav_order: 5
+nav_order: 7
 permalink: /patterns/process
 ---
 # Process Pattern

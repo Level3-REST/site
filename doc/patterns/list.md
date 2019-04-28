@@ -3,6 +3,7 @@ layout: default
 title: List
 parent: Patterns
 has_children: true
+has_toc: false
 nav_order: 1
 permalink: /patterns/list
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Chooser
 parent: Patterns
-nav_order: 3
+nav_order: 6
 permalink: /patterns/chooser
 ---
 # Chooser Pattern

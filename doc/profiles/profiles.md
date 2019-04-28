@@ -3,6 +3,7 @@ layout: default
 title: Profiles
 nav_order: 3
 has_children: true
+has_toc: false
 permalink: /profiles
 ---
 # Profiles
@@ -17,6 +18,24 @@ Resource implementations can support multiple Level 3 profiles in a single resou
 The profile definitions contain multiple diagrams that show the interactions between a client and the resource. Each definition contains a “Discovery” section which declares the headers it returns with all operation responses. For clarity, all subsequent diagrams do not repeat these headers unless they are relevant to the discussion. In practice, a client can expect to see the full set of headers in every operation.
 
 HTTP has additional headers and status codes to represent authorization, content-negotiation and other concerns. An API may respond with these to inform the client of its interaction requirements. Level 3 profiles do not describe these universally, but a client can expect to encounter them and operate accordingly.
+
+## Profile Listing
+
+- Structure and Information
+  - [Root](root.md)
+  - [Nexus](nexus.md)
+  - [Info](info.md)
+  - [Data](data.md)
+  - [Content](content.md)
+- Controls
+  - [Action](action.md)
+  - [Form](form.md)
+  - [Upload](upload.md)
+- [Mixins](mixins.md)
+  - [Entity](entity.md)
+  - [Preflight](preflight.md)
+  - [Representation](representation.md)
+  - [Async](async.md)
 
 ## Specifications
 

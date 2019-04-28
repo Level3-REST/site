@@ -2,7 +2,7 @@
 layout: default
 title: Filter
 parent: Patterns
-nav_order: 6
+nav_order: 3
 permalink: /patterns/filter
 ---
 # Filter Pattern

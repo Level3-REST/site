@@ -3,6 +3,7 @@ layout: default
 title: Patterns
 nav_order: 4
 has_children: true
+has_toc: false
 permalink: /patterns
 ---
 # Patterns
@@ -51,5 +52,17 @@ The pattern descriptions are link targets in `Link` and `Profile` headers so tha
 ## Patterns can be Combined
 
 Level 3 resource patterns can overlap and are simultaneously utilizable. When the patterns are combined, changes in one pattern configuration does not reset the other pattern's configurations. For instance, the [List](list.md) pattern can combine the [Filter](filter.md), [Page](page.md) and [Sort](sort.md) patterns to create a full-featured list API. If a client is sorting the list by a "first-name" property, and then changes the page number in the [Pagination](page.md#pagination-resource) control, the "first-name" sort ordering still applies to the list.
+
+## Pattern Listing
+
+- [List](list.md)
+  - [Editable List](list/editable.md)
+- [Tree](tree.md)
+- [Filter](filter.md)
+- [Sort](sort.md)
+- [Page](page.md)
+- [Chooser](chooser.md)
+- [Process](process.md)
+- [Metadata](metadata.md)
 
 {% include footer.html %}
