@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Design
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 nav_order: 2
 permalink: /design
 ---

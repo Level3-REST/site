@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 nav_order: 5
 permalink: /about
 ---

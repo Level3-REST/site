@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Introduction
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 nav_order: 1
 permalink: /
 ---
