@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Data
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Profiles
 nav_order: 4
 permalink: /profiles/data

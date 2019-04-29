@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Action
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Profiles
 nav_order: 7
 permalink: /profiles/action

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Nexus
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Profiles
 nav_order: 2
 permalink: /profiles/nexus

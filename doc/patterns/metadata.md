@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Metadata
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Patterns
 nav_order: 8
 permalink: /patterns/metadata

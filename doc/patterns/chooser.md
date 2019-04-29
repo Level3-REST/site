@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Chooser
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Patterns
 nav_order: 6
 permalink: /patterns/chooser

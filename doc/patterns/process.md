@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Process
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Patterns
 nav_order: 7
 permalink: /patterns/process

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Profiles
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 nav_order: 3
 has_children: true
 has_toc: false

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Upload
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Profiles
 nav_order: 8
 permalink: /profiles/upload

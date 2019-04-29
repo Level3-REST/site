@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Info
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Profiles
 nav_order: 3
 permalink: /profiles/info

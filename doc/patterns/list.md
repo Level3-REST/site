@@ -1,6 +1,7 @@
 ---
 layout: default
 title: List
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Patterns
 has_children: true
 has_toc: false

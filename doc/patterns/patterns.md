@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Patterns
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 nav_order: 4
 has_children: true
 has_toc: false

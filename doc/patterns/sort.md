@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Sort
+description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
 parent: Patterns
 nav_order: 4
 permalink: /patterns/sort
