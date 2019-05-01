@@ -4,7 +4,7 @@
 title Async Preflight Mixin
 
 actor Client
-participant "<&project><&check> Async + Preflight" as Async
+participant "<&project> Async + <&check> Preflight" as Async
 
 Client -> Async: PUT / POST / PATCH / DELETE
 rnote right #lightblue

@@ -4,7 +4,7 @@
 title Refetch Content Range
 
 actor Client
-participant "<&data-transfer-download><&badge> Content + Entity" as Content
+participant "<&data-transfer-download> Content + <&badge> Entity" as Content
 
 Client -> Content: GET / HEAD
 Content --> Client: 200 OK
