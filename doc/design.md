@@ -85,6 +85,6 @@ A Level 3 API works above the shape of the resource content itself and can be co
 
 ### Change Only One Domain's State
 
-Links give the client an impression of a combined whole from multiple resources. The client must be comfortable changing the state of a resource through a modification operation without unduly modifying the state of a related resource unless that related state change is a natural consequence of the first state change. The patterns discuss how this constraint affects their interactions.
+Links give the client an impression of a combined whole from multiple resources. The client must be comfortable changing the state of a resource through a modification operation without unduly modifying the state of a related resource unless that related state change is a natural consequence of the first state change. The [Patterns](patterns/patterns.md) discuss how this constraint affects their interactions.
 
 {% include footer.html %}
