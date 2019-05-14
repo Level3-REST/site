@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Alias
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Redirects Clients to Another Resource
 parent: Profiles
 nav_order: 9
 permalink: /profiles/alias

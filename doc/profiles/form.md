@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Form
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Collects Form-Style Data
 parent: Profiles
 nav_order: 8
 permalink: /profiles/form

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Representation (Mixin)
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Lets Clients Decide to Receive a Representation in the Response
 parent: Mixins
 grand_parent: Profiles
 nav_order: 3

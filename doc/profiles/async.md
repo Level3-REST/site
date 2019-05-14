@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Async (Mixin)
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Gives the Client Async Control for a Resource Operation
 parent: Mixins
 grand_parent: Profiles
 nav_order: 4

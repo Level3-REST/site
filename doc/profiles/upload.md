@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Upload
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Accepts Content Submissions, Often Unstructured Bytes
 parent: Profiles
 nav_order: 8
 permalink: /profiles/upload

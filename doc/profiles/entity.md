@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Entity (Mixin)
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Adds Caching and Conditional Operations to a Resource
 parent: Mixins
 grand_parent: Profiles
 nav_order: 1

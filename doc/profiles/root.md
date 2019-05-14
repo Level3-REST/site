@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Root
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Top-Level Home Resource of an API
 parent: Profiles
 nav_order: 1
 permalink: /profiles/root

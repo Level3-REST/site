@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Preflight (Mixin)
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Adds "Look Before You Leap" to Help Manage Expensive Operations
 parent: Mixins
 grand_parent: Profiles
 nav_order: 2
