@@ -28,6 +28,7 @@ HTTP has additional headers and status codes to represent authorization, content
   - [Info](info.md)
   - [Data](data.md)
   - [Content](content.md)
+  - [Alias](alias.md)
 - Controls
   - [Action](action.md)
   - [Form](form.md)

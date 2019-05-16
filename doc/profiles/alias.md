@@ -21,7 +21,7 @@ Alias supports two kinds of redirection:
 | Stable URL, dynamic resource | `307 Temporary Redirect` |
 | Permanent change             | `308 Permanent Redirect` |
 
-An Alias resource supports all the operations of the target resource, including`HEAD`, `GET`, `PUT`, `POST`, `PATCH` and `DELETE`.
+An Alias resource supports all the operations of the target resource, including `HEAD`, `GET`, `PUT`, `POST`, `PATCH` and `DELETE`.
 
 ### Discovery
 
