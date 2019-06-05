@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Chooser
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Control pattern for selecting one or more choices, like a dropdown or a radio button.
 parent: Patterns
 nav_order: 6
 permalink: /patterns/chooser

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Process
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Workflow pattern that guides clients through multiple workflow steps.
 parent: Patterns
 nav_order: 7
 permalink: /patterns/process

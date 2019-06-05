@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Metadata
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Informational pattern to show metadata about another resource, like a content resource.
 parent: Patterns
 nav_order: 8
 permalink: /patterns/metadata

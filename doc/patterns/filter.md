@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Filter
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Control pattern to manage list and tree filtering.
 parent: Patterns
 nav_order: 3
 permalink: /patterns/filter

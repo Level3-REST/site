@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tree
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Hypermedia pattern that presents a tree of resources.
 parent: Patterns
 nav_order: 2
 permalink: /patterns/tree

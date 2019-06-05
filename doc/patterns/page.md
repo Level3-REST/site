@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Page
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Control pattern to manage list pagination.
 parent: Patterns
 nav_order: 5
 permalink: /patterns/page
