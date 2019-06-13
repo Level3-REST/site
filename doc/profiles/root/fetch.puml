@@ -6,7 +6,7 @@ title Fetch Root
 actor Client
 participant "<&home> Root" as Root
 
-Client -> Root: HEAD
+Client -> Root: GET
 Root --> Client: 204 No Content
 
 @enduml

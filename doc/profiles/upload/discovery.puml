@@ -6,7 +6,7 @@ title Discovery
 actor Client
 participant "<&data-transfer-upload> Upload" as Upload
 
-Client -> Upload: HEAD
+Client -> Upload: HEAD / GET
 Upload --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |

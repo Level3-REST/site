@@ -6,7 +6,7 @@ title Fetch Nexus
 actor Client
 participant "<&aperture> Nexus" as Nexus
 
-Client -> Nexus: HEAD
+Client -> Nexus: GET
 Nexus --> Client: 200 OK
 hnote over Client #darkseagreen: ""{ state }""
 

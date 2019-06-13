@@ -5,7 +5,7 @@ title Discovery
 actor Client
 participant "<&arrow-circle-right> Action" as Action
 
-Client -> Action: HEAD
+Client -> Action: HEAD / GET
 Action --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
