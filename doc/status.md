@@ -26,11 +26,11 @@ HTTP response status codes are numerous and only a few apply to API interactions
 
 Client requests can be rejected for various reasons, and the client may be able to attempt their operation again with a corrected request. Two of these (`403` and `409`) are stateful interpretations of fairly vague HTTP status codes.  
 
-| Status Code | Meaning                                                      | Profiles | Source                                                       |
-| ----------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
-| `400`       | Incorrect message formatting                                 |          | RFC 7231, [section 6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
-| `422`       | Message format ok, but wrong semantics. The resource does not understand the data. |          | RFC 4918, [section 11.2](https://tools.ietf.org/html/rfc4918#section-11.2) |
-| `403`       | Business rule failure, cannot be fixed. For instance, in a hotel API, a client cannot book a room that is not available. |          | RFC 7231, [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
-| `409`       | Business rule failure, but client can fix and try again. For instance, in a shopping API, a client cannot place their order until they supply a shipping address. |          | RFC 7231, [section 6.5.8](https://tools.ietf.org/html/rfc7231#section-6.5.8) |
-|             |                                                              |          |                                                              |
+| Status Code                | Meaning                                                      | Profiles                                                     | Source                                                       |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `400 Bad Request`          | Incorrect message formatting                                 | [Content](profiles/content.md), [Data](profiles/data.md), [Form](profiles/form.md), [Upload](profiles/upload.md) | RFC 7231, [section 6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
+| `422 Unprocessable Entity` | Message format is correct, but the data presents unknown or incorrect semantics. The resource does not understand the message. | [Data](profiles/data.md), [Form](profiles/form.md)           | RFC 4918, [section 11.2](https://tools.ietf.org/html/rfc4918#section-11.2) |
+| `403`                      | Business rule failure, cannot be fixed. For instance, in a hotel API, a client cannot book a room that is not available. |                                                              | RFC 7231, [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
+| `409`                      | Business rule failure, but client can fix and try again. For instance, in a shopping API, a client cannot place their order until they supply a shipping address. |                                                              | RFC 7231, [section 6.5.8](https://tools.ietf.org/html/rfc7231#section-6.5.8) |
+|                            |                                                              |                                                              |                                                              |
 

@@ -24,6 +24,7 @@ rnote left #lightgreen
   | ""Last-Modified"" | //HTTP-date// |
 end note
 group failure: Upload rejected
+  Upload -->o Client: 400 Bad Request
   Upload -->o Client: 411 Length Required
   Upload -->o Client: 413 Payload Too Large
   Upload -->o Client: 415 Unsupported Media Type

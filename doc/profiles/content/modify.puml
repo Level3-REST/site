@@ -15,6 +15,7 @@ end note
 hnote over Content #lightsteelblue: ""...bytes...""
 Content --> Client: 204 No Content
 group failure: Upload rejected
+  Content -->o Client: 400 Bad Request
   Content -->o Client: 411 Length Required
   Content -->o Client: 413 Payload Too Large
   Content -->o Client: 415 Unsupported Media Type
