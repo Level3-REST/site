@@ -2,10 +2,9 @@
 layout: default
 title: About
 description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
-nav_order: 5
+nav_order: 6
 permalink: /about
 ---
-
 ### About The Author
 
 Few enjoy talking about themselves, but it would be unfair not to describe my experiences and how Level 3 REST came to be. I have been working in the REST API field since 2008 and in SOAP, XML-RPC and other internet-based API technologies ([IIOP](https://en.wikipedia.org/wiki/General_Inter-ORB_Protocol), anyone?) since the days of Compuserve and Netscape. I have spent countless hours and days struggling with building API servers, consuming APIs in clients and wishing this wasn’t all so damn hard.
