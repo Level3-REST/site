@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Status Codes
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: HTTP status codes cross-referenced to Profiles
 nav_order: 5
 permalink: /status_codes
 ---
