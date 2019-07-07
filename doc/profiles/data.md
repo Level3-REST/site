@@ -37,7 +37,8 @@ A client can use the `PUT` operation to replace the data in a Data resource. How
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | `400 Bad Request`          | The data's syntax is malformed.                              |
-| `422 Unprocessable Entity` | Values in the data are not accepted by business validation rules. |
+| `409 Conflict`             | Values in the data are not accepted by business validation rules. |
+| `422 Unprocessable Entity` | The data is semantically-incorrect.                          |
 
 ![](data/replace.svg){: .center-image}
 
@@ -52,8 +53,8 @@ If the patch cannot be applied successfully, the resource returns `409 Conflict`
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | `400 Bad Request`          | The patch's syntax is malformed.                             |
-| `409 Conflict `            | The patch cannot be applied to the resource, usually because the resource has changed since the patch was created. |
-| `422 Unprocessable Entity` | Patch can be applied successfully, but the updated values in the data are not accepted by business validation rules. |
+| `409 Conflict`             | Patch can be applied successfully, but the updated values in the data are not accepted by business validation rules. |
+| `422 Unprocessable Entity` | The patch data is semantically-incorrect.                    |
 | `428 Precondition Failed`  | `Content-Type` request header required.                      |
 
 ![](data/modify.svg){: .center-image}

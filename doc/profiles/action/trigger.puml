@@ -12,5 +12,8 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //URL// |
 end note
+group failure: rejected
+  Action -->o Client: 409 Conflict
+end
 
 @enduml
