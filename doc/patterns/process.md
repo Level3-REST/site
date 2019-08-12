@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Process
-description: Workflow pattern that guides clients through multiple workflow steps.
+description: Process-management pattern that guides clients through multiple process steps.
 parent: Patterns
 nav_order: 7
 permalink: /patterns/process
