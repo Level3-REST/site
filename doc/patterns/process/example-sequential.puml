@@ -9,7 +9,10 @@ rectangle "Set Payment" as Payment
 rectangle "Complete Order" as Order
 
 AddCart --> Shipping: blocks
+Shipping --> AddCart: blocked-by
 Shipping --> Payment: blocks
+Payment --> Shipping: blocked-by
 Payment --> Order: blocks
+Order --> Payment: blocked-by
 
 @enduml

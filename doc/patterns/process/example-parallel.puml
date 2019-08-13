@@ -8,9 +8,9 @@ rectangle "Select Shipping Address" as Shipping
 rectangle "Set Payment" as Payment
 rectangle "Complete Order" as Order
 
-AddCart --> Shipping: blocks
-AddCart --> Payment: blocks
-Shipping --> Order: blocks
-Payment --> Order: blocks
-
+note left: ""blocks"" links omitted \nfor diagram clarity
+Shipping --> AddCart: blocked-by
+Payment --> AddCart: blocked-by
+Order --> Shipping: blocked-by
+Order --> Payment: blocked-by
 @enduml

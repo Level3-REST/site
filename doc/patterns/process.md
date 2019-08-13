@@ -20,15 +20,15 @@ These activities can be dynamically added to a process, depending on other activ
 
 Activities can block other activities to control sequence and activity flow. A blocking activity resource attaches to another activity with a `blocks` link to indicate a sequential activity requirement to unblock the next activity in a flow. This blocking activity also attaches a `blocked-by` link to the process resource so the client can inspect all the activities blocking the process. Clients find messages in the blocking activity's content that explain the blockage.
 
-Activity blocking can model both sequential and parallel activities in a process. Consider a commerce Checkout process. Suppose the API can support parallel checkout activities. The client can execute the “Select Shipping Address” activity or the “Set Payment” activity in either order. However, neither can start until “Add to Cart” has unblocked them. Similarly, “Complete Order” cannot start until the shipping and payment activities are complete.
+Activity blocking can model both sequential and parallel activities in a process. Consider a commerce checkout process. Suppose the API can support parallel checkout activities. The client can execute the “Select Shipping Address” activity or the “Set Payment” activity in either order. However, neither can start until “Add to Cart” has unblocked them. Similarly, “Complete Order” cannot start until the shipping and payment activities are complete.
 
 ![](process/example-parallel.svg){: .center-image}
 
-The same checkout process can present a sequence of activities by chaining the `blocks` activties relationships in sequence:
+The same checkout process can present a sequence of activities by chaining the `blocks` and `blocked-by` activities relationships in sequence:
 
 ![](process/example-sequential.svg){: .center-image}
 
-Parallel activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a "cash" payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
+Activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a "cash" payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
 
 A Process finishes when all the blocking activities complete. The last activity may produce a `Location` to the a result resource, or the process itself is the completed resource.
 
