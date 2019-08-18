@@ -23,7 +23,7 @@ HTTP has additional headers and status codes to represent authorization, content
 ## Profile Listing
 
 - Structure and Information
-  - [Root](root.md)
+  - [Home](home.md)
   - [Nexus](nexus.md)
   - [Info](info.md)
   - [Data](data.md)

@@ -4,14 +4,14 @@
 title Discovery
 
 actor Client
-participant "<&home> Root" as Root
+participant "<&home> Home" as Home
 
-Client -> Root: HEAD
-Root --> Client: 204 No Content
+Client -> Home: HEAD
+Home --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Allow"" | ""HEAD,GET"" |
-  | ""Profile"" | ""<http://level3.rest/profiles/root>"" |
+  | ""Profile"" | ""<http://level3.rest/profiles/home>"" |
 end note
 
 @enduml

@@ -1,7 +1,7 @@
 @startuml
 !include ../copyright.iuml
 
-rectangle "<&home> Root" as Root
+rectangle "<&home> Home" as Home
 rectangle "<&aperture> Nexus" as Nexus
 rectangle "<&info> Info" as Info
 rectangle "<&code> Data" as Data

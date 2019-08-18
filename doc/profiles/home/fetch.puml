@@ -1,0 +1,12 @@
+@startuml
+!include ../../copyright.iuml
+
+title Fetch Home
+
+actor Client
+participant "<&home> Home" as Home
+
+Client -> Home: GET
+Home --> Client: 204 No Content
+
+@enduml
