@@ -7,7 +7,9 @@ actor Client
 participant "<&aperture> Nexus" as Nexus
 
 Client -> Nexus: GET
-Nexus --> Client: 200 OK
-hnote over Client #darkseagreen: ""{ state }""
-
+Nexus --> Client: 200 OK / 204 No Content
+hnote over Client #darkseagreen
+  ""  { state }""
+  //omitted for 204//
+end note
 @enduml

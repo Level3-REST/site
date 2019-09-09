@@ -7,7 +7,7 @@ actor Client
 participant "<&share> Alias" as Alias
 
 Client -> Alias: GET / PUT / POST / PATCH / DELETE
-Alias --> Client: 307 Temporary Redirect\n308 Permanent Redirect
+Alias --> Client: 307 Temporary Redirect /\n308 Permanent Redirect
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //Target URL// |

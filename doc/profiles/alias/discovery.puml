@@ -7,7 +7,7 @@ actor Client
 participant "<&share> Alias" as Alias
 
 Client -> Alias: HEAD
-Alias --> Client: 307 Temporary Redirect\n308 Permanent Redirect
+Alias --> Client: 307 Temporary Redirect /\n308 Permanent Redirect
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //target URL// |
