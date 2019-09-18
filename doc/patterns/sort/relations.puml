@@ -13,4 +13,5 @@ rectangle Sorter [
 Sorted 0-->> Sort: "sort-info"
 Sort 0-->> Sorter: "sorter"
 Sorter 0-->> Sorted: "sorts"
+
 @enduml

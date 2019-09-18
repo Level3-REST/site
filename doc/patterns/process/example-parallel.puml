@@ -13,4 +13,5 @@ Shipping --> AddCart: blocked-by
 Payment --> AddCart: blocked-by
 Order --> Shipping: blocked-by
 Order --> Payment: blocked-by
+
 @enduml

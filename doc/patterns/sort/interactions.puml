@@ -12,4 +12,5 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //Sorted Resource URL// |
 end note
+
 @enduml

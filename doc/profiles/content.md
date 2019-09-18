@@ -8,7 +8,9 @@ permalink: /profiles/content
 ---
 # Content Profile
 
-##### `Profile: <http://level3.rest/profiles/content>`
+```
+Profile: <http://level3.rest/profiles/content>
+```
 
 Content resources represent byte-oriented data and can support range-based features like resumable downloads and skip-ahead downloading when they mix in the [Entity profile](entity.md).
 

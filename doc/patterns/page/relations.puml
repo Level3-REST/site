@@ -22,4 +22,5 @@ Paged 0-->> Paged: "previous, next"
 Paged 0-->> Page: "page-info"
 Page 0-->> Pagination: "paginator"
 Pagination 0-->> Paged: "paginates"
+
 @enduml

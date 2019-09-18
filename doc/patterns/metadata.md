@@ -18,7 +18,9 @@ Metadata's [Info](../profiles/info.md) profile means the client cannot edit or d
 
 ## Content Resource
 
-`Profile: <http://level3.rest/patterns/metadata#content-resource>`
+```
+Profile: <http://level3.rest/patterns/metadata#content-resource>
+```
 
 The Content resource presents the [Content profile](../profiles/content.md). It is the image, document or other content data described by the [Metadata](#metadata-resource) resource.
 
@@ -32,7 +34,9 @@ The `metadata` link relation is similar to IANA's “[describedby](https://www.w
 
 ## Metadata Resource
 
-`Profile: <http://level3.rest/patterns/metadata#metadata-resource>`
+```
+Profile: <http://level3.rest/patterns/metadata#metadata-resource>
+```
 
 The Metadata resource presents the [Info profile](../profiles/info.md) and contains relevant details about the [Content](#content-resource) resource, depending on the type of content. Images can have metadata about the dimensions, resolution and colour model. Documents may contain metadata about the page count and author. 
 

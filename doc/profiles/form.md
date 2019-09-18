@@ -8,7 +8,9 @@ permalink: /profiles/form
 ---
 # Form Profile
 
-##### `Profile: <http://level3.rest/profiles/form>`
+```
+Profile: <http://level3.rest/profiles/form>
+```
 
 A Form is a hypermedia control that provides a form for the client to fill in and then accepts that form back in a `POST` request. Anyone who has ever filled out and submitted a paper form in the real world already knows how the Form profile works. The basic concept with Form is to `GET` the representation, fill it in, and `POST` it back.
 

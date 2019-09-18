@@ -34,7 +34,9 @@ A Process finishes when all the blocking activities complete. The last activity 
 
 ## Process Resource
 
-`Profile: <http://level3.rest/patterns/process#process-resource>`
+```
+Profile: <http://level3.rest/patterns/process#process-resource>
+```
 
 The Process resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile.
 
@@ -54,7 +56,9 @@ The last Activity in the activity list completes the process when executed.
 
 ## Activity Resource
 
-`Profile: <http://level3.rest/patterns/process#activity-resource>`
+```
+Profile: <http://level3.rest/patterns/process#activity-resource>
+```
 
 An Activity resource has no required profile. It is often another pattern that presents the activity's state and a hypermedia control to change that state.
 

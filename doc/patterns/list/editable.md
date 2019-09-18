@@ -19,7 +19,9 @@ The Entry resource in the diagram is unchanged from the base list's [Entry](../l
 
 ## List Resource
 
-`Profile: <http://level3.rest/patterns/list/editable#list-resource>`
+```
+Profile: <http://level3.rest/patterns/list/editable#list-resource>
+```
 
 The Editable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements.
 
@@ -41,7 +43,9 @@ Points to an [Add Entry](#add-entry-resource) resource that adds an entry to the
 
 ## Empty List Resource
 
-`Profile: <http://level3.rest/patterns/list/editable#empty-list-resource>`
+```
+Profile: <http://level3.rest/patterns/list/editable#empty-list-resource>
+```
 
 [Action](../../profiles/action.md) resource that empties the [List](#list-resource). Triggering the action returns a `Location` pointing to the list.
 
@@ -55,7 +59,9 @@ Links to the [List](#list-resource) that is emptied by this action.
 
 ## Add Entry Resource
 
-`Profile: <http://level3.rest/patterns/list/editable#add-entry-resource>`
+```
+Profile: <http://level3.rest/patterns/list/editable#add-entry-resource>
+```
 
 Add Entry resource adds an [Entry](#entry-resource) to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
 

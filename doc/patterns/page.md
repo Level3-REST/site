@@ -20,7 +20,9 @@ The client changes page configuration by `POST`ing a new configuration form to t
 
 ## Paged Resource
 
-`Profile: <http://level3.rest/patterns/page#paged-resource>`
+```
+Profile: <http://level3.rest/patterns/page#paged-resource>
+```
 
 The Paged resource can present any profile. The profile choice does not affect pagination.
 
@@ -50,7 +52,9 @@ Points to another [Paged](#paged-resource) resource that contains the previous p
 
 ## Page Info Resource
 
-`Profile: <http://level3.rest/patterns/page#page-info-resource>`
+```
+Profile: <http://level3.rest/patterns/page#page-info-resource>
+```
 
 The Page Info resource describes the pagination configuration used in the [Paged](#paged-resource) resource. This resource should have relevant state fields describing the current page, page size and other information that helps the client determine which page the related Paged resource represents.
 
@@ -70,7 +74,9 @@ Points to a [Pagination](#pagination-resource) resource that can configure the p
 
 ## Pagination Resource
 
-`Profile: <http://level3.rest/patterns/page#pagination-resource>`
+```
+Profile: <http://level3.rest/patterns/page#pagination-resource>
+```
 
 The Pagination resource is an affordance to change the pagination configuration. It is a [Form](../profiles/form.md) resource containing the current configuration. The client can change the page size or the starting page so the client can select a different page to view. Once the client submits the form, the response's `Location` points to a [Paged](#paged-resource) resource configured with this pagination configuration.
 

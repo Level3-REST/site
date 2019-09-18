@@ -11,4 +11,5 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //Chooser URL// |
 end note
+
 @enduml

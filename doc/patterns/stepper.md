@@ -14,7 +14,9 @@ Stepper is a hypermedia control that presents a small-range value, such as like 
 
 ## Stepper Resource
 
-`Profile: <http://level3.rest/patterns/stepper#stepper-resource>`
+```
+Profile: <http://level3.rest/patterns/stepper#stepper-resource>
+```
 
 Contains the value being incremented and decremented. If the value can only be modified by increment or decrement actions, the Stepper resource should be an [Info](../profiles/info.md) profile. However, if the value can be modified with a `PUT` request, the Stepper must support the [Data](../profiles/data.md) profile.
 
@@ -36,7 +38,9 @@ Points to a [Decrementer](#decrementer-resource) resource that decreases the val
 
 ## Incrementer Resource
 
-`Profile: <http://level3.rest/patterns/stepper#incrementer-resource>`
+```
+Profile: <http://level3.rest/patterns/stepper#incrementer-resource>
+```
 
 An [Action](../profiles/action.md) resource that increments the value of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its maximum, `POST` to this resource is ignored.
 
@@ -50,7 +54,9 @@ Points to the [Steper](#stepper-resource) resource that will be incremented.
 
 ## Decrementer Resource
 
-`Profile: <http://level3.rest/patterns/stepper#decrementer-resource>`
+```
+Profile: <http://level3.rest/patterns/stepper#decrementer-resource>
+```
 
 An [Action](../profiles/action.md) resource that decrements the value of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its minimum, `POST` to this resource is ignored.
 
@@ -61,3 +67,5 @@ rel="http://level3.rest/patterns/stepper#decrements"
 ```
 
 Points to the [Stepper](#stepper-resource) resource that will be decremented.
+
+{% include footer.html %}

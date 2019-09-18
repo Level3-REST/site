@@ -8,7 +8,9 @@ permalink: /profiles/action
 ---
 # Action Profile
 
-##### `Profile: <http://level3.rest/profiles/action>`
+```
+Profile: <http://level3.rest/profiles/action>
+```
 
 An Action resource is a hypermedia control that triggers a state change. They act like buttons to execute an action on the server. Actions do not accept a payload; the URL contains all the Action’s identifying information.
 

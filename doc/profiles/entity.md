@@ -9,7 +9,9 @@ permalink: /profiles/mixins/entity
 ---
 # Entity Profile (Mixin)
 
-##### `Profile: <http://level3.rest/profiles/mixins/entity>`
+```
+Profile: <http://level3.rest/profiles/mixins/entity>
+```
 
 Resources often have identifiably-distinct instances of themselves defined by unique URIs. These instances are known as [Entities](https://wikipedia.org/wiki/entity) in the real world. An entity must exist to accept operations, and clients should perform operations on them with an awareness of their current state.
 

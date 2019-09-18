@@ -9,7 +9,9 @@ permalink: /profiles/mixins/preflight
 ---
 # Preflight Profile (Mixin)
 
-##### `Profile: <http://level3.rest/profiles/mixins/preflight>`
+```
+Profile: <http://level3.rest/profiles/mixins/preflight>
+```
 
 A resource that accepts `POST`, `PUT` or `PATCH` requests can offer to preflight a request's headers before the client sends the full request payload. Preflighting is valuable to calls where the payload is large or expensive to produce. If the resource rejects the client's preflight request, the client can skip the full payload transmission.
 

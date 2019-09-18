@@ -20,7 +20,9 @@ The Choice's state is changed on the action, as is the state of the Chooser over
 
 ## Chooser Resource
 
-`Profile: <http://level3.rest/patterns/chooser#chooser-resource>`
+```
+Profile: <http://level3.rest/patterns/chooser#chooser-resource>
+```
 
 The Choice resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile. It has the following state:
 
@@ -40,7 +42,9 @@ A Chooser resource has 0 or more `choice` links pointing to [Choice](#choice-res
 
 ## Choice Resource
 
-`Profile: <http://level3.rest/patterns/chooser#choice-resource>`
+```
+Profile: <http://level3.rest/patterns/chooser#choice-resource>
+```
 
 The Choice resource presents the [Action](../profiles/action.md) profile. It has the following state:
 

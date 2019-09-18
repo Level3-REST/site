@@ -13,4 +13,5 @@ rectangle Filtration [
 Filtered 0-->> Filtering: "filter-info"
 Filtering 0-->> Filtration: "filter"
 Filtration 0-->> Filtered: "filters"
+
 @enduml

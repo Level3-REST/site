@@ -9,7 +9,9 @@ permalink: /profiles/mixins/async
 ---
 # Async Profile (Mixin)
 
-##### `Profile: <http://level3.rest/profiles/mixins/async>`
+```
+Profile: <http://level3.rest/profiles/mixins/async>
+```
 
 Resources that accept `POST`, `PUT`, `DELETE` or `PATCH` requests block on the request until the operation completes. A client may not want to wait, so a resource can offer the Async profile to give the client control over if they wait at all or time out after a specified number of seconds. Async profile lets the client “fire and forget” the state change operation.
 

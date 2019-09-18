@@ -8,7 +8,9 @@ permalink: /profiles/alias
 ---
 # Alias Profile
 
-##### `Profile: <http://level3.rest/profiles/alias>`
+```
+Profile: <http://level3.rest/profiles/alias>
+```
 
 Alias resources act as a stable reference to another resource by redirecting operations to the other resource. That other resource may be unstable and thus not the same on every request. For instance, Alias can be used to point to the current cell tower a mobile phone has joined, or the airport gate a flight is currently parked.
 

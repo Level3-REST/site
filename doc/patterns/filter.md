@@ -35,7 +35,9 @@ These operands work efficiently with indexed data and should provide quick clien
 
 ## Filtered Resource
 
-`Profile: <http://level3.rest/patterns/filter#filtered-resource>`
+```
+Profile: <http://level3.rest/patterns/filter#filtered-resource>
+```
 
 The Filtered resource can present any profile. The profile choice does not effect filtering options.
 
@@ -49,7 +51,9 @@ Points to a [Filter Info](#filter-info-resource) resource that describes the fil
 
 ## Filter Info Resource
 
-`Profile: <http://level3.rest/patterns/filter#filter-info-resource>`
+```
+Profile: <http://level3.rest/patterns/filter#filter-info-resource>
+```
 
 The Filter Info resource describes the current filtering configuration used in the [Filtered](#filtered-resource) resource. The configuration representation consists of an array of filter declarations assigned to a top-level `filters` element.
 
@@ -96,7 +100,9 @@ Points to a [Filtration](#filtration-resource) resource that configures the filt
 
 ## Filtration Resource
 
-`Profile: <http://level3.rest/patterns/filter#filtration-resource>`
+```
+Profile: <http://level3.rest/patterns/filter#filtration-resource>
+```
 
 The Filtration resource changes the [Filtered](#filtered-resource) resource's filtration configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
 
