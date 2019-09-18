@@ -1,0 +1,20 @@
+@startuml
+!include ../../copyright.iuml
+
+title Stepper Pattern
+
+rectangle Stepper [
+  <&info> | <&code> Stepper
+  ....
+  ""value""
+]
+
+rectangle "<&arrow-circle-right> Incrementer" as Inc
+rectangle "<&arrow-circle-right> Decrementer" as Dec
+
+Stepper 0-->> Inc: "increment"
+Stepper 0-->> Dec: "decrement"
+Inc 0-->> Stepper: "increments"
+Dec 0-->> Stepper: "decrements"
+
+@enduml

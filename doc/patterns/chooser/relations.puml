@@ -6,12 +6,12 @@ title Chooser Pattern
 rectangle Chooser [
   <&info> | <&aperture> Chooser
   ....
-  "" type: radio | checks""
+  ""type: radio | checks""
 ]
 rectangle Choice [
   <&arrow-circle-right> Choice
   ....
-  "" checked: true | false""
+  ""checked: true | false""
 ]
 rectangle "<&question-mark> Description" as Description
 

@@ -7,7 +7,7 @@ rectangle "<&info> Sort Info" as Sort
 rectangle Sorter [
   <&spreadsheet> Sorter
   ....
-  "" [ { property, direction } ]""
+  ""[ { property, direction } ]""
 ]
 
 Sorted 0-->> Sort: "sort-info"

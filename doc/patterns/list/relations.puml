@@ -6,7 +6,7 @@ title List Pattern
 rectangle List [
   <&info> | <&aperture> List
   ....
-  "" count""
+  ""count""
 ]
 rectangle "<&question-mark> Entry" as Entry
 

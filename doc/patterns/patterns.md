@@ -19,7 +19,7 @@ Pattern resources occasionally include properties that the client can expect to 
 
 A resource that is participating in a pattern includes their part in that pattern in their `Profile` headers list. For instance, if a Nexus resource is part of a List pattern implementation, the header is:
 
-```http
+```
 Profile: <http://level3.rest/profiles/nexus>,
          <http://level3.rest/patterns/list#list-resource>
 ```

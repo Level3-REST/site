@@ -10,7 +10,7 @@ permalink: /patterns/chooser
 
 Chooser is a hypermedia control that presents one or more choices for clients to select. A [Chooser](#chooser-resource) has two types that determine how many selections are possible. The types are patterned after HTML's selection `<input>` formats. The  `radio` type accepts a single selection. The `checks` type can accept multiple choices.
 
-A client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice action resource. The result of the `POST` to choice changes the state of the Choice. If the Choice's `checked` property was `false`, it becomes `true` after the action. If the Choice's `checked` property was `true` then it changes to `false` after the action.
+A client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice action resource. The result of the `POST` changes the state of the Choice. If the Choice's `checked` property was `false`, it becomes `true` after the action. If the Choice's `checked` property was `true` then it changes to `false` after the action.
 
 ![](chooser/relations.svg){: .center-image}
 

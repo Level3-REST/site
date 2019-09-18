@@ -10,7 +10,7 @@ permalink: /profiles/data
 
 ##### `Profile: <http://level3.rest/profiles/data>`
 
-A Data resource represents a [first-class](https://en.wikipedia.org/wiki/First-class_citizen) data object in the world. Its properties are not computed from other resources, as are [Info](info.md) resources, but directly created by a system actor. A Data resource is intended to be editable by the client. It can offer the modification methods `PUT` and `PATCH`, and it can also offer `DELETE`. A Data resource often has business validation rules on the server to ensure data correctness.
+A Data resource represents a [first-class](https://en.wikipedia.org/wiki/First-class_citizen) data object in the world. Its properties are not computed from other resources, as are [Info](info.md) resources, but directly created by a system actor. A Data resource is intended to be editable by the client. It can offer the modification methods `PUT` and `PATCH`, and it can also offer `DELETE` if the resource is deletable. A Data resource often has business validation rules on the server to ensure data correctness.
 
 ### Discovery
 

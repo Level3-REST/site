@@ -3,7 +3,7 @@ layout: default
 title: Process
 description: Process-management pattern that guides clients through multiple process steps.
 parent: Patterns
-nav_order: 7
+nav_order: 8
 permalink: /patterns/process
 ---
 # Process Pattern

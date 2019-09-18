@@ -7,7 +7,7 @@ rectangle "<&info> Filter Info" as Filtering
 rectangle Filtration [
   <&spreadsheet> Filtration
   ....
-  "" [ { property, operand, value } ]""
+  ""[ { property, operand, value } ]""
 ]
 
 Filtered 0-->> Filtering: "filter-info"
