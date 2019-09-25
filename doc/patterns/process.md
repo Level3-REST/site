@@ -38,9 +38,7 @@ A Process finishes when all the blocking activities complete. The last activity 
 Profile: <http://level3.rest/patterns/process#process-resource>
 ```
 
-The Process resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile.
-
-If the Process resource presents the [Nexus](../profiles/nexus.md) profile, then it can be deleted with a `DELETE` operation. The activity resources in the process are also deleted.
+The Process resource presents the [Nexus](../profiles/nexus.md) profile and may choose to support the `DELETE` operation. When the process instance is deleted, he activity resources in the process are also deleted.
 
 Process shares the [`blocked-by`](#blocked-by) relationship with the Activity resource.
 

@@ -14,7 +14,7 @@ Lists are a common, central component in most APIs. A Level 3 list is an [ordere
 
 ![](list/relations.svg){: .center-image}
 
-The List pattern has an [Editable List](list/editable.md) extension that provides capabilities to add entries to the list and empty the list.
+The List pattern has an [Editable List](list/editable.md) version that provides capabilities to add entries to the list and empty the list.
 
 ##### List Entry Domain Considerations
 
@@ -32,13 +32,13 @@ For example, consider a product wish list. A wish list entry would reference a p
 Profile: <http://level3.rest/patterns/list#list-resource>
 ```
 
-The List resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile.
+The List resource presents the [Nexus](../profiles/nexus.md) profile.
 
 | Property | Purpose                            |
 | -------- | ---------------------------------- |
 | `count`  | The number of Entries in the list. |
 
-If the List resource presents the [Nexus](../profiles/nexus.md) profile, then it can be deleted with a `DELETE` operation. The entries in the list are deleted as well if they are part of the same domain. See [List Entry Domain Considerations](#list-entry-domain-considerations) for details.
+If the List resource may choose to support the `DELETE` operation. When deleted, the entries in the list are deleted as well if they are part of the same domain. See [List Entry Domain Considerations](#list-entry-domain-considerations) for details.
 
 ### list-entry
 

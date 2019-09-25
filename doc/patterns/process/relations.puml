@@ -3,7 +3,7 @@
 
 title Process Pattern
 
-rectangle "<&info> | <&aperture> Process" as Process
+rectangle "<&aperture> Process" as Process
 rectangle "<&question-mark> Activity" as Activity
 
 Process 0-->> "1..N" Activity: "activity, blocked-by"

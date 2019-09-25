@@ -3,7 +3,7 @@
 
 title Tree Pattern
 
-rectangle "<&info> | <&aperture> Tree" as Tree
+rectangle "<&aperture> Tree" as Tree
 rectangle "<&question-mark> Node" as Node
 
 Tree 0-->> "0..N" Node: "child"
