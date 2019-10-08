@@ -63,7 +63,7 @@ Links to the [List](#list-resource) that is emptied by this action.
 Profile: <http://level3.rest/patterns/list/editable#add-entry-resource>
 ```
 
-Add Entry resource adds an [Entry](#entry-resource) to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
+Add Entry resource adds an [Entry](../list.md#entry-resource) to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
 
 ### adds-to-list
 
