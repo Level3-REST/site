@@ -32,7 +32,7 @@ For example, consider a product wish list. A wish list entry would reference a p
 Profile: <http://level3.rest/patterns/list#list-resource>
 ```
 
-The List resource presents the [Nexus](../profiles/nexus.md) profile.
+The List resource presents the [Nexus](../profiles/nexus.md) or [Home](../profiles/home.md) profile.
 
 | Property | Purpose                            |
 | -------- | ---------------------------------- |

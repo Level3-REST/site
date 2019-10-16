@@ -4,7 +4,7 @@
 title List Pattern
 
 rectangle List [
-  <&aperture> List
+  <&aperture> | <&home> List
   ....
   ""count""
 ]
