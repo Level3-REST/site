@@ -1,7 +1,7 @@
 ---
 layout: default
 title: List
-description: List shows and edits a list of other resources.
+description: List shows a list of other resources.
 parent: Patterns
 has_children: true
 has_toc: false

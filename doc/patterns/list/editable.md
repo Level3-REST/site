@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Editable
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
+description: Editable List shows and edits a list of other resources.
 parent: List
 grand_parent: Patterns
 nav_order: 1
