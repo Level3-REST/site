@@ -17,8 +17,8 @@ end note
 Client -> Entity: PUT / POST / PATCH / DELETE
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""If-Modified-Since"" | //HTTP-date// |
-  | ""If-None-Match"" | //entity-tag// |
+  | ""If-Unmodified-Since"" | //HTTP-date// |
+  | ""If-Match"" | //entity-tag// |
 end note
 hnote over Entity #lightsteelblue
   ""    payload""
