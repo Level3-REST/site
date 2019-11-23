@@ -13,7 +13,7 @@ rnote left #lightgreen
   | ""Location"" | //URL// |
 end note
 group failure: rejected
-  Action -->o Client: 409 Conflict
+  Action -->o Client: 403 Forbidden
 end
 
 @enduml

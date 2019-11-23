@@ -76,7 +76,7 @@ Each filter declaration further filters the elements by that declaration. The ar
 }
 ```
 
-The filtered resource contains elements filtered by `age` (>= 30) and a `team` of either "Bruins" or "Canucks."
+The filtered resource contains elements filtered by `age` (>= 30) and a `team` of either “Bruins” or “Canucks.”
 
 The XML representation looks like this:
 

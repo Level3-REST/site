@@ -54,7 +54,7 @@ The pattern descriptions are link targets in `Link` and `Profile` headers so tha
 
 ## Patterns can be Combined
 
-Level 3 resource patterns can overlap and are simultaneously utilizable. When the patterns are combined, changes in one pattern configuration does not reset the other pattern's configurations. For instance, the [List](list.md) pattern can combine the [Filter](filter.md), [Page](page.md) and [Sort](sort.md) patterns to create a full-featured list API. If a client is sorting the list by a "first-name" property, and then changes the page number in the [Pagination](page.md#pagination-resource) control, the "first-name" sort ordering still applies to the list.
+Level 3 resource patterns can overlap and are simultaneously utilizable. When the patterns are combined, changes in one pattern configuration does not reset the other pattern's configurations. For instance, the [List](list.md) pattern can combine the [Filter](filter.md), [Page](page.md) and [Sort](sort.md) patterns to create a full-featured list API. If a client is sorting the list by a `first-name` property, and then changes the page number in the [Pagination](page.md#pagination-resource) control, the "first-name" sort ordering still applies to the list.
 
 ## Pattern Listing
 

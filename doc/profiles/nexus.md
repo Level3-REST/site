@@ -12,7 +12,7 @@ permalink: /profiles/nexus
 Profile: <http://level3.rest/profiles/nexus>
 ```
 
-A Nexus resource is a central “meeting point” for related resources. It is often identified by a shared business identifier, like invoice number or a book's ISBN. A Nexus resource may have state information, but it is read-only and should reflect an overall business state. For instance, an order resource can have the states "open" or "closed.”
+A Nexus resource is a central “meeting point” for related resources. It is often identified by a shared business identifier, like invoice number or a book's ISBN. A Nexus resource may have state information, but it is read-only and should reflect an overall business state. For instance, an order resource can have the states `open` or `closed`.
 
 Clients discover related states via the links attached to the Nexus. The order resource's shipping details, payment info and other order-related states are related to the Nexus resource but are linked, not embedded, in the Nexus resource. These resources offer affordances to manipulate the state of the order.
 

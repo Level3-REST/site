@@ -40,7 +40,7 @@ Points to a [Page Info](#page-info-resource) resource that describes the configu
 rel="http://level3.rest/patterns/page#next"
 ```
 
-Points to another [Paged](#paged-resource) resource that contains the next page of elements. This relationship is similar in concept to IANA's "next" link relation, which is defined by HTML 5 as the next document in a sequence.
+Points to another [Paged](#paged-resource) resource that contains the next page of elements. This relationship is similar in concept to IANA's `next` link relation, which is defined by HTML 5 as the next document in a sequence.
 
 ### previous
 
@@ -48,7 +48,7 @@ Points to another [Paged](#paged-resource) resource that contains the next page 
 rel="http://level3.rest/patterns/page#previous"
 ```
 
-Points to another [Paged](#paged-resource) resource that contains the previous page of elements. This relationship is similar in concept to IANA's "previous" link relation, which is defined by HTML 5 as the previous document in a sequence.
+Points to another [Paged](#paged-resource) resource that contains the previous page of elements. This relationship is similar in concept to IANA's `previous` link relation, which is defined by HTML 5 as the previous document in a sequence.
 
 ## Page Info Resource
 
@@ -97,7 +97,7 @@ Points to the [Paged](#paged-resource) resource that this Pagination resource co
 
 HTML 5 Link Types: [section 4.8.6](https://www.w3.org/TR/html5/links.html#sec-link-types)
 
-- The "next" Link Relation Type: [section 4.8.6.13.1](https://www.w3.org/TR/html5/links.html#link-type-next)
-- The "prev" Link Relation Type: [section 4.8.6.13.2](https://www.w3.org/TR/html5/links.html#link-type-prev)
+- The `next` Link Relation Type: [section 4.8.6.13.1](https://www.w3.org/TR/html5/links.html#link-type-next)
+- The `prev` Link Relation Type: [section 4.8.6.13.2](https://www.w3.org/TR/html5/links.html#link-type-prev)
 
 {% include footer.html %}

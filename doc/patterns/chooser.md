@@ -66,7 +66,7 @@ This link points to the [Chooser](#chooser-resource) to which this Choice belong
 rel="http://level3.rest/patterns/chooser#description"
 ```
 
-This link points to a [Description](#description-resource) that describes this Choice. This relation is similar to the registered IANA relation "describedby."
+This link points to a [Description](#description-resource) that describes this Choice. This relation is similar to the registered IANA relation `describedby`.
 
 ## Description Resource
 
@@ -85,6 +85,6 @@ HTTP/1.1 Message Syntax and Routing: [RFC 7230](https://tools.ietf.org/html/rfc7
 
 Protocol for Web Description Resources: [POWDER](https://www.w3.org/TR/powder-dr/)
 
-- “describedby”: [Appendix D](https://www.w3.org/TR/powder-dr/#appD)
+- The `describedby` Link Relation Type: [Appendix D](https://www.w3.org/TR/powder-dr/#appD)
 
 {% include footer.html %}

@@ -27,8 +27,8 @@ rnote left #lightgreen
 end note
 group failure: form rejected
   Form -->o Client: 400 Bad Request
-  Form -->o Client: 409 Conflict
   Form -->o Client: 422 Unprocessable Entity
+  Form -->o Client: 403 Forbidden
 end
 
 @enduml

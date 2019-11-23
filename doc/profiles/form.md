@@ -14,7 +14,7 @@ Profile: <http://level3.rest/profiles/form>
 
 A Form is a hypermedia control that provides a form for the client to fill in and then accepts that form back in a `POST` request. Anyone who has ever filled out and submitted a paper form in the real world already knows how the Form profile works. The basic concept with Form is to `GET` the representation, fill it in, and `POST` it back.
 
-HTML has had `<form>` controls since the beginning, and they have proven useful for capturing information and state from users in many applications. Over time, HTML forms have added valuable capabilities for client-side field validation and semantic field presentations like "password" and "email." In a similar spirit, Level 3 forms can supply client-oriented schemas to assist the client in creating user presentations and valid form payloads.
+HTML has had `<form>` controls since the beginning, and they have proven useful for capturing information and state from users in many applications. Over time, HTML forms have added valuable capabilities for client-side field validation and semantic field presentations like `password` and `email`. In a similar spirit, Level 3 forms can supply client-oriented schemas to assist the client in creating user presentations and valid form payloads.
 
 Forms often create new resources, but can also be used to direct a client to a pre-existing resource that matches the submitted form's content. A Form resource can also represent an API command that changes the system state.
 
@@ -44,9 +44,9 @@ Once the client submits the form, the resource responds with a success message a
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The forms's syntax is malformed.                             |
-| `409 Conflict`             | Values in the data are not accepted by business validation rules. |
+| `400 Bad Request`          | The forms' body is malformed.                                |
 | `422 Unprocessable Entity` | The form is semantically-incorrect.                          |
+| `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
 
 ![](form/submit.svg){: .center-image}
 
@@ -75,6 +75,7 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 201 Created: [section 6.3.2](https://tools.ietf.org/html/rfc7231#section-6.3.2)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 400 Bad Request: [section 6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)
+- 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 - Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
 {% include footer.html %}

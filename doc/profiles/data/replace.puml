@@ -16,6 +16,7 @@ Data --> Client: 204 No Content
 group failure: rejected
   Data -->o Client: 400 Bad Request
   Data -->o Client: 422 Unprocessable Entity
+  Data -->o Client: 403 Forbidden
 end
 
 @enduml

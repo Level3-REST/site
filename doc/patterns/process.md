@@ -14,7 +14,7 @@ Wikipedia describes a [process](https://en.wikipedia.org/wiki/Process) as “…
 
 The Process resource acts as the locus of one or more Activity resources representing steps or actions that are part of the overall process. Activities present controls like [Chooser](chooser.md) or [Forms](../profiles/form.md) that accept state change operations to complete the activity.
 
-These activities can be dynamically added to a process, depending on other activity results. For instance, imagine a service signup process that allows both adults and minors, with their guardian's permission, to join the service. One activity uses an age check form that asks for the person's age. If the person indicates they are underage, a new activity called "guardian permission" joins the process to collect the guardian's consent for the signup.
+These activities can be dynamically added to a process, depending on other activity results. For instance, imagine a service signup process that allows both adults and minors, with their guardian's permission, to join the service. One activity uses an age check form that asks for the person's age. If the person indicates they are underage, a new activity called “guardian-permission” joins the process to collect the guardian's consent for the signup.
 
 ### Activity Blocking Controls Process Flow
 
@@ -28,7 +28,7 @@ The same checkout process can present a sequence of activities by chaining the `
 
 ![](process/example-sequential.svg){: .center-image}
 
-Activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a "cash" payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
+Activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a “cash” payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
 
 A Process finishes when all the blocking activities complete. The last activity may produce a `Location` to the a result resource, or the process itself is the completed resource.
 
@@ -92,6 +92,6 @@ HTTP/1.1 Message Syntax and Routing: [RFC 7230](https://tools.ietf.org/html/rfc7
 
 - Header Field Order: [section 3.2.2](https://tools.ietf.org/html/rfc7230#section-3.2.2)
 
-The "blocked-by" Link Relation Type: [RFC 7725](https://tools.ietf.org/html/rfc7725)
+The `blocked-by` Link Relation Type: [RFC 7725](https://tools.ietf.org/html/rfc7725)
 
 {% include footer.html %}

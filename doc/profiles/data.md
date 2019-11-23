@@ -38,9 +38,9 @@ A client can use the `PUT` operation to replace the data in a Data resource. How
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The data's syntax is malformed.                              |
-| `409 Conflict`             | Values in the data are not accepted by business validation rules. |
+| `400 Bad Request`          | The data's body is malformed.                                |
 | `422 Unprocessable Entity` | The data is semantically-incorrect.                          |
+| `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
 
 ![](data/replace.svg){: .center-image}
 
@@ -48,15 +48,16 @@ A client can use the `PUT` operation to replace the data in a Data resource. How
 
 A client can use the `PATCH` operation to modify portions of the data in a Data resource. The client must use a patch format supported by the resource (as discovered in the `Accept-Patch` header) and construct a patch payload to submit with the `PATCH` operation. The client should send a `Content-Type` header indicating the patch format. If the resource supports more than one patch media type, it may require this header for disambiguation.
 
-If the patch cannot be applied successfully, the resource returns `409 Conflict`. The client should re-fetch the data resource and rebuild the patch payload. If the patch is applicable, but the resulting data values violate business validation rules, the resource sends back `422 Unprocessable Entity`.
+If the patch cannot be applied successfully, the resource returns `409 Conflict`. The client should re-fetch the data resource and rebuild the patch payload. If the patch is applicable, but the resulting data values violate business validation rules, the resource sends back  `403 Forbidden`.
 
 ##### Rejections
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The patch's syntax is malformed.                             |
-| `409 Conflict`             | Patch can be applied successfully, but the updated values in the data are not accepted by business validation rules. |
-| `422 Unprocessable Entity` | The patch data is semantically-incorrect.                    |
+| `400 Bad Request`          | The patch's syntax is malformed JSON or XML.                 |
+| `422 Unprocessable Entity` | The patch data is semantically-incorrect. Check the patch format specification for errors in the body. |
+| `409 Conflict`             | The patch cannot be applied successfully because the state of the resource is not in the right shape to accept the patch. |
+| `403 Forbidden`            | Patch can be applied successfully, but the updated values in the data are not accepted by business validation rules. |
 | `428 Precondition Failed`  | `Content-Type` request header required.                      |
 
 ![](data/modify.svg){: .center-image}
@@ -97,6 +98,7 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+- 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 - 409 Conflict: [section 6.5.8](https://tools.ietf.org/html/rfc7231#section-6.5.8)
 
 XML Patch: [RFC 7351](https://tools.ietf.org/html/rfc7351)
