@@ -18,7 +18,7 @@ Stepper is a hypermedia control that presents a small-range value, such as like 
 Profile: <http://level3.rest/patterns/stepper#stepper-resource>
 ```
 
-Contains the value being incremented and decremented. If the value can only be modified by increment or decrement actions, the Stepper resource should be an [Info](../profiles/info.md) profile. However, if the value can be modified with a `PUT` request, the Stepper must support the [Data](../profiles/data.md) profile.
+Contains the value being incremented and decremented. This value can be a field in the Stepper object, or it can be a single value. If the value can only be modified by increment or decrement actions, the Stepper resource should be an [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile. However, if the value can be modified with a `PUT` request, the Stepper must support the [Data](../profiles/data.md) profile.
 
 ### increment
 
@@ -26,7 +26,7 @@ Contains the value being incremented and decremented. If the value can only be m
 rel="http://level3.rest/patterns/stepper#increment"
 ```
 
-Points to an [Incrementer](#incrementer-resource) resource that increases the value of the [Stepper](#stepper-resource) resource by a single step. This relationship only appears if the value can be incremented, meaning the value has no range or it is below its maximum value.
+Points to an [Incrementer](#incrementer-resource) resource that increases the value of the [Stepper](#stepper-resource) resource by a single step. This relationship only appears if the value can be incremented, meaning the value has no range or it is below its maximum value. 
 
 ### decrement
 
@@ -47,10 +47,10 @@ An [Action](../profiles/action.md) resource that increments the value of the [St
 ### increments
 
 ```
-rel="http://level3.rest/patterns/stepper#increments"
+rel="http://level3.rest/patterns/stepper#increments"; anchor="#field-path"
 ```
 
-Points to the [Steper](#stepper-resource) resource that will be incremented.
+Points to the [Steper](#stepper-resource) resource that will be incremented.  The anchor value in the link contains a path to the field being incremented, if relevant.
 
 ## Decrementer Resource
 
@@ -63,9 +63,9 @@ An [Action](../profiles/action.md) resource that decrements the value of the [St
 ### decrements
 
 ```
-rel="http://level3.rest/patterns/stepper#decrements"
+rel="http://level3.rest/patterns/stepper#decrements"; anchor="#field-path"
 ```
 
-Points to the [Stepper](#stepper-resource) resource that will be decremented.
+Points to the [Stepper](#stepper-resource) resource that will be decremented. The anchor value in the link contains a path to the field being incremented, if relevant.
 
 {% include footer.html %}

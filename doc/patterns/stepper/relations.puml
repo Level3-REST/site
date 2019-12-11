@@ -4,7 +4,7 @@
 title Stepper Pattern
 
 rectangle Stepper [
-  <&info> | <&code> Stepper
+  <&info> | <&aperture> | <&code> Stepper
   ....
   ""value""
 ]
