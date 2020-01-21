@@ -10,7 +10,7 @@ permalink: /profiles/mixins/representation
 # Representation Profile (Mixin)
 
 ```
-Profile: <http://level3.rest/profiles/mixins/representation>
+Profile: <https://level3.rest/profiles/mixins/representation>
 ```
 
 Resources that accept `POST`, `PUT` or `PATCH` requests may or may not return a representation in the response. The client might want the response returned, however, to save a subsequent `GET` request, or to omit a returned representation to save transmission time. The Representation profile gives a client the ability to specify that they prefer the created or modified representation returned with the response or omitted from the response.

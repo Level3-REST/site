@@ -17,7 +17,7 @@ The Nodes in a tree have one `parent` link to their parent Node as well as a `to
 ## Tree Resource
 
 ```
-Profile: <http://level3.rest/patterns/tree#tree-resource>
+Profile: <https://level3.rest/patterns/tree#tree-resource>
 ```
 
 The Tree resource presents either the [Home](../profiles/home.md) or [Nexus](../profiles/nexus.md) profile and it can choose to support the `DELETE` operation. The node resources in the tree are also deleted. For instance, if the tree represents a file system, then deleting the Tree resource also deletes the child file and directory resources because the individual files have no context to exist outside of their directory.
@@ -27,7 +27,7 @@ The Tree resource shares the [`child`](#child) relationship with Node resource.
 ## Node Resource
 
 ```
-Profile: <http://level3.rest/patterns/tree#node-resource>
+Profile: <https://level3.rest/patterns/tree#node-resource>
 ```
 
 A Node resource has no required profile. If the node's profile supports the `DELETE` operation, a client can remove the node from the tree by deleting the node. This operation deletes all `child` nodes and their children as well.
@@ -35,7 +35,7 @@ A Node resource has no required profile. If the node's profile supports the `DEL
 ### top
 
 ```
-rel="http://level3.rest/patterns/tree#top"
+rel="https://level3.rest/patterns/tree#top"
 ```
 
 The `top` link points to the [Tree](#tree-resource) of which the node is a member.
@@ -43,7 +43,7 @@ The `top` link points to the [Tree](#tree-resource) of which the node is a membe
 ### child
 
 ```
-rel="http://level3.rest/patterns/tree#child"
+rel="https://level3.rest/patterns/tree#child"
 ```
 
 Tree and Node resources have 0 or more `child` links pointing to direct child [Node](#node-resource) resources. The ordering of the links is intentional, meaning they should be considered the sibling order. [HTTP header sequence rules](https://tools.ietf.org/html/rfc7230#section-3.2.2) ensure the client can rely on this order to be consistent with the resource's ordering intentions.
@@ -51,7 +51,7 @@ Tree and Node resources have 0 or more `child` links pointing to direct child [N
 ### parent
 
 ```
-rel="http://level3.rest/patterns/tree#parent"
+rel="https://level3.rest/patterns/tree#parent"
 ```
 
 The `parent` link points to the node's parent [Node](#node-resource).

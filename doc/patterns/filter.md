@@ -36,7 +36,7 @@ These operands work efficiently with indexed data and should provide quick clien
 ## Filtered Resource
 
 ```
-Profile: <http://level3.rest/patterns/filter#filtered-resource>
+Profile: <https://level3.rest/patterns/filter#filtered-resource>
 ```
 
 The Filtered resource can present any profile. The profile choice does not effect filtering options.
@@ -44,7 +44,7 @@ The Filtered resource can present any profile. The profile choice does not effec
 ### filter-info
 
 ```
-rel="http://level3.rest/patterns/filter#filter-info"
+rel="https://level3.rest/patterns/filter#filter-info"
 ```
 
 Points to a [Filter Info](#filter-info-resource) resource that describes the filtered resources filtering configuration.
@@ -52,7 +52,7 @@ Points to a [Filter Info](#filter-info-resource) resource that describes the fil
 ## Filter Info Resource
 
 ```
-Profile: <http://level3.rest/patterns/filter#filter-info-resource>
+Profile: <https://level3.rest/patterns/filter#filter-info-resource>
 ```
 
 The Filter Info resource describes the current filtering configuration used in the [Filtered](#filtered-resource) resource. The configuration representation consists of an array of filter declarations assigned to a top-level `filters` element.
@@ -93,7 +93,7 @@ The XML representation looks like this:
 ### filter
 
 ```
-rel="http://level3.rest/patterns/filter#filter"
+rel="https://level3.rest/patterns/filter#filter"
 ```
 
 Points to a [Filtration](#filtration-resource) resource that configures the filtration of the [Filtered](#filtered-resource) resource.
@@ -101,7 +101,7 @@ Points to a [Filtration](#filtration-resource) resource that configures the filt
 ## Filtration Resource
 
 ```
-Profile: <http://level3.rest/patterns/filter#filtration-resource>
+Profile: <https://level3.rest/patterns/filter#filtration-resource>
 ```
 
 The Filtration resource changes the [Filtered](#filtered-resource) resource's filtration configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
@@ -117,7 +117,7 @@ The form creates a filters array. This array has objects with these properties:
 ### filters
 
 ```
-rel="http://level3.rest/patterns/filter#filters"
+rel="https://level3.rest/patterns/filter#filters"
 ```
 
 Points to the [Filtered](#filtered-resource) resource that this Filtration resource filters.

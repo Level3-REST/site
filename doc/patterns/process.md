@@ -35,7 +35,7 @@ A Process finishes when all the blocking activities complete. The last activity 
 ## Process Resource
 
 ```
-Profile: <http://level3.rest/patterns/process#process-resource>
+Profile: <https://level3.rest/patterns/process#process-resource>
 ```
 
 The Process resource presents the [Nexus](../profiles/nexus.md) profile and may choose to support the `DELETE` operation. When the process instance is deleted, he activity resources in the process are also deleted.
@@ -45,7 +45,7 @@ Process shares the [`blocked-by`](#blocked-by) relationship with the Activity re
 ### activity
 
 ```
-rel="http://level3.rest/patterns/process#activity"
+rel="https://level3.rest/patterns/process#activity"
 ```
 
 Process resources have one or more `activity` links pointing to the list of activities. The order of the links is intentional and ordered in a blocking sequence or desired activity flow. The order of the activities is not strict, however, as many Activities are completable in other sequences or parallel. Clients can choose to present a set of Activities as a step-by-step wizard, or they may present them all at once in a single view.
@@ -55,7 +55,7 @@ The last Activity in the activity list completes the process when executed.
 ## Activity Resource
 
 ```
-Profile: <http://level3.rest/patterns/process#activity-resource>
+Profile: <https://level3.rest/patterns/process#activity-resource>
 ```
 
 An Activity resource has no required profile. It is often another pattern that presents the activity's state and a hypermedia control to change that state.
@@ -63,7 +63,7 @@ An Activity resource has no required profile. It is often another pattern that p
 ### process
 
 ```
-rel="http://level3.rest/patterns/process#process"
+rel="https://level3.rest/patterns/process#process"
 ```
 
 The `process` link points to the [Process](#process-resource) of which the activity is a member.
@@ -71,7 +71,7 @@ The `process` link points to the [Process](#process-resource) of which the activ
 ### blocks
 
 ```
-rel="http://level3.rest/patterns/process#blocks"
+rel="https://level3.rest/patterns/process#blocks"
 ```
 
 Activities can block other activities, which indicate the client should execute the blocking activity before attempting to execute the blocked one. The `blocks` link declares such a sequence. An activity can have multiple `blocks` relationships to other activities.
@@ -79,7 +79,7 @@ Activities can block other activities, which indicate the client should execute 
 ### blocked-by
 
 ```
-rel="http://level3.rest/patterns/process#blocked-by"
+rel="https://level3.rest/patterns/process#blocked-by"
 ```
 
 The `blocked-by` link points to an activity that blocks this activity. The client should execute the `blocked-by` resource before executing this activity.

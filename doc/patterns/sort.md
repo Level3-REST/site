@@ -19,7 +19,7 @@ The client changes sort configuration by `POST`ing a new configuration form to t
 ## Sorted Resource
 
 ```
-Profile: <http://level3.rest/patterns/sort#sorted-resource>
+Profile: <https://level3.rest/patterns/sort#sorted-resource>
 ```
 
 The Sorted resource can present any profile. The profile choice does not effect filtering options.
@@ -27,7 +27,7 @@ The Sorted resource can present any profile. The profile choice does not effect 
 ### sort-info
 
 ```
-rel="http://level3.rest/patterns/sort#sort-info"
+rel="https://level3.rest/patterns/sort#sort-info"
 ```
 
 Points to a [Sort Info](#sort-info-resource) resource that describes the configuration of the [Sorted](#sorted-resource) resource's element order.
@@ -35,7 +35,7 @@ Points to a [Sort Info](#sort-info-resource) resource that describes the configu
 ## Sort Info Resource
 
 ```
-Profile: <http://level3.rest/patterns/sort#sort-info>
+Profile: <https://level3.rest/patterns/sort#sort-info>
 ```
 
 The Sort Info resource describes the ordering configuration used in the [Sorted](#sorted-resource) resource. This configuration consists of an array of sorting declarations, which Sort Info's representation assigns to a top-level `sort-order` element.
@@ -72,7 +72,7 @@ The XML representation looks like this:
 ### sorter
 
 ```
-rel="http://level3.rest/patterns/sort#sorter-resource"
+rel="https://level3.rest/patterns/sort#sorter-resource"
 ```
 
 Points to a [Sorter](#sorter-resource) resource that can configure the element order of the [Sorted](#sorted-resource) resource.
@@ -80,7 +80,7 @@ Points to a [Sorter](#sorter-resource) resource that can configure the element o
 ## Sorter Resource
 
 ```
-Profile: <http://level3.rest/patterns/sort#sorter-resource>
+Profile: <https://level3.rest/patterns/sort#sorter-resource>
 ```
 
 The Sorter resource changes the [Sorted](#sorted-resource) resource's sorting configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the Form resource does not use a schema. If only a subset of the properties is sortable, then the Sorter resource should present a schema to help the client submit a successful sorting change.
@@ -95,7 +95,7 @@ The Form creates a sorting declaration array. This array has objects with these 
 ### sorts
 
 ```
-rel="http://level3.rest/patterns/sort#sorts"
+rel="https://level3.rest/patterns/sort#sorts"
 ```
 
 Points to the [Sorted](#sorted-resource) resource that this Sorter resource configures.

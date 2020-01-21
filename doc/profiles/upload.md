@@ -9,7 +9,7 @@ permalink: /profiles/upload
 # Upload Profile
 
 ```
-Profile: <http://level3.rest/profiles/upload>
+Profile: <https://level3.rest/profiles/upload>
 ```
 
 The Upload profile accepts byte-based payload submissions. The Upload resource can be thought to create a [Content](content.md) resource representing the submitted content.

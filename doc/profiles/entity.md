@@ -10,7 +10,7 @@ permalink: /profiles/mixins/entity
 # Entity Profile (Mixin)
 
 ```
-Profile: <http://level3.rest/profiles/mixins/entity>
+Profile: <https://level3.rest/profiles/mixins/entity>
 ```
 
 Resources often have identifiably-distinct instances of themselves defined by unique URIs. These instances are known as [Entities](https://wikipedia.org/wiki/entity) in the real world. An entity must exist to accept operations, and clients should perform operations on them with an awareness of their current state.
@@ -31,7 +31,7 @@ A `HEAD` request returns the headers described in the table below. An Entity res
 | ------------- | ------------------------------------------------------------ |
 | ETag          | An [*entity-tag*](https://tools.ietf.org/html/rfc7232#section-2.3) identifying the entity version. |
 | Last-Modified | The [*HTTP-date*](https://tools.ietf.org/html/rfc7231#section-7.1.1.1) the entity was last modified. |
-| Profile       | `<http://level3.rest/profiles/mixin/entity>`                 |
+| Profile       | `<https://level3.rest/profiles/mixin/entity>`                 |
 
 ### Cache-Aware Fetch
 

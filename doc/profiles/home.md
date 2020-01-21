@@ -9,7 +9,7 @@ permalink: /profiles/home
 # Home Profile
 
 ```
-Profile: <http://level3.rest/profiles/home>
+Profile: <https://level3.rest/profiles/home>
 ```
 
 The Home resource is the top resource for a graph of related resources. Homes cannot be deleted or edited in any way. A Home resource typically has no ID data in it’s URI, which is a stable location for clients to access directly.

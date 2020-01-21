@@ -21,7 +21,7 @@ The Choice's state is changed on the action, as is the state of the Chooser over
 ## Chooser Resource
 
 ```
-Profile: <http://level3.rest/patterns/chooser#chooser-resource>
+Profile: <https://level3.rest/patterns/chooser#chooser-resource>
 ```
 
 The Choice resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile. It has the following state:
@@ -35,7 +35,7 @@ If the Chooser resource presents the [Nexus](../profiles/nexus.md) profile, then
 ### choice
 
 ```
-rel="http://level3.rest/patterns/chooser#choice"
+rel="https://level3.rest/patterns/chooser#choice"
 ```
 
 A Chooser resource has 0 or more `choice` links pointing to [Choice](#choice-resource) resources in its list. The ordering of the links is intentional, meaning they should be considered the presentation order of the choices. The HTTP specifications require [header order](https://tools.ietf.org/html/rfc7230#section-3.2.2) to be maintained so clients can expect consistent link order.
@@ -43,7 +43,7 @@ A Chooser resource has 0 or more `choice` links pointing to [Choice](#choice-res
 ## Choice Resource
 
 ```
-Profile: <http://level3.rest/patterns/chooser#choice-resource>
+Profile: <https://level3.rest/patterns/chooser#choice-resource>
 ```
 
 The Choice resource presents the [Action](../profiles/action.md) profile. It has the following state:
@@ -55,7 +55,7 @@ The Choice resource presents the [Action](../profiles/action.md) profile. It has
 ### choice-for
 
 ```
-rel="http://level3.rest/patterns/chooser#choice-for"
+rel="https://level3.rest/patterns/chooser#choice-for"
 ```
 
 This link points to the [Chooser](#chooser-resource) to which this Choice belongs.
@@ -63,7 +63,7 @@ This link points to the [Chooser](#chooser-resource) to which this Choice belong
 ### description
 
 ```
-rel="http://level3.rest/patterns/chooser#description"
+rel="https://level3.rest/patterns/chooser#description"
 ```
 
 This link points to a [Description](#description-resource) that describes this Choice. This relation is similar to the registered IANA relation `describedby`.

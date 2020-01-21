@@ -22,8 +22,8 @@ Pattern resources occasionally include properties that the client can expect to 
 A resource that is participating in a pattern includes their part in that pattern in their `Profile` headers list. For instance, if a Nexus resource is part of a List pattern implementation, the header is:
 
 ```
-Profile: <http://level3.rest/profiles/nexus>,
-         <http://level3.rest/patterns/list#list-resource>
+Profile: <https://level3.rest/profiles/nexus>,
+         <https://level3.rest/patterns/list#list-resource>
 ```
 
 These headers give the client the necessary information they need to interact with the resource in its pattern's context. As a key, these profile types have an icon to help identify their roles in the diagrams. Note that mixin profiles are not included in patterns, but are naturally part of the resource's individual client experience. Patterns do not require mixin profiles to function.

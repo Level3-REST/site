@@ -29,7 +29,7 @@ For example, consider a product wish list. A wish list entry would reference a p
 ## List Resource
 
 ```
-Profile: <http://level3.rest/patterns/list#list-resource>
+Profile: <https://level3.rest/patterns/list#list-resource>
 ```
 
 The List resource presents the [Nexus](../profiles/nexus.md) or [Home](../profiles/home.md) profile.
@@ -43,7 +43,7 @@ If the List resource may choose to support the `DELETE` operation. When deleted,
 ### list-entry
 
 ```
-rel="http://level3.rest/patterns/list#list-entry"
+rel="https://level3.rest/patterns/list#list-entry"
 ```
 
 A [List](#list-resource) resource has 0 or more `list-entry` links pointing to [Entry](#entry-resource) resources in its list. The client should consider the link order to be the current order of the list.
@@ -51,7 +51,7 @@ A [List](#list-resource) resource has 0 or more `list-entry` links pointing to [
 ## Entry Resource
 
 ```
-Profile: <http://level3.rest/patterns/list#entry-resource>
+Profile: <https://level3.rest/patterns/list#entry-resource>
 ```
 
 An Entry resource has no required profile. If the Entry's profile supports the `DELETE` operation, a client can remove the entry from the list by deleting the entry.
@@ -59,7 +59,7 @@ An Entry resource has no required profile. If the Entry's profile supports the `
 ### *list*
 
 ```
-rel="http://level3.rest/patterns/list#list"
+rel="https://level3.rest/patterns/list#list"
 ```
 
 The `list` link points to the [List](#list-resource) to which the entry is a member.

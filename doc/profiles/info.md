@@ -9,7 +9,7 @@ permalink: /profiles/info
 # Info Profile
 
 ```
-Profile: <http://level3.rest/profiles/info>
+Profile: <https://level3.rest/profiles/info>
 ```
 
 An Info resource profile provides read-only information. A client does not edit the data in an Info resource, nor does a client `DELETE` an Info resource. Info resources can be used to present calculated state about another resource, like tour dates for a concert, or details of past events like an auction item's minimum bid or a city's historical temperature. If the related resource changes, the Info resource likely changes as well. Similarly, if the client deletes the related resource, the Info resource is also deleted. 

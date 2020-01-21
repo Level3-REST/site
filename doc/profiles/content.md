@@ -9,7 +9,7 @@ permalink: /profiles/content
 # Content Profile
 
 ```
-Profile: <http://level3.rest/profiles/content>
+Profile: <https://level3.rest/profiles/content>
 ```
 
 Content resources represent byte-oriented data and can support range-based features like resumable downloads and skip-ahead downloading when they mix in the [Entity profile](entity.md).
@@ -26,7 +26,7 @@ A `HEAD` request will return the following response. The headers are explained i
 | Content-Length      | The number of bytes in the content.                          |
 | Content-Type        | The [*media-type*](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the content. |
 | Content-Disposition | `inline` or `attachment; filename="<filename>"`. See [RFC 6266](https://tools.ietf.org/html/rfc6266) for possible disposition statements. |
-| Profile             | `<http://level3.rest/profiles/content>`                      |
+| Profile             | `<https://level3.rest/profiles/content>`                      |
 
 ### Fetch Content
 

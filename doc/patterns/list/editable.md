@@ -20,7 +20,7 @@ The Entry resource in the diagram is unchanged from the base list's [Entry](../l
 ## List Resource
 
 ```
-Profile: <http://level3.rest/patterns/list/editable#list-resource>
+Profile: <https://level3.rest/patterns/list/editable#list-resource>
 ```
 
 The Editable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements.
@@ -28,7 +28,7 @@ The Editable List resource inherits the base [List](../list.md#list-resource) re
 ### empty-list
 
 ```
-rel="http://level3.rest/patterns/list/editable#empty-list"
+rel="https://level3.rest/patterns/list/editable#empty-list"
 ```
 
 Leads to an [Empty List](#empty-list-resource) action that empties the [List](#list-resource) when triggered.
@@ -36,7 +36,7 @@ Leads to an [Empty List](#empty-list-resource) action that empties the [List](#l
 ### *add-entry*
 
 ```
-rel="http://level3.rest/patterns/list/editable#add-entry"
+rel="https://level3.rest/patterns/list/editable#add-entry"
 ```
 
 Points to an [Add Entry](#add-entry-resource) resource that adds an entry to the list. This relationship is optional and may be implemented with a more semantic relationship like “add-to-basket” on a product in a shopping API or “add-to-team” on a player profile in a fantasy sports league API.
@@ -44,7 +44,7 @@ Points to an [Add Entry](#add-entry-resource) resource that adds an entry to the
 ## Empty List Resource
 
 ```
-Profile: <http://level3.rest/patterns/list/editable#empty-list-resource>
+Profile: <https://level3.rest/patterns/list/editable#empty-list-resource>
 ```
 
 [Action](../../profiles/action.md) resource that empties the [List](#list-resource). Triggering the action returns a `Location` pointing to the list.
@@ -52,7 +52,7 @@ Profile: <http://level3.rest/patterns/list/editable#empty-list-resource>
 ### empties-list
 
 ```
-rel="http://level3.rest/patterns/list/editable#empties-list"
+rel="https://level3.rest/patterns/list/editable#empties-list"
 ```
 
 Links to the [List](#list-resource) that is emptied by this action.
@@ -60,7 +60,7 @@ Links to the [List](#list-resource) that is emptied by this action.
 ## Add Entry Resource
 
 ```
-Profile: <http://level3.rest/patterns/list/editable#add-entry-resource>
+Profile: <https://level3.rest/patterns/list/editable#add-entry-resource>
 ```
 
 Add Entry resource adds an [Entry](../list.md#entry-resource) to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
@@ -68,7 +68,7 @@ Add Entry resource adds an [Entry](../list.md#entry-resource) to the list. The p
 ### adds-to-list
 
 ```
-rel="http://level3.rest/patterns/list/editable#adds-to-list"
+rel="https://level3.rest/patterns/list/editable#adds-to-list"
 ```
 
 Links to the [List](#list-resource) into which the Add Entry resource adds entries.
