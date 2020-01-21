@@ -12,7 +12,7 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //target URL// |
   | ""Allow"" | //target's ""Allow"" values// |
-  | ""Profile"" | ""<http://level3.rest/profiles/alias>"", |
+  | ""Profile"" | ""<https://level3.rest/profiles/alias>"", |
   | | ""<target-profile>"" |
 end note
 

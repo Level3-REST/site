@@ -10,6 +10,6 @@ Action --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Allow"" | ""HEAD,GET,POST"" |
-  | ""Profile"" | ""<http://level3.rest/profiles/action>"" |
+  | ""Profile"" | ""<https://level3.rest/profiles/action>"" |
 end note
 @enduml

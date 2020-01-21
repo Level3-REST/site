@@ -16,8 +16,8 @@ rnote left #lightgreen
   | ""Content-Type"" | //media-type// |
   | ""Last-Modified"" | //HTTP-date// |
   | ""Content-Disposition"" | //disposition// |
-  | ""Profile"" | ""<http://level3.rest/profiles/content>,"" |
-  | | ""<http://level3.rest/profiles/mixins/entity>"" |
+  | ""Profile"" | ""<https://level3.rest/profiles/content>,"" |
+  | | ""<https://level3.rest/profiles/mixins/entity>"" |
 end note
 |||
 Client -> Content: GET

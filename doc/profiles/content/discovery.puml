@@ -15,7 +15,7 @@ rnote left #lightgreen
   | ""Content-Length"" | //byte-count// |
   | ""Content-Type"" | //media-type// |
   | ""Content-Disposition"" | //disposition// |
-  | ""Profile"" | ""<http://level3.rest/profiles/content>"" |
+  | ""Profile"" | ""<https://level3.rest/profiles/content>"" |
   | | |
   | | //*optional//|
 end note

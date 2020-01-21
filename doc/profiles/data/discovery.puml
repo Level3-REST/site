@@ -13,7 +13,7 @@ rnote left #lightgreen
   | ""Content-Type"" | //media-type// |
   | *""Accept-Patch"" | //media-types// |
   | ""Allow"" | ""HEAD,GET,PUT,""*""PATCH,DELETE"" |
-  | ""Profile"" | ""<http://level3.rest/profiles/data>"" |
+  | ""Profile"" | ""<https://level3.rest/profiles/data>"" |
 
   // *""PATCH"" support is optional//
 end note

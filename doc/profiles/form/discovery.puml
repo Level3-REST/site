@@ -12,7 +12,7 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Allow"" | ""HEAD,GET,POST"" |
   | ""Content-Type"" | //content-type// |
-  | ""Profile"" | ""<http://level3.rest/profiles/form>"" |
+  | ""Profile"" | ""<https://level3.rest/profiles/form>"" |
 end note
 
 @enduml
