@@ -3,19 +3,11 @@
 
 title Chooser Pattern
 
-rectangle Chooser [
-  <&info> | <&aperture> Chooser
-  ....
-  ""type: radio | checks""
-]
-rectangle Choice [
-  <&arrow-circle-right> Choice
-  ....
-  ""checked: true | false""
-]
+rectangle "<&info> | <&aperture> Chooser (Radio or Multi)" as Chooser
+rectangle "<&arrow-circle-right> Choice" as Choice
 rectangle "<&question-mark> Description" as Description
 
-Chooser 0-->> "0..N" Choice: "choice"
+Chooser 0-->> "0..N" Choice: "choice/chosen"
 Choice 0-->> Chooser: "choice-for"
 Choice 0-->> Description: "description"
 
