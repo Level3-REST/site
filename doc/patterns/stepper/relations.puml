@@ -3,11 +3,7 @@
 
 title Stepper Pattern
 
-rectangle Stepper [
-  <&info> | <&aperture> | <&code> Stepper
-  ....
-  ""value""
-]
+rectangle "<&code> Stepper" as Stepper
 
 rectangle "<&arrow-circle-right> Incrementer" as Inc
 rectangle "<&arrow-circle-right> Decrementer" as Dec
