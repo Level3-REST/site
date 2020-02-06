@@ -2,7 +2,8 @@
 layout: default
 title: Cursored Page
 description: Cursored page control pattern to manage list pagination.
-parent: Patterns
+parent: Page
+grand_parent: Patterns
 nav_order: 2
 permalink: /patterns/page/cursor
 ---

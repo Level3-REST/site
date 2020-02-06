@@ -2,7 +2,8 @@
 layout: default
 title: Page
 description: Control pattern to manage list pagination.
-parent: Patterns
+parent: Page
+grand_parent: Patterns
 nav_order: 1
 permalink: /patterns/page
 ---
