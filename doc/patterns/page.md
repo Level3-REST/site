@@ -3,6 +3,8 @@ layout: default
 title: Page
 description: Control pattern to navigate resource pagination.
 parent: Patterns
+has_children: true
+has_toc: false
 nav_order: 5
 permalink: /patterns/page
 ---
