@@ -18,11 +18,11 @@ The List pattern has an [Editable List](list/editable.md) version that provides 
 
 ##### List Entry Domain Considerations
 
-List entries may belong to the list's domain, or they may exist in a different domain. An example of list and entries in the same domain is a task list. Task list entries belong to the same domain as the task list itself and can support editing capabilities. When a client deletes a task, it is removed from the system. When a client deletes the list, all the tasks are deleted as well.
+List entries may belong to the list’s domain, or they may exist in a different domain. An example of list and entries in the same domain is a task list. Task list entries belong to the same domain as the task list itself and can support editing capabilities. When a client deletes a task, it is removed from the system. When a client deletes the list, all the tasks are deleted as well.
 
 An example of external domain entries is a search results list. The entries in the list are links to resources in another domain, like a product catalogue or content database. The list is [filterable](filter.md), [sortable](sort.md) and [pageable](page.md), but those resources do not know that they participate in a list and do not bear the [Entry](#entry-resource) resource profile and [`list`](#list) link.
 
-A List resource may want to offer editing capabilities, so it creates entries that link to resources in an external domain. The list has full editability without affecting the other domain's resources. The client can [add entries](list/editable#add-entry) to the list and remove entries with a `DELETE` operation.
+A List resource may want to offer editing capabilities, so it creates entries that link to resources in an external domain. The list has full editability without affecting the other domain’s resources. The client can [add entries](list/editable#add-entry) to the list and remove entries with a `DELETE` operation.
 
 For example, consider a product wish list. A wish list entry would reference a product resource via a linked relation, yet the entry resource itself is part of the wish list domain. This wish list entry can be deleted, modified, or otherwise manipulated as part of the wish list without affecting the product itself.
 
@@ -54,7 +54,7 @@ A [List](#list-resource) resource has 0 or more `list-entry` links pointing to [
 Profile: <https://level3.rest/patterns/list#entry-resource>
 ```
 
-An Entry resource has no required profile. If the Entry's profile supports the `DELETE` operation, a client can remove the entry from the list by deleting the entry.
+An Entry resource has no required profile. If the Entry’s profile supports the `DELETE` operation, a client can remove the entry from the list by deleting the entry.
 
 ### *list*
 

@@ -14,7 +14,7 @@ The Filter pattern provides filtration affordances. It often complements List an
 
 ### Operands
 
-Filter declarations use logical operands to describe how to filter the elements by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule based on the field's semantics. The resource's data types guide the applicability of these operands to filtered fields.
+Filter declarations use logical operands to describe how to filter the elements by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule based on the field’s semantics. The resource’s data types guide the applicability of these operands to filtered fields.
 
 These operands work efficiently with indexed data and should provide quick client responses.
 
@@ -104,7 +104,7 @@ Points to a [Filtration](#filtration-resource) resource that configures the filt
 Profile: <https://level3.rest/patterns/filter#filtration-resource>
 ```
 
-The Filtration resource changes the [Filtered](#filtered-resource) resource's filtration configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
+The Filtration resource changes the [Filtered](#filtered-resource) resource’s filtration configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
 
 The form creates a filters array. This array has objects with these properties:
 

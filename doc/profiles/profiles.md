@@ -9,7 +9,7 @@ permalink: /profiles
 ---
 # Profiles
 
-A profile is a client-centric interaction definition that gives an API client information on how to use a resource. The HTTP `Profile` header declares the Level 3 profiles that a resource supports. The profiles link to documentation describing the profile's interaction model and semantics. 
+A profile is a client-centric interaction definition that gives an API client information on how to use a resource. The HTTP `Profile` header declares the Level 3 profiles that a resource supports. The profiles link to documentation describing the profile’s interaction model and semantics. 
 
 ### Mixins
 Resource implementations can support multiple Level 3 profiles in a single resource. Each profile definition encourages implementations to support related mixin profiles. For example, the [Content profile](content.md) recommends supporting the [Preflight profile](preflight.md) to provide a better user upload experience. These mixin profiles are defined to be used in conjunction with other profiles to improve their capabilities but do not make sense as standalone resource profiles.
@@ -41,7 +41,7 @@ HTTP has additional headers and status codes to represent authorization, content
 
 ## Specifications
 
-See [WebDAV's `Profile` header](https://www.greenbytes.de/tech/webdav/draft-nottingham-http-link-header-00.html#rfc.section.4) for details on the inspiration of Level 3’s `Profile` header.
+See [WebDAV’s `Profile` header](https://www.greenbytes.de/tech/webdav/draft-nottingham-http-link-header-00.html#rfc.section.4) for details on the inspiration of Level 3’s `Profile` header.
 
 See [RFC 6906](https://tools.ietf.org/html/rfc6906) for an explanation of the profile concept. 
 

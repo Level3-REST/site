@@ -14,11 +14,11 @@ Wikipedia describes a [process](https://en.wikipedia.org/wiki/Process) as “…
 
 The Process resource acts as the locus of one or more Activity resources representing steps or actions that are part of the overall process. Activities present controls like [Chooser](chooser.md) or [Forms](../profiles/form.md) that accept state change operations to complete the activity.
 
-These activities can be dynamically added to a process, depending on other activity results. For instance, imagine a service signup process that allows both adults and minors, with their guardian's permission, to join the service. One activity uses an age check form that asks for the person's age. If the person indicates they are underage, a new activity called “guardian-permission” joins the process to collect the guardian's consent for the signup.
+These activities can be dynamically added to a process, depending on other activity results. For instance, imagine a service sign-up process that allows both adults and minors, with their guardian’s permission, to join the service. One activity uses an age check form that asks for the person’s age. If the person indicates they are underage, a new activity called “guardian-permission” joins the process to collect the guardian’s consent for the sign-up.
 
 ### Activity Blocking Controls Process Flow
 
-Activities can block other activities to control sequence and activity flow. A blocking activity resource attaches to another activity with a `blocks` link to indicate a sequential activity requirement to unblock the next activity in a flow. This blocking activity also attaches a `blocked-by` link to the process resource so the client can inspect all the activities blocking the process. Clients find messages in the blocking activity's content that explain the blockage.
+Activities can block other activities to control sequence and activity flow. A blocking activity resource attaches to another activity with a `blocks` link to indicate a sequential activity requirement to unblock the next activity in a flow. This blocking activity also attaches a `blocked-by` link to the process resource so the client can inspect all the activities blocking the process. Clients find messages in the blocking activity’s content that explain the blockage.
 
 Activity blocking can model both sequential and parallel activities in a process. Consider a commerce checkout process. Suppose the API can support parallel checkout activities. The client can execute the “Select Shipping Address” activity or the “Set Payment” activity in either order. However, neither can start until “Add to Cart” has unblocked them. Similarly, “Complete Order” cannot start until the shipping and payment activities are complete.
 
@@ -58,7 +58,7 @@ The last Activity in the activity list completes the process when executed.
 Profile: <https://level3.rest/patterns/process#activity-resource>
 ```
 
-An Activity resource has no required profile. It is often another pattern that presents the activity's state and a hypermedia control to change that state.
+An Activity resource has no required profile. It is often another pattern that presents the activity’s state and a hypermedia control to change that state.
 
 ### process
 

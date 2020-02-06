@@ -20,7 +20,7 @@ The [increment](#increment) and [decrement](#decrement) links are present when t
 Profile: <https://level3.rest/patterns/stepper#stepper-resource>
 ```
 
-A [Data](../profiles/data.md) resource that contains the value being incremented and decremented. This value can be a field in the Stepper object, or it can be a single value. A Stepper resource can have multiple [Incrementer](#incrementer-resource) and [Decrementers](#decrementer-resource), one per field. The links will contain an [anchor](https://tools.ietf.org/html/rfc8288#section-3.2) property indicating the field to be stepped.
+A [Data](../profiles/data.md) resource that contains the value being incremented and decremented. This value can be a field in the Stepper object, or it can be a single value. A Stepper resource can have multiple [Incrementers](#incrementer-resource) and [Decrementers](#decrementer-resource), one per field. The links will contain an [anchor](https://tools.ietf.org/html/rfc8288#section-3.2) property indicating the field to be stepped.
 
 ### increment
 
@@ -52,7 +52,7 @@ An [Action](../profiles/action.md) resource that increments the value (or field)
 rel="https://level3.rest/patterns/stepper#increments";anchor="#field-path"
 ```
 
-Points to the [Steper](#stepper-resource) resource that will be incremented. The anchor value in the link contains a path to the field being incremented, if relevant.
+Points to the [Stepper](#stepper-resource) resource that will be incremented. The anchor value in the link contains a path to the field being incremented, if relevant.
 
 ## Decrementer Resource
 

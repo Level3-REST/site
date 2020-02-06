@@ -26,7 +26,7 @@ Submit a content request to the resource. Clients are encouraged to send the `Co
 
 Clients can optionally send a `Slug` header that can be used to identify the submitted content later. The slug can be a file name, a title, or anything that helps identify the content. The slug’s text may show up in the Content’s URL, and possibly the `Content-Disposition` header. For more details on the [Slug header](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7), please refer to the Atom publishing protocol.
 
-The  `POST` response headers include the newly-created [Content](content.md) resource’s URL in `Location` as well as it's Entity validation headers (`ETag`, `Last-Modified`) if available.
+The  `POST` response headers include the newly-created [Content](content.md) resource’s URL in `Location` as well as its Entity validation headers (`ETag`, `Last-Modified`) if available.
 
 ![](upload/submit.svg){: .center-image}
 
@@ -34,7 +34,7 @@ The  `POST` response headers include the newly-created [Content](content.md) res
 
 1. HTTP 1.1 provides a way to mix multiple content parts in a single request with the [Multipart content type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html). Upload chooses not to support Multipart uploads, however, for two reasons:
 
-   1. Impossible to discover part submission requirements. Level 3's primary architecture quality is [Discoverability](../qualities.md#discoverability). To learn how to use a resource, one must be able to discover it's affordances without external documentation or other out-of-band communication. Multipart does not provide this type of discovery mechanism, and the client must rely on other sources to learn what part types are acceptable and what is an acceptable submission format.
+   1. Impossible to discover part submission requirements. Level 3’s primary architecture quality is [Discoverability](../design.md#discoverability). To learn how to use a resource, one must be able to discover its affordances without external documentation or other out-of-band communication. Multipart does not provide this type of discovery mechanism, and the client must rely on other sources to learn what part types are acceptable and what is an acceptable submission format.
    2. HTTP/2 makes Multipart less relevant. Multipart solves a batching problem where a client wants to send multiple submissions in a single batched request. [HTTP/2](https://hpbn.co/http2/#request-and-response-multiplexing) makes it easier to send multiple submissions without requiring the complexity of Multipart requests. HTTP/2 uses request multiplexing and HTTP pipelining to manage simultaneous uploads over a single connection.
 
 # Mixins

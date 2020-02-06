@@ -16,11 +16,11 @@ A Form is a hypermedia control that provides a form for the client to fill in an
 
 HTML has had `<form>` controls since the beginning, and they have proven useful for capturing information and state from users in many applications. Over time, HTML forms have added valuable capabilities for client-side field validation and semantic field presentations like `password` and `email`. In a similar spirit, Level 3 forms can supply client-oriented schemas to assist the client in creating user presentations and valid form payloads.
 
-Forms often create new resources, but can also be used to direct a client to a pre-existing resource that matches the submitted form's content. A Form resource can also represent an API command that changes the system state.
+Forms often create new resources, but can also be used to direct a client to a pre-existing resource that matches the submitted form’s content. A Form resource can also represent an API command that changes the system state.
 
 ##### Form Content
 
-Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or prepopulated. The other is to supply a form schema that the client uses to construct a form payload to submit. The client can learn the form representation during Discovery by reviewing the `Content-Type` header.
+Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or pre-populated. The other is to supply a form schema that the client uses to construct a form payload to submit. The client can learn the form representation during Discovery by reviewing the `Content-Type` header.
 
 ### Discovery
 
@@ -44,7 +44,7 @@ Once the client submits the form, the resource responds with a success message a
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The forms' body is malformed.                                |
+| `400 Bad Request`          | The forms’ body is malformed.                                |
 | `422 Unprocessable Entity` | The form is semantically-incorrect.                          |
 | `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
 
@@ -54,11 +54,11 @@ Once the client submits the form, the resource responds with a success message a
 
 ## Representation Mixin
 
-A Form resource can provide the [Representation profile](representation.md) as a mixin so the client can receive the relevant `Location`'s representation in the submission response.
+A Form resource can provide the [Representation profile](representation.md) as a mixin so the client can receive the relevant `Location`’s representation in the submission response.
 
 ## Entity Mixin
 
-A Form can provide the [Entity profile](entity.md) as a mixin so the client can benefit from cached Form requests as well as a stable submission schema via the [Conditional Operation](entity.md#conditional-operation) flow. If the Form's schema and requirements have not changed, the client receives a `304 Not Modified` status code.
+A Form can provide the [Entity profile](entity.md) as a mixin so the client can benefit from cached Form requests as well as a stable submission schema via the [Conditional Operation](entity.md#conditional-operation) flow. If the Form’s schema and requirements have not changed, the client receives a `304 Not Modified` status code.
 
 ## Specifications
 

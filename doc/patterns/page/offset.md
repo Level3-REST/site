@@ -34,7 +34,7 @@ See the documentation for [Paged resource](../page.md).
 rel="https://level3.rest/patterns/page/offset#page-info"
 ```
 
-Points to a [Page Info](#page-info-resource) resource that describes the [Paged](#paged-resource) resource's pagination configuration.
+Points to a [Page Info](#page-info-resource) resource that describes the [Paged](#paged-resource) resource’s pagination configuration.
 
 ## Page Info Resource
 
@@ -64,7 +64,7 @@ Points to a [Pagination](#pagination-resource) resource that can configure the p
 Profile: <https://level3.rest/patterns/page/offset#pagination-resource>
 ```
 
-The Pagination resource is a [Form](../../profiles/form.md) resource that changes the pagination offset configuration. The client can change the page size or the start page so the client can select a different page to view. Once the client submits the form, the response's `Location` points to a [Paged](#paged-resource) resource configured with this configuration.
+The Pagination resource is a [Form](../../profiles/form.md) resource that changes the pagination offset configuration. The client can change the page size or the start page so the client can select a different page to view. Once the client submits the form, the response’s `Location` points to a [Paged](#paged-resource) resource configured with this configuration.
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |

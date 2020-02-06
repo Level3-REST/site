@@ -9,11 +9,11 @@ permalink: /patterns/list/editable
 ---
 # Editable List Pattern
 
-Editabe List expands the [List](../list.md) pattern by adding editing controls. An editable list pattern may not enable all editing controls. An editable list can choose to omit a control, like [Add Entry](#add-entry-resource), in favour of another approach that is more intuitive to the semantics of the list. 
+Editable List expands the [List](../list.md) pattern by adding editing controls. An editable list pattern may not enable all editing controls. An editable list can choose to omit a control, like [Add Entry](#add-entry-resource), in favour of another approach that is more intuitive to the semantics of the list. 
 
-This diagram includes the existing List resources [List](../list.md#list-resource) and [Entry](../list.md#entry-resource) and adds additional relationships to new resources to make it an editable list. The List resource's profiles includes both the [editable/list-resource](#list-resource) profile and the base [list-resource](../list.md#list-resource) profile.
+This diagram includes the existing List resources [List](../list.md#list-resource) and [Entry](../list.md#entry-resource) and adds additional relationships to new resources to make it an editable list. The List resource’s profiles includes both the [editable/list-resource](#list-resource) profile and the base [list-resource](../list.md#list-resource) profile.
 
-The Entry resource in the diagram is unchanged from the base list's [Entry](../list.md#entry-resource) and has no extension profile.
+The Entry resource in the diagram is unchanged from the base list’s [Entry](../list.md#entry-resource) and has no extension profile.
 
 ![](editable/relations.svg){: .center-image}
 

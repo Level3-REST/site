@@ -12,9 +12,9 @@ permalink: /profiles/nexus
 Profile: <https://level3.rest/profiles/nexus>
 ```
 
-A Nexus resource is a central “meeting point” for related resources. It is often identified by a shared business identifier, like invoice number or a book's ISBN. A Nexus resource may have state information, but it is read-only and should reflect an overall business state. For instance, an order resource can have the states `open` or `closed`.
+A Nexus resource is a central “meeting point” for related resources. It is often identified by a shared business identifier, like invoice number or a book’s ISBN. A Nexus resource may have state information, but it is read-only and should reflect an overall business state. For instance, an order resource can have the states `open` or `closed`.
 
-Clients discover related states via the links attached to the Nexus. The order resource's shipping details, payment info and other order-related states are related to the Nexus resource but are linked, not embedded, in the Nexus resource. These resources offer affordances to manipulate the state of the order.
+Clients discover related states via the links attached to the Nexus. The order resource’s shipping details, payment info and other order-related states are related to the Nexus resource but are linked, not embedded, in the Nexus resource. These resources offer affordances to manipulate the state of the order.
 
 A Nexus resource offers the `DELETE` operation which removes the Nexus resource instance from the system. Related resources remove their states as a result of a successful delete.
 
@@ -26,13 +26,13 @@ The Nexus profile presents the required `Profile` and `Allow` headers. If the re
 
 ### Fetch Nexus
 
-A client can fetch the Nexus' state with a `GET` request. The state information is in the payload. If the resource has no state, it will return `204 No Content` instead of `200 OK` and a state body.
+A client can fetch the Nexus’ state with a `GET` request. The state information is in the payload. If the resource has no state, it will return `204 No Content` instead of `200 OK` and a state body.
 
 ![](nexus/fetch.svg){: .center-image}
 
 ### Remove Nexus
 
-Nexus resources, as central points of business context, might not be entirely deleted by the underlying system. Subsequent calls to the removed Nexus can return `410 Gone` to indicate it did exist once but no longer. An API should not represent a `DELETE` result as a terminal state like 'deleted' but should instead make a state transition to this final state as part of its workflow.
+Nexus resources, as central points of business context, might not be entirely deleted by the underlying system. Subsequent calls to the removed Nexus can return `410 Gone` to indicate it did exist once but no longer. An API should not represent a `DELETE` result as a terminal state like “deleted” but should instead make a state transition to this final state as part of its workflow.
 
 ![](nexus/remove.svg){: .center-image}
 

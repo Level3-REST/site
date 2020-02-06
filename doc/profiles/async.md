@@ -23,13 +23,13 @@ Batch- or job-style APIs, where normal behaviour is to submit a state change tha
 
 ### Discovery
 
-Resources that support the Async profile include in the Async profile header in it's list of `Profile` headers.
+Resources that support the Async profile include in the Async profile header in its list of `Profile` headers.
 
 ![](async/discovery.svg){: .center-image}
 
 ### Immediate Async Response
 
-In this flow, the client does not want to wait for the operation to complete or [time out](#response-with-async-timeout); they get an immediate acceptance of the operation from the resource. The client sends a `Prefer: respond-async` header to tell the resource to return as soon as it can confirm the operation's acceptance. The resource returns a status of `202 Accepted`.
+In this flow, the client does not want to wait for the operation to complete or [time out](#response-with-async-timeout); they get an immediate acceptance of the operation from the resource. The client sends a `Prefer: respond-async` header to tell the resource to return as soon as it can confirm the operation’s acceptance. The resource returns a status of `202 Accepted`.
 
 ![](async/immediate.svg){: .center-image}
 

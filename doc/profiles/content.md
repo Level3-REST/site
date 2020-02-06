@@ -60,19 +60,19 @@ Content resources can provide the [Representation profile](representation.md) as
 
 ## Entity Mixin
 
-When a Content resource mixes in the Entity profile, it includes the Entity profile's [validation headers](entity.md#discovery) in fetch requests. These headers enable Entity's [Cache-Aware Fetch](entity.md#cache-aware-fetch) flow. These headers also enable [range requests](#range-requests). The `Accept-Ranges: bytes` header indicates that the resource can accept range requests.
+When a Content resource mixes in the Entity profile, it includes the Entity profile’s [validation headers](entity.md#discovery) in fetch requests. These headers enable Entity’s [Cache-Aware Fetch](entity.md#cache-aware-fetch) flow. These headers also enable [range requests](#range-requests). The `Accept-Ranges: bytes` header indicates that the resource can accept range requests.
 
-The Entity mixin allows a Content resource to use Entity's modification behaviours, including the option of preflighting operations based on validation headers:
+The Entity mixin allows a Content resource to use Entity’s modification behaviours, including the option of preflighting operations based on validation headers:
 
 - [Conditional Operation](entity.md#conditional-operation)
 - [Forced Modification](entity.md#forced-modification)
-- [Preflight Operation](entity.md#preflight-operation)
+- [Preflight Operation](entity.md#preflight-mixin)
 
 ### Range Requests
 
 A client can download a portion of the content using a range request. They are useful for resuming interrupted downloads, jumping to a midway point in the content or downloading the content in stages.
 
-The client has two options for range requests, and a Content resource must support both. One option ([Fail-Fast](#fail-fast)) fails the range request if the Entity validation headers do not match, and the other ([Refetch](#refetch)) switches to downloading the entire content if the validations do not match. A range request depends on validators to ensure the content's bytes are the same from the previous request.
+The client has two options for range requests, and a Content resource must support both. One option ([Fail-Fast](#fail-fast)) fails the range request if the Entity validation headers do not match, and the other ([Refetch](#refetch)) switches to downloading the entire content if the validations do not match. A range request depends on validators to ensure the content’s bytes are the same from the previous request.
 
 For both options the client [discovers](#discovery) the range and validator information with either a `HEAD` request or an incomplete `GET` request. The client then sends a `GET` request with the [byte range](https://tools.ietf.org/html/rfc7233#section-2.1) of the content they would like to receive in a `Range` header. If the content range cannot be delivered, a `416 Requested Range Not Satisfiable` is returned with the total number of available bytes in the `Content-Range` header. This condition occurs when the client requests a content range that goes beyond the size of the content itself.
 
@@ -90,7 +90,7 @@ Refetch allows the client to automatically restart a download if the content has
 
 ##### No Multipart Ranges
 
-The HTTP/1.1 Range Request specification allows requests to specify multiple ranges in the `Range` header, with the ranges delivered in a multipart-formatted response. However, the Content profile does not support these multiple range requests because they are complicated to support and increasingly-unnecessary given [HTTP/2's ability to parallelize requests](https://hpbn.co/http2/#request-and-response-multiplexing). Clients that wish to fetch multiple parts should make multiple range requests and let HTTP/2 take care of the multiplexing.
+The HTTP/1.1 Range Request specification allows requests to specify multiple ranges in the `Range` header, with the ranges delivered in a multipart-formatted response. However, the Content profile does not support these multiple range requests because they are complicated to support and increasingly-unnecessary given [HTTP/2’s ability to parallelize requests](https://hpbn.co/http2/#request-and-response-multiplexing). Clients that wish to fetch multiple parts should make multiple range requests and let HTTP/2 take care of the multiplexing.
 
 ## Specifications
 

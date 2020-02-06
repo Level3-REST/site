@@ -26,7 +26,7 @@ Profile: <https://level3.rest/profiles/nexus>,
          <https://level3.rest/patterns/list#list-resource>
 ```
 
-These headers give the client the necessary information they need to interact with the resource in its pattern's context. As a key, these profile types have an icon to help identify their roles in the diagrams. Note that mixin profiles are not included in patterns, but are naturally part of the resource's individual client experience. Patterns do not require mixin profiles to function.
+These headers give the client the necessary information they need to interact with the resource in its pattern’s context. As a key, these profile types have an icon to help identify their roles in the diagrams. Note that mixin profiles are not included in patterns, but are naturally part of the resource’s individual client experience. Patterns do not require mixin profiles to function.
 
 ![](profiles-list.svg){: .center-image}
 
@@ -46,7 +46,7 @@ Every pattern definition includes a description of each relationship name detail
 
 ![](relations.svg){: .center-image}
 
-IANA's [link relation registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml) may be useful in some API designs, but Level 3's pattern catalogue has chosen to always use extension relations instead of the registry. The primary reason is to inform the client of the pattern's context for the relation. A client can follow the relationship URL to this documentation to learn what the relationship means in the pattern.
+IANA’s [link relation registry](https://www.iana.org/assignments/link-relations/link-relations.xhtml) may be useful in some API designs, but Level 3’s pattern catalogue has chosen to always use extension relations instead of the registry. The primary reason is to inform the client of the pattern’s context for the relation. A client can follow the relationship URL to this documentation to learn what the relationship means in the pattern.
 
 ## Pattern Pages are Link Targets
 

@@ -38,7 +38,7 @@ A client can use the `PUT` operation to replace the data in a Data resource. How
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The data's body is malformed.                                |
+| `400 Bad Request`          | The data’s body is malformed.                                |
 | `422 Unprocessable Entity` | The data is semantically-incorrect.                          |
 | `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
 
@@ -54,7 +54,7 @@ If the patch cannot be applied successfully, the resource returns `409 Conflict`
 
 | Status Code                | Explanation                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The patch's syntax is malformed JSON or XML.                 |
+| `400 Bad Request`          | The patch’s syntax is malformed JSON or XML.                 |
 | `422 Unprocessable Entity` | The patch data is semantically-incorrect. Check the patch format specification for errors in the body. |
 | `409 Conflict`             | The patch cannot be applied successfully because the state of the resource is not in the right shape to accept the patch. |
 | `403 Forbidden`            | Patch can be applied successfully, but the updated values in the data are not accepted by business validation rules. |

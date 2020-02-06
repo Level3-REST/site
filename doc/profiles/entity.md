@@ -19,7 +19,7 @@ The HTTP specification has some essential features to support Entity operations.
 
 The header values `ETag` and `Last-Modified` are often transparently managed by HTTP clients, especially in browsers. A client should learn about conditional request support in their HTTP client library and enable these features.
 
-Almost every Level 3 profile can use the Entity mixin to improve the client's performance and safe usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort.
+Almost every Level 3 profile can use the Entity mixin to improve the client’s performance and safe usage. Resource implementers may find that it is more costly to support the Entity profile, but the gains for the client are usually worth the effort.
 
 ### Discovery
 
@@ -41,25 +41,25 @@ When a client makes subsequent fetch requests for an already-fetched resource, t
 
 ### Conditional Operation
 
-A client can modify an Entity resource's state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their request. 
+A client can modify an Entity resource’s state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their request. 
 
 This problem, known as the “lost update” problem, is solved by reusing the validator headers from the fetch request. The client sends the `ETag` value in the `If-Match` header and the `Last-Modified` value in the `If-Unmodified-Since` header with their operation.
 
 ![](entity/cond-operation.svg){: .center-image}
 
-If the client's version of the resource does not match the resource's version and modification date, the resource responds with `412 Precondition Failed`. The client must fetch the resource again and attempt the operation with new values for `If-Match` and `If-Unmodified-Since`.
+If the client’s version of the resource does not match the resource’s version and modification date, the resource responds with `412 Precondition Failed`. The client must fetch the resource again and attempt the operation with new values for `If-Match` and `If-Unmodified-Since`.
 
-If the client does not send `If-Match` or `If-Unmodified-Since` headers, and the resource requires them for the operations, it sends back `428 Precondition Required` to indicate this requirement. The client should `GET` the resource, evaluate it's state and then send a conditional operation request with the new data. For `DELETE` operations the client may use `HEAD` instead to collect the most-current validation values.
+If the client does not send `If-Match` or `If-Unmodified-Since` headers, and the resource requires them for the operations, it sends back `428 Precondition Required` to indicate this requirement. The client should `GET` the resource, evaluate its state and then send a conditional operation request with the new data. For `DELETE` operations the client may use `HEAD` instead to collect the most-current validation values.
 
-Once the client's operation is successful, the resource sends back the new `ETag` and `Last-Modified` values in the response for `PUT` and `PATCH` operations. `POST` operations also return these headers, but they refer to the newly-created resource if it is an Entity resource. `DELETE` operations do not return validation headers.
+Once the client’s operation is successful, the resource sends back the new `ETag` and `Last-Modified` values in the response for `PUT` and `PATCH` operations. `POST` operations also return these headers, but they refer to the newly-created resource if it is an Entity resource. `DELETE` operations do not return validation headers.
 
 Entity resources do not send back the representation payload on success, but rather `204 No Content`. It is reasonable to assume the client who just sent the modification request already has this payload locally and need not receive it again.
 
 ### Forced Modification
 
-A client may decide that their change must override other client's changes; they are not concerned with working from the most current version of the resource. To force a modification or deletion of an Entity resource, the client sends an `If-Match: *` header with their `PUT` or `DELETE` operation. Any current resource state is overwritten or deleted. However, if the Entity does not exist, the operation fails. One cannot create a nonexistent resource with `PUT`.
+A client may decide that their change must override other client’s changes; they are not concerned with working from the most current version of the resource. To force a modification or deletion of an Entity resource, the client sends an `If-Match: *` header with their `PUT` or `DELETE` operation. Any current resource state is overwritten or deleted. However, if the Entity does not exist, the operation fails. One cannot create a nonexistent resource with `PUT`.
 
-`PATCH` is not supported as `PATCH` requires contextual markers in the payload to facilitate the modification. Similarly, `POST` is also not supported because it's semantics are specific to the resource profile.
+`PATCH` is not supported as `PATCH` requires contextual markers in the payload to facilitate the modification. Similarly, `POST` is also not supported because its semantics are specific to the resource profile.
 
 ![](entity/forced-modification.svg){: .center-image}
 
