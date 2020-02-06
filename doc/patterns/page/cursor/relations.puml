@@ -1,0 +1,23 @@
+@startuml
+!include ../relations.puml
+
+title Cursored Page Pattern
+
+
+rectangle Entry [
+  <&question-mark> Cursor Entry
+  ....
+  ""cursor""
+]
+rectangle Cursor [
+  <&spreadsheet> Cursor
+  ....
+  ""size""
+  ""before || after""
+]
+
+Paged 0~~>> Entry: "list-entry"
+Paged 0-->> Cursor: "cursor"
+Cursor 0-->> Paged: "paginates"
+
+@enduml

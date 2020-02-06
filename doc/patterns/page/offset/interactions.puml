@@ -1,11 +1,12 @@
 @startuml
-!include ../../copyright.iuml
+!include ../../../copyright.iuml
 
-title Configure Pagination
+title Configure Offset Pagination
 actor Client
 participant "<&spreadsheet> Pagination" as Pagination
 
 Client -> Pagination: POST
+hnote over Pagination #lightblue: ""{ size, start }""
 Pagination --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |

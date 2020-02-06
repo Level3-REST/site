@@ -4,23 +4,6 @@
 title Page Pattern
 
 rectangle "<&question-mark> Paged" as Paged
-rectangle Page [
-  <&info> Page Info
-  ....
-  ""current""
-  ""pages""
-  ""size""
-]
-rectangle Pagination [
-  <&spreadsheet> Pagination
-  ....
-  ""size""
-  ""start""
-]
-
 Paged 0-->> Paged: "previous, next"
-Paged 0-->> Page: "page-info"
-Page 0-->> Pagination: "paginator"
-Pagination 0-->> Paged: "paginates"
 
 @enduml

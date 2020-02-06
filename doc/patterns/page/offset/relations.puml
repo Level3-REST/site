@@ -1,0 +1,24 @@
+@startuml
+!include ../relations.puml
+
+title Offset Page Pattern
+
+rectangle PageInfo [
+  <&info> Page Info
+  ....
+  ""current""
+  ""pages""
+  ""size""
+]
+rectangle Pagination [
+  <&spreadsheet> Pagination
+  ....
+  ""size""
+  ""start""
+]
+
+Paged 0-->> PageInfo: "page-info"
+Paged 0-->> Pagination: "paginator"
+Pagination 0-->> Paged: "paginates"
+
+@enduml

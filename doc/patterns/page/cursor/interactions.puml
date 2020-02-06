@@ -1,0 +1,25 @@
+@startuml
+!include ../../../copyright2020.iuml
+
+title Configure Cursor
+actor Client
+participant "<&spreadsheet> Cursor" as Cursor
+participant "<&question-mark> Cursor Entry" as CursorEntry
+
+Client -> CursorEntry: GET
+CursorEntry --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ cursor }""
+Client -> Cursor: POST
+hnote over Cursor #lightblue
+ ""{""
+ ""  size,""
+ ""  before || after""
+ ""}""
+end note
+Cursor --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //Paged Resource URL// |
+end note
+
+@enduml

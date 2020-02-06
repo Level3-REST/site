@@ -20,10 +20,10 @@ The Entry resource in the diagram is unchanged from the base list's [Entry](../l
 ## List Resource
 
 ```
-Profile: <https://level3.rest/patterns/list/editable#list-resource>
+Profile: <https://level3.rest/patterns/list#list-resource>
 ```
 
-The Editable List resource inherits the base [List](../list.md#list-resource) resource's profile requirements.
+See the [List](../list.md#list-resource) resource definition.
 
 ### empty-list
 
@@ -40,6 +40,14 @@ rel="https://level3.rest/patterns/list/editable#add-entry"
 ```
 
 Points to an [Add Entry](#add-entry-resource) resource that adds an entry to the list. This relationship is optional and may be implemented with a more semantic relationship like “add-to-basket” on a product in a shopping API or “add-to-team” on a player profile in a fantasy sports league API.
+
+## Entry Resource
+
+```
+Profile: <https://level3.rest/patterns/list#entry-resource>
+```
+
+See the [Entry](../list.md#entry-resource) resource definition.
 
 ## Empty List Resource
 

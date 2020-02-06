@@ -1,22 +1,23 @@
 ---
 layout: default
 title: Page
-description: Control pattern to manage list pagination.
+description: Control pattern to navigate resource pagination.
 parent: Patterns
 nav_order: 5
 permalink: /patterns/page
 ---
 # Page Pattern
 
-The Page pattern adds pagination affordances to resources that have multiple elements. The [List](#list.md) pattern often applies the Page pattern, giving clients control over pagination of the list’s entries.
+The Page pattern adds pagination links to resources that have multiple elements. The [List](list.md) pattern often applies the Page pattern to give clients the ability to page through the list’s entries. However, another type of data-providing resource, like an [Info](../profiles/info.md) resource, may contain a large list of elements that can page its data with this pattern.
 
-The [Paged](#paged-resource) resource has a [Page Info](#page-info-resource) resource that describes the pagination configuration. The paged resource also has cursor links to the `previous` and `next` pages. Clients can change the pagination configuration with the [Pagination](#pagination-resource) resource. An API may add additional pagination links to specific page markers if they choose.
+A [Paged](#paged-resource) resource has links to the previous and next pages. An API may add additional pagination links to specific page markers, like “first” and “last,” if their experience requires them.
 
 ![](page/relations.svg){: .center-image}
 
-The client changes page configuration by `POST`ing a new configuration form to the [Pagination](#pagination-resource) resource. Pagination returns the updated [Paged](#paged-resource) resource URL in it's `Location` response header.
+Clients manage Page size and placement in the list with either the [Offset Page](page/offset.md) pattern or the [Cursored Page](page/cursor.md) pattern. While not required, these patterns give the client control over how to formulate the pages. A Paged resource may choose to offer either pattern, depending on their data source and the desired user experience.
 
-![](page/interactions.svg){: .center-image}
+- [Offset Page](page/offset.md) pattern offers pagination with page size and page offset positioning. A client can position the page offset in the overall list and jump to any section of the Paged list.
+- [Cursored Page](page/cursor.md) pattern paginates a list with a cursor and page size, but the client is unaware of their position in the whole list. 
 
 ## Paged Resource
 
@@ -26,21 +27,13 @@ Profile: <https://level3.rest/patterns/page#paged-resource>
 
 The Paged resource can present any profile. The profile choice does not affect pagination.
 
-### page-info
-
-```
-rel="https://level3.rest/patterns/page#page-info"
-```
-
-Points to a [Page Info](#page-info-resource) resource that describes the configuration of the [Paged](#paged-resource) resource's pagination.
-
 ### next
 
 ```
 rel="https://level3.rest/patterns/page#next"
 ```
 
-Points to another [Paged](#paged-resource) resource that contains the next page of elements. This relationship is similar in concept to IANA's `next` link relation, which is defined by HTML 5 as the next document in a sequence.
+Points to another [Paged](#paged-resource) resource that contains the next page of elements. This relationship is similar in concept to IANA’s `next` link relation, which is defined by HTML 5 as the next document in a sequence.
 
 ### previous
 
@@ -48,50 +41,7 @@ Points to another [Paged](#paged-resource) resource that contains the next page 
 rel="https://level3.rest/patterns/page#previous"
 ```
 
-Points to another [Paged](#paged-resource) resource that contains the previous page of elements. This relationship is similar in concept to IANA's `previous` link relation, which is defined by HTML 5 as the previous document in a sequence.
-
-## Page Info Resource
-
-```
-Profile: <https://level3.rest/patterns/page#page-info-resource>
-```
-
-The Page Info resource describes the pagination configuration used in the [Paged](#paged-resource) resource. This resource should have relevant state fields describing the current page, page size and other information that helps the client determine which page the related Paged resource represents.
-
-| Property  | Purpose                                                      |
-| --------- | ------------------------------------------------------------ |
-| `current` | The current page. Page numbers are 1-based.                  |
-| `pages`   | The number of pages in the Paged resource. May be unknown, so a client will need to accept text statements in this property. |
-| `size`    | The number of elements per page.                             |
-
-### paginator
-
-```
-rel="https://level3.rest/patterns/page#paginator"
-```
-
-Points to a [Pagination](#pagination-resource) resource that can configure the pagination.
-
-## Pagination Resource
-
-```
-Profile: <https://level3.rest/patterns/page#pagination-resource>
-```
-
-The Pagination resource is an affordance to change the pagination configuration. It is a [Form](../profiles/form.md) resource containing the current configuration. The client can change the page size or the starting page so the client can select a different page to view. Once the client submits the form, the response's `Location` points to a [Paged](#paged-resource) resource configured with this pagination configuration.
-
-| Property | Purpose                                                      |
-| -------- | ------------------------------------------------------------ |
-| `size`   | The number of elements per page.                             |
-| `start`  | The starting page for the Paged view. Clients use this property to control what page to view. |
-
-### paginates
-
-```
-rel="https://level3.rest/patterns/page#paginates"
-```
-
-Points to the [Paged](#paged-resource) resource that this Pagination resource configures.
+Points to another [Paged](#paged-resource) resource that contains the previous page of elements. This relationship is similar in concept to IANA’s `previous` link relation, which is defined by HTML 5 as the previous document in a sequence.
 
 ## Specifications
 
