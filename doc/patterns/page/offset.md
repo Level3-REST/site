@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Page
+title: Offset Page
 description: Control pattern to manage list pagination.
 parent: Page
 grand_parent: Patterns
