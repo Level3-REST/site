@@ -1,0 +1,13 @@
+@startuml
+!include ../../copyright2020.iuml
+
+title Toggle Pattern
+
+rectangle "<&code> Toggle" as Toggle
+
+rectangle "<&arrow-circle-right> Toggler" as Toggler
+
+Toggle 0-->> Toggler: "toggle"
+Toggler 0-->> Toggle: "toggles"
+
+@enduml

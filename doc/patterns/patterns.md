@@ -68,6 +68,7 @@ Level 3 resource patterns can overlap and are simultaneously utilizable. When th
   - [Cursored Page](page/cursor.md)
 - [Chooser](chooser.md)
 - [Stepper](stepper.md)
+- [Toggle](toggle.md)
 - [Process](process.md)
 - [Metadata](metadata.md)
 

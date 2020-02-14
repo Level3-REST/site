@@ -3,7 +3,7 @@ layout: default
 title: Metadata
 description: Informational pattern to show metadata about another resource, like a content resource.
 parent: Patterns
-nav_order: 9
+nav_order: 10
 permalink: /patterns/metadata
 ---
 # Metadata Pattern
