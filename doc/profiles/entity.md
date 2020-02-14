@@ -41,7 +41,7 @@ When a client makes subsequent fetch requests for an already-fetched resource, t
 
 ### Conditional Operation
 
-A client can modify an Entity resource’s state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their request. 
+A client can modify an Entity resource’s state using `PUT` and `PATCH`, remove the resource using `DELETE`, or use the resource’s `POST` operation to create new resources. Due to the distributed nature of the internet, clients usually do not want to miss other modifications, either from another client or a backend system, and cause inconsistent state with their request.
 
 This problem, known as the “lost update” problem, is solved by reusing the validator headers from the fetch request. The client sends the `ETag` value in the `If-Match` header and the `Last-Modified` value in the `If-Unmodified-Since` header with their operation.
 
@@ -72,7 +72,7 @@ An Entity resource can mix in the [Preflight](preflight.md) profile to give the 
 | If-Match            | entity-tag, * | 404, 410, 412 (for entity-tag) |
 | If-Unmodified-Since | HTTP-date     | 404, 410, 412                  |
 
-Once the resource responds with `100 Continue`, then the client can send the full request including a payload. 
+Once the resource responds with `100 Continue`, then the client can send the full request including a payload.
 
 ## Specifications
 

@@ -40,7 +40,7 @@ In other cases, the pattern has no specification for the profile of the resource
 
 ### Link Relations
 
-Each pattern has a diagram showing the link relations between the resources. These link relations use simple string names for clarity. In practice, they should be fully-realized URLs, as per the [Web Linking](https://tools.ietf.org/html/rfc8288) standard for [extension relations](https://tools.ietf.org/html/rfc8288#section-2.1.2). 
+Each pattern has a diagram showing the link relations between the resources. These link relations use simple string names for clarity. In practice, they should be fully-realized URLs, as per the [Web Linking](https://tools.ietf.org/html/rfc8288) standard for [extension relations](https://tools.ietf.org/html/rfc8288#section-2.1.2).
 
 Every pattern definition includes a description of each relationship name detailing its full name and meaning. Patterns may not require every relation; those that are optional use dotted arrows and italicized relation names.
 

@@ -19,7 +19,7 @@ A [Paged](#paged-resource) resource has links to the previous and next pages. An
 Clients manage Page size and placement in the list with either the [Offset Page](page/offset.md) pattern or the [Cursored Page](page/cursor.md) pattern. While not required, these patterns give the client control over how to formulate the pages. A Paged resource may choose to offer either pattern, depending on their data source and the desired user experience.
 
 - [Offset Page](page/offset.md) pattern offers pagination with page size and page offset positioning. A client can position the page offset in the overall list and jump to any section of the Paged list.
-- [Cursored Page](page/cursor.md) pattern paginates a list with a cursor and page size, but the client is unaware of their position in the whole list. 
+- [Cursored Page](page/cursor.md) pattern paginates a list with a cursor and page size, but the client is unaware of their position in the whole list.
 
 ## Paged Resource
 

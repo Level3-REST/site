@@ -78,7 +78,7 @@ For both options the client [discovers](#discovery) the range and validator info
 
 ##### Fail-Fast
 
-Fail-Fast gives the client an option to perform range requests without triggering a full download if the client changes. The client follows the Entity  [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header as described above. If the content is the same, then the client receives a `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client receives a `409 Conflict` status. In this case, the client may choose to [fetch the content](#fetch-content) without validation headers.
+Fail-Fast gives the client an option to perform range requests without triggering a full download if the client changes. The client follows the Entity [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header as described above. If the content is the same, then the client receives a `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client receives a `409 Conflict` status. In this case, the client may choose to [fetch the content](#fetch-content) without validation headers.
 
 ![](content/fail-fast.svg){: .center-image}
 

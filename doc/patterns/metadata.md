@@ -38,7 +38,7 @@ The `metadata` link relation is similar to IANA’s “[describedby](https://www
 Profile: <https://level3.rest/patterns/metadata#metadata-resource>
 ```
 
-The Metadata resource presents the [Info profile](../profiles/info.md) and contains relevant details about the [Content](#content-resource) resource, depending on the type of content. Images can have metadata about the dimensions, resolution and colour model. Documents may contain metadata about the page count and author. 
+The Metadata resource presents the [Info profile](../profiles/info.md) and contains relevant details about the [Content](#content-resource) resource, depending on the type of content. Images can have metadata about the dimensions, resolution and colour model. Documents may contain metadata about the page count and author.
 
 Metadata should be used in other API contexts like search results or directory listings as they provide useful information for the client to select a Content resource. The `content` link gives the client navigability to the actual Content data should they choose to consume it.
 

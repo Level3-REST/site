@@ -24,7 +24,7 @@ Forms in Level 3 supply their form representation in two ways. One is to deliver
 
 ### Discovery
 
-The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` indicating the type of the request payload. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html),  [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The client must understand the content type and how to use the schema to produce a submission payload.
+The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` indicating the type of the request payload. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html), [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The client must understand the content type and how to use the schema to produce a submission payload.
 
 Alternately the Form can send a template object with empty fields, which is a sufficient approach for simple forms. In this case the `Content-Type` will reflect the format of the template object, like `application/json` or `application/xml`.
 

@@ -8,7 +8,7 @@ permalink: /patterns/tree
 ---
 # Tree Pattern
 
-[Trees](https://en.wikipedia.org/wiki/Tree_(data_structure)) represent real-world structures like directories, navigations, org charts and other hierarchies. Relationships bind the nodes of a tree together and give them context with the other nodes. 
+[Trees](https://en.wikipedia.org/wiki/Tree_(data_structure)) represent real-world structures like directories, navigations, org charts and other hierarchies. Relationships bind the nodes of a tree together and give them context with the other nodes.
 
 The Nodes in a tree have one `parent` link to their parent Node as well as a `top` link to the Tree. Top-level Nodes, those that are direct children of Tree, do not have a `parent` link. Nodes that have no `child` links are considered leaves.
 

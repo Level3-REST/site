@@ -26,7 +26,7 @@ Submit a content request to the resource. Clients are encouraged to send the `Co
 
 Clients can optionally send a `Slug` header that can be used to identify the submitted content later. The slug can be a file name, a title, or anything that helps identify the content. The slug’s text may show up in the Content’s URL, and possibly the `Content-Disposition` header. For more details on the [Slug header](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7), please refer to the Atom publishing protocol.
 
-The  `POST` response headers include the newly-created [Content](content.md) resource’s URL in `Location` as well as its Entity validation headers (`ETag`, `Last-Modified`) if available.
+The `POST` response headers include the newly-created [Content](content.md) resource’s URL in `Location` as well as its Entity validation headers (`ETag`, `Last-Modified`) if available.
 
 ![](upload/submit.svg){: .center-image}
 

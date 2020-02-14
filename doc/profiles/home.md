@@ -30,6 +30,6 @@ A client can fetch the Home with a `GET` request. The `Link` header will contain
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
-- 204 No Content:  [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+- 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 
 {% include footer.html %}

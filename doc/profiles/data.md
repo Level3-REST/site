@@ -26,7 +26,7 @@ A data resource can help clients update the resource state by providing a data s
 
 ### Fetch Data
 
-A client uses the  `GET` operation to fetch the Data’s representation.
+A client uses the `GET` operation to fetch the Data’s representation.
 
 ![](data/fetch.svg){: .center-image}
 
@@ -48,7 +48,7 @@ A client can use the `PUT` operation to replace the data in a Data resource. How
 
 A client can use the `PATCH` operation to modify portions of the data in a Data resource. The client must use a patch format supported by the resource (as discovered in the `Accept-Patch` header) and construct a patch payload to submit with the `PATCH` operation. The client should send a `Content-Type` header indicating the patch format. If the resource supports more than one patch media type, it may require this header for disambiguation.
 
-If the patch cannot be applied successfully, the resource returns `409 Conflict`. The client should re-fetch the data resource and rebuild the patch payload. If the patch is applicable, but the resulting data values violate business validation rules, the resource sends back  `403 Forbidden`.
+If the patch cannot be applied successfully, the resource returns `409 Conflict`. The client should re-fetch the data resource and rebuild the patch payload. If the patch is applicable, but the resulting data values violate business validation rules, the resource sends back `403 Forbidden`.
 
 ##### Rejections
 

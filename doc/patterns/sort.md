@@ -50,9 +50,9 @@ A sorting declaration in the `sort-order` array has these properties:
 Each additional sorting declaration sub-sorts the elements by that declaration. Consider this sort order array:
 
 ```json
-{ 
+{
   "sort-order": [
-    { "property": "age", "direction": "descend" }, 
+    { "property": "age", "direction": "descend" },
     { "property": "last-name", "direction": "ascend" }
   ]
 }
@@ -64,8 +64,8 @@ The XML representation looks like this:
 
 ```xml
 <sort-order>
-  <sort-by property="age" direction="descend"/> 
-  <sort-by property="last-name" direction="ascend"/> 
+  <sort-by property="age" direction="descend"/>
+  <sort-by property="last-name" direction="ascend"/>
 </sort-order>
 ```
 

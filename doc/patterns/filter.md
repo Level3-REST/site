@@ -68,9 +68,9 @@ A filtering declaration in the `filters` array has these properties:
 Each filter declaration further filters the elements by that declaration. The array of declarations `AND`s together to create an element list that matches every filter. Consider this filters array:
 
 ```json
-{ 
+{
   "filters": [
-    { "property": "age", "operand": "gte", "value": 30 }, 
+    { "property": "age", "operand": "gte", "value": 30 },
     { "property": "team", "operand": "in", "value": ["Bruins", "Canucks"] }
   ]
 }

@@ -22,7 +22,7 @@ The Action profile presents the required `Profile` and `Allow` headers.
 
 ### Trigger Action
 
-Clients trigger an Action by `POST`ing to it. The resource responds with `303 See Other` and the `Location` header points to the state that was changed by the triggered action. The resource returns a `403 Forbidden` status if the action cannot be completed because the business state will not accept it. 
+Clients trigger an Action by `POST`ing to it. The resource responds with `303 See Other` and the `Location` header points to the state that was changed by the triggered action. The resource returns a `403 Forbidden` status if the action cannot be completed because the business state will not accept it.
 
 ![](action/trigger.svg){: .center-image}
 

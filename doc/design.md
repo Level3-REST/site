@@ -51,7 +51,7 @@ The HTTP specs do not explicitly state when `Allow` should be returned, and in p
 
 Links are the connective state that binds a Level 3 API together. They are available to the client in a consistent way that is independent of the response body’s media type. The consumer does not have to fully understand the media type to discover the relationships a resource possesses. Link headers deliver this relationship data in a way that meets this constraint as well as the [Disjoin Design from Content-Type](#disjoin-design-from-content-type) constraint.
 
-Link headers follow the [Web Linking](https://tools.ietf.org/html/rfc8288) specification. When constructing a link, one can use a [registered relationship name](https://www.iana.org/assignments/link-relations/link-relations.xhtml) like “next” or “about” or one can use the extension model with an HTTP address for the `rel` name. This address points to a human-readable description of the relationship. A Level 3 API often uses the extension model to precisely define the relationship, or to disambiguate between two links that could use the same IANA `rel` name but need to differentiate themselves. 
+Link headers follow the [Web Linking](https://tools.ietf.org/html/rfc8288) specification. When constructing a link, one can use a [registered relationship name](https://www.iana.org/assignments/link-relations/link-relations.xhtml) like “next” or “about” or one can use the extension model with an HTTP address for the `rel` name. This address points to a human-readable description of the relationship. A Level 3 API often uses the extension model to precisely define the relationship, or to disambiguate between two links that could use the same IANA `rel` name but need to differentiate themselves.
 
 [Some concern exists](https://maxchadwick.xyz/blog/http-response-header-size-limits) that responses containing a large number of headers may breach their server’s limits on overall response header size (generally 8k). APIs should address this particular constraint by limiting the number of Links a resource may have. For instance, [List](patterns/list.md) resources should use [pagination](patterns/page.md) to control the number of items they present rather than listing out hundreds of item links. A client may not have the capability of processing hundreds of links and needs to consume digestible sets.
 
@@ -59,7 +59,7 @@ HTTP/2’s [header compression](https://http2.github.io/http2-spec/compression.h
 
 ### Links are Ephemeral
 
-The links between resources are not guaranteed to be present on every request and resource instance, even though a pattern may specify them. A link to another resource may not make sense given the state of the resource, so a client should always test for link existence at runtime and gracefully react when a link is absent. Links are the engine of application state, and they must reflect the system’s state with absence as well as presence. 
+The links between resources are not guaranteed to be present on every request and resource instance, even though a pattern may specify them. A link to another resource may not make sense given the state of the resource, so a client should always test for link existence at runtime and gracefully react when a link is absent. Links are the engine of application state, and they must reflect the system’s state with absence as well as presence.
 
 ### Backtrace to Root
 
