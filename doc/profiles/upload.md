@@ -3,7 +3,7 @@ layout: default
 title: Upload
 description: Accepts Content Submissions, Often Unstructured Bytes
 parent: Profiles
-nav_order: 8
+nav_order: 9
 permalink: /profiles/upload
 ---
 # Upload Profile

@@ -3,7 +3,7 @@ layout: default
 title: Form
 description: Collects Form-Style Data
 parent: Profiles
-nav_order: 8
+nav_order: 7
 permalink: /profiles/form
 ---
 # Form Profile
@@ -20,13 +20,13 @@ Forms often create new resources, but can also be used to direct a client to a p
 
 ##### Form Content
 
-Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or pre-populated. The other is to supply a form schema that the client uses to construct a form payload to submit. The client can learn the form representation during Discovery by reviewing the `Content-Type` header.
+Forms in Level 3 supply their form representation in two ways. One is to deliver a simple object template with fields that are either empty or pre-populated. The other is to provide a form schema that the client uses to construct a form payload to submit. The client can learn the form representation format during Discovery by reviewing the `Content-Type` header.
 
 ### Discovery
 
-The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` indicating the type of the request payload. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html), [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The client must understand the content type and how to use the schema to produce a submission payload.
+The Form profile presents the required `Profile` and `Allow` headers as well as a `Content-Type` header indicating the request payload type. The resource may provide a `Content-Type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html), [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a form payload. The client must understand the content type and how to use the schema to produce a submission payload.
 
-Alternately the Form can send a template object with empty fields, which is a sufficient approach for simple forms. In this case the `Content-Type` will reflect the format of the template object, like `application/json` or `application/xml`.
+Alternately the Form can send a template object with empty fields, which is a good approach for simple forms. In this case the `Content-Type` will reflect the template object’s format, like `application/json` or `application/xml`.
 
 ![](form/discovery.svg){: .center-image}
 
@@ -34,7 +34,7 @@ Alternately the Form can send a template object with empty fields, which is a su
 
 First, a client `GET`s the representation from the Form resource. The representation could be a schema definition or a template object with empty fields. Both the schema and form template can include default values.
 
-If the representation is a schema, then it should be used to construct a form object. If the representation is a template object, then it should be filled in by the client. The completed object is then `POST`ed back to the Form resource.
+If the representation is a schema, then the client uses it to construct a form object. If the representation is a template object then it should be filled in by the client. The completed object is then `POST`ed back to the Form resource.
 
 Clients should always `GET` the representation for every request rather than reusing the schema or form template from a previous request. The Form’s data requirements may have changed since the client last fetched the representation.
 

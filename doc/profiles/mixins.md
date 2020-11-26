@@ -2,8 +2,8 @@
 layout: default
 title: Mixins
 parent: Profiles
-description: Reusable, Client-Centric Hypermedia Patterns for Any REST API
-nav_order: 10
+description: Mixins extend a resource’s Profile with new capabilities.
+nav_order: 11
 has_children: true
 has_toc: false
 permalink: /profiles/mixins

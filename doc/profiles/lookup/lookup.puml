@@ -1,0 +1,38 @@
+@startuml
+!include ../../copyright2020.iuml
+
+title Lookup Query
+
+actor Client
+participant "<&eye> Lookup" as Lookup
+participant "<&question-mark> Other" as Other
+
+Client -> Lookup: GET
+Lookup --> Client: 200 OK
+hnote over Client #darkseagreen: schema or ""{ template }""
+note over Client
+  //Client constructs Lookup query//
+  //with schema or fills in template//
+end note
+...
+Client -> Lookup: POST
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""Content-Type"" | //media-type// |
+end note
+hnote over Lookup #lightsteelblue: ""{ Lookup }""
+Lookup --> Client: 303 See Other / 404 Not Found
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Location"" | //Resource URL// |
+end note
+group failure: Lookup rejected
+  Lookup -->o Client: 400 Bad Request
+  Lookup -->o Client: 422 Unprocessable Entity
+  Lookup -->o Client: 403 Forbidden
+end
+group 303: Redirect to Location URL
+  Client -> Other: GET
+  ...
+end
+@enduml

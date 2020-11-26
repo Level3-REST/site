@@ -20,26 +20,3 @@
 <p/>
 <a href="https://twitter.com/intent/tweet" class="twitter-mention-button" data-show-count="false">Tweet about Level 3 REST</a>
 <script async src="https://platform.twitter.com/widgets.js"></script>
-<div id="vssue"></div>
-<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
-<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
-<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
-<script>
-  new Vue({
-    el: '#vssue',
-    render: h => h('Vssue', {
-      props: {
-        options: {
-          perPage: 20,
-          prefix: '',
-          admins: ['mattbishop'],
-          labels: [`comments for ${document.location.pathname}`],
-          owner: 'Level3-REST',
-          repo: 'site',
-          clientId: '8fc0df7ae638d3dc8db4',
-          clientSecret: 'b171d372e4a5ba1c85d5f4ea77db3931118a0705'
-        }
-      }
-    })
-  });
-</script>

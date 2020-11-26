@@ -1,0 +1,18 @@
+@startuml
+!include ../../copyright2020.iuml
+
+title Discovery
+
+actor Client
+participant "<&eye> Lookup" as Lookup
+
+Client -> Lookup: HEAD
+Lookup --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""Allow"" | ""HEAD,GET,POST"" |
+  | ""Content-Type"" | //content-type// |
+  | ""Profile"" | ""<https://level3.rest/profiles/lookup>"" |
+end note
+
+@enduml

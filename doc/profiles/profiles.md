@@ -32,6 +32,7 @@ HTTP has additional headers and status codes to represent authorization, content
 - Controls
   - [Action](action.md)
   - [Form](form.md)
+  - [Lookup](lookup.md)
   - [Upload](upload.md)
 - [Mixins](mixins.md)
   - [Entity](entity.md)

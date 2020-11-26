@@ -3,7 +3,7 @@ layout: default
 title: Action
 description: Execute an Action Without Data
 parent: Profiles
-nav_order: 7
+nav_order: 6
 permalink: /profiles/action
 ---
 # Action Profile
