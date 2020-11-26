@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Layout
+title: Lookup
 description: Looks up another resource with a query form
 parent: Profiles
 nav_order: 8
