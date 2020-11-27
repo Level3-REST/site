@@ -10,7 +10,7 @@ rectangle Entry [
   ""cursor""
 ]
 rectangle Cursor [
-  <&spreadsheet> Cursor
+  <&eye> Cursor
   ....
   ""size""
   ""before || after""

@@ -11,7 +11,7 @@ rectangle PageInfo [
   ""size""
 ]
 rectangle Pagination [
-  <&spreadsheet> Pagination
+  <&eye> Pagination
   ....
   ""size""
   ""start""

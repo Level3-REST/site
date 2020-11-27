@@ -7,6 +7,7 @@ rectangle "<&info> Info" as Info
 rectangle "<&code> Data" as Data
 rectangle "<&data-transfer-download> Content" as Content
 rectangle "<&spreadsheet> Form" as Form
+rectangle "<&eye> Lookup" as Lookup
 rectangle "<&arrow-circle-right> Action" as Action
 rectangle "<&data-transfer-upload> Upload" as Upload
 rectangle "<&share> Alias" as Alias

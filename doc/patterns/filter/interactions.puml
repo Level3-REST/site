@@ -3,7 +3,7 @@
 
 title Configure Filtering
 actor Client
-participant "<&spreadsheet> Filtration" as Filtration
+participant "<&eye> Filtration" as Filtration
 
 Client -> Filtration: POST
 hnote over Filtration #lightsteelblue: ""{ filters }""

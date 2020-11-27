@@ -83,14 +83,9 @@ Points to a [Sorter](#sorter-resource) resource that can configure the element o
 Profile: <https://level3.rest/patterns/sort#sorter-resource>
 ```
 
-The Sorter resource changes the [Sorted](#sorted-resource) resource’s sorting configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the Form resource does not use a schema. If only a subset of the properties is sortable, then the Sorter resource should present a schema to help the client submit a successful sorting change.
+The Sorter resource changes the [Sorted](#sorted-resource) resource’s sort configuration. It is a [Lookup](../profiles/lookup.md) resource that starts with the current configuration in its schema representation, or its template object if the lookup does not use a schema. If only a subset of the properties are sortable, then the Sorter resource should present a schema to help the client submit a successful sorting change.
 
-The Form creates a sorting declaration array. This array has objects with these properties:
-
-| Property    | Purpose                       |
-| ----------- | ----------------------------- |
-| `property`  | The property being sorted by. |
-| `direction` | Either `ascend` or `descend`. |
+A Sorter's content is the same as the [Sort Info](#sort-info-resource) content. Clients edit the configuration to reflect the desired sort configuration. When this new configuration is submitted to the Sorter resource, the lookup redirects to the newly-configured [Sorted](#sorted-resource) resource.
 
 ### sorts
 

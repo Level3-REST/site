@@ -3,11 +3,11 @@
 
 title Configure Offset Pagination
 actor Client
-participant "<&spreadsheet> Pagination" as Pagination
+participant "<&eye> Pagination" as Pagination
 
 Client -> Pagination: POST
 hnote over Pagination #lightblue: ""{ size, start }""
-Pagination --> Client: 200 OK
+Pagination --> Client: 303 See Other
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //Paged Resource URL// |

@@ -70,7 +70,7 @@ In a List resource, the cursor entries are individual [List Entry](../list.md#en
 Profile: <https://level3.rest/patterns/page/cursor#cursor-resource>
 ```
 
-The Cursor resource is a form to change the cursor pagination configuration. It is a [Form](../../profiles/form.md) resource containing the current configuration. The client can specify the page size and either the `before` or `after` cursor to select a different page point to navigate through. Once the client submits the form, the response’s `Location` points to a [Paged](#paged-resource) resource configured with this configuration.
+The Cursor resource is a form to change the cursor pagination configuration. It is a [Lookup](../../profiles/lookup.md) resource containing the current configuration. The client can specify the page size and either the `before` or `after` cursor to select a different page point to navigate through. Once the client submits the lookup, the redirects to the [Paged](#paged-resource) resource configured with this configuration.
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |

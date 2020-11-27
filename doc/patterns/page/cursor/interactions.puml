@@ -3,7 +3,7 @@
 
 title Configure Cursor
 actor Client
-participant "<&spreadsheet> Cursor" as Cursor
+participant "<&eye> Cursor" as Cursor
 participant "<&question-mark> Cursor Entry" as CursorEntry
 
 Client -> CursorEntry: GET
@@ -16,7 +16,7 @@ hnote over Cursor #lightblue
  ""  before || after""
  ""}""
 end note
-Cursor --> Client: 200 OK
+Cursor --> Client: 303 See Other
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Location"" | //Paged Resource URL// |

@@ -3,7 +3,7 @@
 
 title Configure Sorting
 actor Client
-participant "<&spreadsheet> Sorter" as Sorter
+participant "<&eye> Sorter" as Sorter
 
 Client -> Sorter: POST
 hnote over Sorter #lightsteelblue: ""{ sort-order }""

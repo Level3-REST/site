@@ -5,7 +5,7 @@ title Filter Pattern
 rectangle "<&question-mark> Filtered" as Filtered
 rectangle "<&info> Filter Info" as Filtering
 rectangle Filtration [
-  <&spreadsheet> Filtration
+  <&eye> Filtration
   ....
   ""[ { property, operand, value } ]""
 ]

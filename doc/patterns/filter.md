@@ -104,15 +104,9 @@ Points to a [Filtration](#filtration-resource) resource that configures the filt
 Profile: <https://level3.rest/patterns/filter#filtration-resource>
 ```
 
-The Filtration resource changes the [Filtered](#filtered-resource) resource’s filtration configuration. It is a [Form](../profiles/form.md) resource that starts with the current configuration in its schema representation, or its template object if the form does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
+The Filtration resource changes the [Filtered](#filtered-resource) resource’s filtration configuration. It is a [Lookup](../profiles/lookup.md) resource that starts with the current configuration in its schema representation, or its template object if the lookup does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
 
-The form creates a filters array. This array has objects with these properties:
-
-| Property   | Purpose                             |
-| ---------- | ----------------------------------- |
-| `property` | The property being filtered.        |
-| `operand`  | The filtering [operand](#operands). |
-| `value`    | Filter value.                       |
+A Filtration's content is the same as the [Filter Info](#filter-info-resource) content. Clients edit the configuration to reflect the desired filtration configuration. When this new configuration is submitted to the Filtration resource, the lookup redirects to the newly-configured [Filtered](#filtered-resource) resource.
 
 ### filters
 
