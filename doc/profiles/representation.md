@@ -29,7 +29,7 @@ The client sends a `Prefer: return=representation` header indicating that they w
 
 ### Omit Representation
 
-The Prefer header parameter `return` also accepts the value `minimal`  which tells the resource to omit a response representation.
+The Prefer header parameter `return` also accepts the value `minimal`  which tells the resource to omit a response representation. The responce will contain a `Content-Location` header that indicates the URL for the full representation. In the case of a `POST` response, the `Location` header is omitted.
 
 ![](representation/minimal.svg){: .center-image}
 

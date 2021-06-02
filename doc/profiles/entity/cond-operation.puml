@@ -10,15 +10,15 @@ Client -> Entity: GET
 Entity --> Client
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag"" | //entity-tag// |
-  | ""Last-Modified"" | //HTTP-date// |
+  | ""ETag:"" | //entity-tag// |
+  | ""Last-Modified:"" | //HTTP-date// |
 end note
 ...
 Client -> Entity: PUT / POST / PATCH / DELETE
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""If-Unmodified-Since"" | //HTTP-date// |
-  | ""If-Match"" | //entity-tag// |
+  | ""If-Unmodified-Since:"" | //HTTP-date// |
+  | ""If-Match:"" | //entity-tag// |
 end note
 hnote over Entity #lightsteelblue
   ""    payload""
@@ -27,8 +27,8 @@ end note
 Entity --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag"" | //entity-tag// |
-  | ""Last-Modified"" | //HTTP-date// |
+  | ""ETag:"" | //entity-tag// |
+  | ""Last-Modified:"" | //HTTP-date// |
 
   // omitted for DELETE//
 end note

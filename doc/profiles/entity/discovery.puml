@@ -10,9 +10,9 @@ Client -> Entity: HEAD
 Entity --> Client
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag"" | //entity-tag// |
-  | ""Last-Modified"" | //HTTP-date// |
-  | ""Profile"" | ""<https://level3.rest/profiles/mixins/entity>"", |
+  | ""ETag:"" | //entity-tag// |
+  | ""Last-Modified:"" | //HTTP-date// |
+  | ""Profile:"" | ""<https://level3.rest/profiles/mixins/entity>"", |
   | | ""<other-profile>"" |
 end note
 

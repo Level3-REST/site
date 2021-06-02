@@ -10,7 +10,7 @@ Client -> Action: POST
 Action --> Client: 303 See Other
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //URL// |
+  | ""Location:"" | //URL// |
 end note
 group failure: rejected
   Action -->o Client: 403 Forbidden

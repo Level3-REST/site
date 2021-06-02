@@ -10,16 +10,16 @@ Client -> Entity: GET
 Entity --> Client
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag"" | //entity-tag// |
-  | ""Last-Modified"" | //HTTP-date// |
+  | ""ETag:"" | //entity-tag// |
+  | ""Last-Modified:"" | //HTTP-date// |
 end note
 hnote over Client #darkseagreen: ""payload""
 ...
 Client -> Entity: GET
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""If-Modified-Since"" | //HTTP-date// |
-  | ""If-None-Match"" | //entity-tag// |
+  | ""If-Modified-Since:"" | //HTTP-date// |
+  | ""If-None-Match:"" | //entity-tag// |
 end note
 Entity --> Client: 304 Not Modified
 

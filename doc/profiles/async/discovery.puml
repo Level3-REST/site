@@ -10,7 +10,7 @@ Client -> Async: HEAD
 Async --> Client
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Profile"" | ""<https://level3.rest/profiles/mixins/async>"", |
+  | ""Profile:"" | ""<https://level3.rest/profiles/mixins/async>"", |
   | | ""<other-profile>"" |
 end note
 

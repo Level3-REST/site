@@ -10,10 +10,10 @@ Client -> Content: GET
 Content --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Accept-Ranges"" | ""bytes"" //or// ""none"" |
-  | ""Content-Length"" | //byte-count// |
-  | ""Content-Type"" | //media-type// |
-  | ""Content-Disposition"" | //disposition// |
+  | ""Accept-Ranges:"" | ""bytes"" //or// ""none"" |
+  | ""Content-Length:"" | //byte-count// |
+  | ""Content-Type:"" | //media-type// |
+  | ""Content-Disposition:"" | //disposition// |
 end note
 hnote over Client #darkseagreen: ""...bytes...""
 

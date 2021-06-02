@@ -10,9 +10,9 @@ Client -> Form: HEAD
 Form --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow"" | ""HEAD,GET,POST"" |
-  | ""Content-Type"" | //content-type// |
-  | ""Profile"" | ""<https://level3.rest/profiles/form>"" |
+  | ""Allow:"" | ""HEAD,GET,POST"" |
+  | ""Content-Type:"" | //content-type// |
+  | ""Profile:"" | ""<https://level3.rest/profiles/form>"" |
 end note
 
 @enduml

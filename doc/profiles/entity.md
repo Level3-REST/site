@@ -69,8 +69,8 @@ An Entity resource can mix in the [Preflight](preflight.md) profile to give the 
 
 | Header              | Value         | Rejection Status Codes         |
 | ------------------- | ------------- | ------------------------------ |
-| If-Match            | entity-tag, * | 404, 410, 412 (for entity-tag) |
-| If-Unmodified-Since | HTTP-date     | 404, 410, 412                  |
+| If-Match            | entity-tag, * | 404, 412 (for entity-tag) |
+| If-Unmodified-Since | HTTP-date     | 404, 412 (for entity-tag) |
 
 Once the resource responds with `100 Continue`, then the client can send the full request including a payload.
 
@@ -84,7 +84,6 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 404 Not Found: [section 6.5.4](https://tools.ietf.org/html/rfc7231#section-6.5.4)
-- 410 Gone: [section 6.5.9](https://tools.ietf.org/html/rfc7231#section-6.5.9)
 - Validation header fields: [section 7.2](https://tools.ietf.org/html/rfc7231#section-7.2)
 
 Conditional Requests: [RFC 7232](https://tools.ietf.org/html/rfc7232)

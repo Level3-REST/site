@@ -8,8 +8,5 @@ participant "<&aperture> Nexus" as Nexus
 
 Client -> Nexus: DELETE
 Nexus --> Client: 204 No Content
-...
-Client -> Nexus: GET
-Nexus --> Client: 404 Not Found\n410 Gone
 
 @enduml

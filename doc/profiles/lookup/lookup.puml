@@ -18,13 +18,13 @@ end note
 Client -> Lookup: POST
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Type"" | //media-type// |
+  | ""Content-Type:"" | //media-type// |
 end note
 hnote over Lookup #lightsteelblue: ""{ Lookup }""
 Lookup --> Client: 303 See Other / 404 Not Found
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Resource URL// |
+  | ""Location:"" | //Resource URL// |
 end note
 group failure: Lookup rejected
   Lookup -->o Client: 400 Bad Request

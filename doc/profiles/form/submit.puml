@@ -17,13 +17,13 @@ end note
 Client -> Form: POST
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Type"" | //media-type// |
+  | ""Content-Type:"" | //media-type// |
 end note
 hnote over Form #lightsteelblue: ""{ form }""
 Form --> Client: 201 Created / 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Resource URL// |
+  | ""Location:"" | //Resource URL// |
 end note
 group failure: form rejected
   Form -->o Client: 400 Bad Request

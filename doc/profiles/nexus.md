@@ -32,7 +32,9 @@ A client can fetch the Nexus’ state with a `GET` request. The state informatio
 
 ### Remove Nexus
 
-Nexus resources, as central points of business context, might not be entirely deleted by the underlying system. Subsequent calls to the removed Nexus can return `410 Gone` to indicate it did exist once but no longer. An API should not represent a `DELETE` result as a terminal state like “deleted” but should instead make a state transition to this final state as part of its workflow.
+Nexus resources, as central points of business context, might be removable from the underlying system. Removing a Nexus may have follow-on effects on related resources such that they are also removed or orphaned by the removal of their linked Nexus resource.
+
+Clients remove a nexus by sending a `DELETE` request.
 
 ![](nexus/remove.svg){: .center-image}
 
@@ -43,6 +45,5 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 404 Not Found: [section 6.5.4](https://tools.ietf.org/html/rfc7231#section-6.5.4)
-- 410 Gone: [section 6.5.9](https://tools.ietf.org/html/rfc7231#section-6.5.9)
 
 {% include footer.html %}

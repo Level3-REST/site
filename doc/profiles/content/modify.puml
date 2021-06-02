@@ -9,8 +9,8 @@ participant "<&data-transfer-download> Content" as Content
 Client -> Content: PUT
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Length"" | //byte-count// |
-  | ""Content-Type"" | //media-type// |
+  | ""Content-Length:"" | //byte-count// |
+  | ""Content-Type:"" | //media-type// |
 end note
 hnote over Content #lightsteelblue: ""...bytes...""
 Content --> Client: 204 No Content

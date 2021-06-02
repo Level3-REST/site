@@ -9,28 +9,28 @@ Client -> Content: GET / HEAD
 Content --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Accept-Ranges"" | ""bytes"" |
-  | ""ETag"" | //entity-tag// |
-  | ""Content-Length"" | //byte-count// |
-  | ""Content-Type"" | //media-type// |
-  | ""Last-Modified"" | //HTTP-date// |
-  | ""Content-Disposition"" | //disposition// |
-  | ""Profile"" | ""<https://level3.rest/profiles/content>,"" |
+  | ""Accept-Ranges:"" | ""bytes"" |
+  | ""ETag:"" | //entity-tag// |
+  | ""Content-Length:"" | //byte-count// |
+  | ""Content-Type:"" | //media-type// |
+  | ""Last-Modified:"" | //HTTP-date// |
+  | ""Content-Disposition:"" | //disposition// |
+  | ""Profile:"" | ""<https://level3.rest/profiles/content>,"" |
   | | ""<https://level3.rest/profiles/mixins/entity>"" |
 end note
 ...
 Client -> Content: GET
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Range"" | ""bytes=""//byte-range// |
-  | ""ETag"" | //entity-tag// |
-  | ""Last-Modified"" | //HTTP-date// |
+  | ""Range:"" | ""bytes=""//byte-range// |
+  | ""ETag:"" | //entity-tag// |
+  | ""Last-Modified:"" | //HTTP-date// |
 end note
 Content --> Client: 206 Partial Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Content-Length"" | //byte-count// |
-  | ""Content-Range"" | ""bytes ""//byte-range//""/""//total// |
+  | ""Content-Length:"" | //byte-count// |
+  | ""Content-Range:"" | ""bytes ""//byte-range//""/""//total// |
 end note
 hnote over Client #darkseagreen: ""...partial bytes...""
 group failure: rejected
@@ -38,7 +38,7 @@ group failure: rejected
   Content -->o Client: 416 Range Not Satisfiable
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Content-Range"" | ""bytes */""//total// |
+  | ""Content-Range:"" | ""bytes */""//total// |
 end note
 end
 

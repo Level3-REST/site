@@ -10,9 +10,9 @@ Client -> Nexus: HEAD
 Nexus --> Client: 200 OK / 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow"" | ""HEAD,GET,DELETE"" |
-  | *""Content-Type"" | //content-type// |
-  | ""Profile"" | ""<https://level3.rest/profiles/nexus>"" |
+  | ""Allow:"" | ""HEAD,GET,DELETE"" |
+  | *""Content-Type:"" | //content-type// |
+  | ""Profile:"" | ""<https://level3.rest/profiles/nexus>"" |
 
   //*""200 OK""//
 end note

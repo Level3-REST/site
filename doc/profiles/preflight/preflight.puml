@@ -10,7 +10,7 @@ participant "<&check> Preflight" as Preflight
 Client -> Preflight: POST / PUT / PATCH
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Expect"" | ""100-continue"" |
+  | ""Expect:"" | ""100-continue"" |
   // Headers to preflight//
 end note
 Preflight --> Client: 100 Continue

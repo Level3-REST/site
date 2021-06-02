@@ -19,7 +19,7 @@ end note
 Cursor --> Client: 303 See Other
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location"" | //Paged Resource URL// |
+  | ""Location:"" | //Paged Resource URL// |
 end note
 
 @enduml
