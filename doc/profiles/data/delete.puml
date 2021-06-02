@@ -1,0 +1,12 @@
+@startuml
+!include ../../copyright2021.iuml
+
+title Remove Data
+
+actor Client
+participant "<&code> Data" as Data
+
+Client -> Data: DELETE
+Data --> Client: 204 No Content
+
+@enduml

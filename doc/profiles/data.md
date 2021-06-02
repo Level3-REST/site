@@ -62,6 +62,12 @@ If the patch cannot be applied successfully, the resource returns `409 Conflict`
 
 ![](data/modify.svg){: .center-image}
 
+### RemoveData
+
+A client can remove a Data resource by sending a `DELETE` request.
+
+![](data/delete.svg){: .center-image}
+
 # Mixins
 
 ## Entity Mixin
