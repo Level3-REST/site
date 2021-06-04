@@ -11,11 +11,13 @@ rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
   | ""Prefer:"" | ""return=minimal"" |
 end note
-Representation --> Client: 204 No Content / 201 Created
+Representation --> Client: 201 Created / 204 No Content / 3xx redirect
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Content-Location:"" | //URL to the full representation// |
   | ""Preference-Applied:"" | ""return=minimal"" |
+  | *""Location:""   | //URL to the full representation// |
+  | | |
+  | *//for POST operations//| |
 end note
 
 @enduml

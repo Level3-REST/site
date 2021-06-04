@@ -82,6 +82,7 @@ Additional HTTP Status Codes: [RFC 6585](https://tools.ietf.org/html/rfc6585)
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
+- 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 404 Not Found: [section 6.5.4](https://tools.ietf.org/html/rfc7231#section-6.5.4)
 - Validation header fields: [section 7.2](https://tools.ietf.org/html/rfc7231#section-7.2)

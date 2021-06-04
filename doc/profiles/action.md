@@ -30,13 +30,13 @@ Clients trigger an Action by `POST`ing to it. The resource responds with `303 Se
 
 ## Representation Mixin
 
-The [Representation profile](representation.md) mixin enables the client to receive the target representation in the Action response.
+The [Representation profile](representation.md) mixin enables the client to receive the target representation in the Action response instead of a redirect to the `Location` URL.
 
 ## Specifications
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
-- 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+- 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 303 See Other: [section 6.4.4](https://tools.ietf.org/html/rfc7231#section-6.4.4)
 - 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 

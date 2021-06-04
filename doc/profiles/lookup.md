@@ -51,6 +51,12 @@ Once the client submits the query, the resource responds with a `303 See Other` 
 
 ![](lookup/lookup.svg){: .center-image}
 
+# Mixins
+
+## Representation Mixin
+
+A Lookup resource can provide the [Representation profile](representation.md) as a mixin so clients can receive the relevant `Location`’s representation in the submission response. This approach saves the round-trip to GET the found resource at the cost of missing a possibly-cached representation in the GET request.
+
 ## Specifications
 
 HTTP Extensions for WebDAV: [RFC 4918](https://tools.ietf.org/html/rfc4918)

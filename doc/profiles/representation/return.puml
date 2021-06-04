@@ -15,6 +15,9 @@ Representation --> Client: 200 OK / 201 Created
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Preference-Applied:"" | ""return=representation"" |
+  | *""Content-Location:""   | //URL to the full representation// |
+  | | |
+  | *//for POST operations//| |
 end note
 hnote over Client #darkseagreen: ""payload""
 

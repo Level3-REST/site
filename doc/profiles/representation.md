@@ -23,15 +23,19 @@ Resources that support the Representation profile include the Representation pro
 
 ### Return Representation
 
-The client sends a `Prefer: return=representation` header indicating that they want the content of the created or modified representation returned with the response. This header saves them from having to issue a `GET` request to fetch the changed state. The resource returns a status of `200 OK` instead of `204 No Content` for `PUT` and `PATCH` operations.
+The client sends a `Prefer: return=representation` header indicating that they want the content of the representation returned with the response. This header saves them from having to issue a `GET` request to fetch the state. The resource returns a status of `200 OK` instead of `204 No Content` for `PUT` and `PATCH` operations. In the case of a `POST` response, the `Location` header will be omitted. Instead, the response will have a `Content-Location` header that indicates the URL for the full representation. 
+
+Some profiles (see [Action](./action.md) and [Lookup](./lookup.md)) use the `POST` operation and return a redirect status code such as `303` or `307` along with a `Location` header that the client follows to retrieve the resource. When a resource implements the Representation mixin, and the client sends `Prefer: return=representation` in their request, the resource will return the resource representation instead of a redirect status.
 
 ![](representation/return.svg){: .center-image}
 
 ### Omit Representation
 
-The Prefer header parameter `return` also accepts the value `minimal`  which tells the resource to omit a response representation. The responce will contain a `Content-Location` header that indicates the URL for the full representation. In the case of a `POST` response, the `Location` header is omitted.
+The `Prefer` header parameter `return` also accepts the value `minimal`  which tells the resource to return no representation and instead return the normal status code for that resource operation. `POST` operations will add the appropriate `Location` header. 
 
 ![](representation/minimal.svg){: .center-image}
+
+
 
 ## Specifications
 

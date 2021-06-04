@@ -103,7 +103,6 @@ JSON Patch: [RFC 6902](https://tools.ietf.org/html/rfc6902)
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
-- 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 - 409 Conflict: [section 6.5.8](https://tools.ietf.org/html/rfc7231#section-6.5.8)
 

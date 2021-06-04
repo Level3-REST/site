@@ -6,7 +6,7 @@ actor Client
 participant "<&arrow-circle-right> Action" as Action
 
 Client -> Action: HEAD / GET
-Action --> Client: 204 No Content
+Action --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Allow:"" | ""HEAD,GET,POST"" |

@@ -43,6 +43,7 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
 - Expect: [section 5.1.1](https://tools.ietf.org/html/rfc7231#section-5.1.1)
 - 100 Continue: [section 6.2.1](https://tools.ietf.org/html/rfc7231#section-6.2.1)
+- 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 417 Expectation Failed: [section 6.5.14](https://tools.ietf.org/html/rfc7231#section-6.5.14)
 
 {% include footer.html %}

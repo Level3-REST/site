@@ -20,13 +20,13 @@ A Nexus resource offers the `DELETE` operation which removes the Nexus resource 
 
 ### Discovery
 
-The Nexus profile presents the required `Profile` and `Allow` headers. If the resources offers no state data, it will return `204 No Content`.
+The Nexus profile presents the required `Profile` and `Allow` headers. If the resources offers state data, it must include the `Content-Type` header indicating the mime type of the representation.
 
 ![](nexus/discovery.svg){: .center-image}
 
 ### Fetch Nexus
 
-A client can fetch the Nexus’ state with a `GET` request. The state information is in the payload. If the resource has no state, it will return `204 No Content` instead of `200 OK` and a state body.
+A client can fetch the Nexus’ state with a `GET` request. The state information is in the payload.
 
 ![](nexus/fetch.svg){: .center-image}
 
@@ -44,6 +44,5 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
-- 404 Not Found: [section 6.5.4](https://tools.ietf.org/html/rfc7231#section-6.5.4)
 
 {% include footer.html %}

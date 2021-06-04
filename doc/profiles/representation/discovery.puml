@@ -7,7 +7,7 @@ actor Client
 participant "<&transfer> Representation" as Representation
 
 Client -> Representation: HEAD
-Representation --> Client
+Representation --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Profile:"" | ""<https://level3.rest/profiles/mixins/representation>"", |

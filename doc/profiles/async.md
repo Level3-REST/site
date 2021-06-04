@@ -56,7 +56,6 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 201 Created: [section 6.3.2](https://tools.ietf.org/html/rfc7231#section-6.3.2)
 - 202 Accepted: [section 6.3.3](https://tools.ietf.org/html/rfc7231#section-6.3.3)
-- 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 
 Prefer Header for HTTP: [RFC 7240](https://tools.ietf.org/html/rfc7240)
 

@@ -7,7 +7,7 @@ actor Client
 participant "<&home> Home" as Home
 
 Client -> Home: HEAD
-Home --> Client: 204 No Content
+Home --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Allow:"" | ""HEAD,GET"" |
