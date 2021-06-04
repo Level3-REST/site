@@ -7,7 +7,7 @@ actor Client
 participant "<&badge> Entity" as Entity
 
 Client -> Entity: GET
-Entity --> Client
+Entity --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""ETag:"" | //entity-tag// |
