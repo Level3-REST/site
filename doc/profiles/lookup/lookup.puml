@@ -28,8 +28,8 @@ rnote left #lightgreen
 end note
 group failure: Lookup rejected
   Lookup -->o Client: 400 Bad Request
+  Lookup -->o Client: 415 Unsupported Media Type
   Lookup -->o Client: 422 Unprocessable Entity
-  Lookup -->o Client: 403 Forbidden
 end
 group 303: Redirect to Location URL
   Client -> Other: GET

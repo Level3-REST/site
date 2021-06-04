@@ -42,11 +42,12 @@ Once the client submits the form, the resource responds with a success message a
 
 ##### Rejections
 
-| Status Code                | Explanation                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| `400 Bad Request`          | The forms’ body is malformed.                                |
-| `422 Unprocessable Entity` | The form is semantically-incorrect.                          |
-| `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
+| Status Code                  | Explanation                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| `400 Bad Request`            | The form body is malformed.                                  |
+| `403 Forbidden`              | Values in the data are not accepted by business validation rules. |
+| `415 Unsupported Media Type` | The media type in the request is not supported.              |
+| `422 Unprocessable Entity`   | The form body is semantically-incorrect.                     |
 
 ![](form/submit.svg){: .center-image}
 
@@ -76,6 +77,7 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
 - 400 Bad Request: [section 6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)
 - 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
+- 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
 {% include footer.html %}

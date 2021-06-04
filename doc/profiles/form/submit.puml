@@ -27,8 +27,9 @@ rnote left #lightgreen
 end note
 group failure: form rejected
   Form -->o Client: 400 Bad Request
-  Form -->o Client: 422 Unprocessable Entity
   Form -->o Client: 403 Forbidden
+  Form -->o Client: 415 Unsupported Media Type
+  Form -->o Client: 422 Unprocessable Entity
 end
 
 @enduml

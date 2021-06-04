@@ -42,12 +42,12 @@ Once the client submits the query, the resource responds with a `303 See Other` 
 
 ##### Rejections
 
-| Status Code                | Explanation                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| `404 Not Found`            | The query has no matching result.                            |
-| `400 Bad Request`          | The query’ body is malformed.                                |
-| `422 Unprocessable Entity` | The query is semantically-incorrect.                         |
-| `403 Forbidden`            | Values in the data are not accepted by business validation rules. |
+| Status Code                  | Explanation                                     |
+| ---------------------------- | ----------------------------------------------- |
+| `404 Not Found`              | The query has no matching result.               |
+| `400 Bad Request`            | The query’ body is malformed.                   |
+| `415 Unsupported Media Type` | The media type in the request is not supported. |
+| `422 Unprocessable Entity`   | The query is semantically-incorrect.            |
 
 ![](lookup/lookup.svg){: .center-image}
 
@@ -71,8 +71,8 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 303 See Other: [section 6.4.4](https://tools.ietf.org/html/rfc7231#section-6.4.4)
 - 400 Bad Request: [section 6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)
-- 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 - 404 Not Found: [section 6.5.4](https://tools.ietf.org/html/rfc7231#section-6.5.4)
+- 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
 {% include footer.html %}

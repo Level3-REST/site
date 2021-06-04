@@ -41,9 +41,11 @@ The `Prefer` header parameter `return` also accepts the value `minimal`  which t
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
+- Content-Location: [section 3.1.4.2](https://datatracker.ietf.org/doc/html/rfc7231#section-3.1.4.2)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 201 Created: [section 6.3.2](https://tools.ietf.org/html/rfc7231#section-6.3.2)
 - 204 No Content: [section 6.3.5](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+- Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
 Prefer Header for HTTP: [RFC 7240](https://tools.ietf.org/html/rfc7240)
 

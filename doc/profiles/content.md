@@ -103,6 +103,9 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - Content-Type: [section 3.1.1.5](https://tools.ietf.org/html/rfc7231#section-3.1.1.5)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 409 Conflict: [section 6.5.8](https://tools.ietf.org/html/rfc7231#section-6.5.8)
+- 411 Length Required: [section 6.5.10](https://tools.ietf.org/html/rfc7231#section-6.5.10)
+- 413 Payload Too Large: [section 6.5.11](https://tools.ietf.org/html/rfc7231#section-6.5.11)
+- 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 
 Content-Disposition: [RFC 6266](https://tools.ietf.org/html/rfc6266)
 
