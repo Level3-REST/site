@@ -19,6 +19,6 @@ rnote left #lightgreen
   | | |
   | *//for POST operations//| |
 end note
-hnote over Client #darkseagreen: ""payload""
+hnote over Client #darkseagreen: ""body""
 
 @enduml

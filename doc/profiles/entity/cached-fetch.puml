@@ -13,7 +13,7 @@ rnote left #lightgreen
   | ""ETag:"" | //entity-tag// |
   | ""Last-Modified:"" | //HTTP-date// |
 end note
-hnote over Client #darkseagreen: ""payload""
+hnote over Client #darkseagreen: ""body""
 ...
 Client -> Entity: GET
 rnote right #lightblue

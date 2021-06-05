@@ -26,7 +26,7 @@ The Nexus profile presents the required `Profile` and `Allow` headers. If the re
 
 ### Fetch Nexus
 
-A client can fetch the Nexus’ state with a `GET` request. The state information is in the payload.
+A client can fetch the Nexus’ state with a `GET` request. The state information is in the body.
 
 ![](nexus/fetch.svg){: .center-image}
 

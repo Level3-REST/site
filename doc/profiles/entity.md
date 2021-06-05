@@ -15,7 +15,7 @@ Profile: <https://level3.rest/profiles/mixins/entity>
 
 Resources often have identifiably-distinct instances of themselves defined by unique URIs. These instances are known as [Entities](https://wikipedia.org/wiki/entity) in the real world. An entity must exist to accept operations, and clients should perform operations on them with an awareness of their current state.
 
-The HTTP specification has some essential features to support Entity operations. These features take the form of validation headers which manage both caching and safe state modifications. Thanks to these headers, clients enjoy the performance benefits of cached response payloads by using these same headers in `GET` requests. Also, clients can safely operate with an Entity resource by knowing the version they are working with has not changed since they last interacted with it.
+The HTTP specification has some essential features to support Entity operations. These features take the form of validation headers which manage both caching and safe state modifications. Thanks to these headers, clients enjoy the performance benefits of cached responses by using these same headers in `GET` requests. Also, clients can safely operate with an Entity resource by knowing the version they are working with has not changed since they last interacted with it.
 
 The header values `ETag` and `Last-Modified` are often transparently managed by HTTP clients, especially in browsers. A client should learn about conditional request support in their HTTP client library and enable these features.
 
@@ -35,7 +35,7 @@ A `HEAD` request returns the headers described in the table below. An Entity res
 
 ### Cache-Aware Fetch
 
-When a client makes subsequent fetch requests for an already-fetched resource, they can send validator headers to indicate the version of the representation they possess. If the resource has not changed, then the resource responds with `304 Not Modified`, and the client can reuse already-fetched response payload.
+When a client makes subsequent fetch requests for an already-fetched resource, they can send validator headers to indicate the version of the representation they possess. If the resource has not changed, then the resource responds with `304 Not Modified`, and the client can reuse already-fetched response.
 
 ![](entity/cached-fetch.svg){: .center-image}
 
@@ -53,7 +53,7 @@ If the client does not send `If-Match` or `If-Unmodified-Since` headers, and the
 
 Once the client’s operation is successful, the resource sends back the new `ETag` and `Last-Modified` values in the response for `PUT` and `PATCH` operations. `POST` operations also return these headers, but they refer to the newly-created resource if it is an Entity resource. `DELETE` operations do not return validation headers.
 
-Entity resources do not send back the representation payload on success, but rather `204 No Content`. It is reasonable to assume the client who just sent the modification request already has this payload locally and need not receive it again.
+Entity resources do not send back the representation on success, but rather `204 No Content`. It is reasonable to assume the client who just sent the modification request already has this payload locally and need not receive it again.
 
 ### Forced Modification
 
