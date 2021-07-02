@@ -1,5 +1,5 @@
 ---
-layout: default
+HTTlayout: default
 title: Form
 description: Collects Form-Style Data
 parent: Profiles
@@ -36,7 +36,7 @@ First, a client `GET`s the representation from the Form resource. The representa
 
 If the representation is a schema, then the client uses it to construct a form object. If the representation is a template object then it should be filled in by the client. The completed object is then `POST`ed back to the Form resource.
 
-Clients should always `GET` the representation for every request rather than reusing the schema or form template from a previous request. The Form’s data requirements may have changed since the client last fetched the representation.
+Clients should always `GET` the representation for every request rather than reusing the schema or form template from a previous request. The Form’s data requirements may have changed since the client last fetched the form representation.
 
 Once the client submits the form, the resource responds with a success message and a `Location` header pointing to a relevant resource. If the submission was unacceptable, then the resource responds with a client error status code and error messages indicating the problem. Common problems include missing required fields or incorrect data in the fields.
 
@@ -51,15 +51,29 @@ Once the client submits the form, the resource responds with a success message a
 
 ![](form/submit.svg){: .center-image}
 
+##### Idempotent Submissions
+
+A Form resource may offer Clients the option to submit an `Idempotency-Key` header to uniquely identify a submission request. The client can resubmit the request with the same header value to verify that their submission was accepted. If the resource offers this capability, the GET / HEAD response will contain an `Idempotency-Key` with either `optional` or `required`. `optional` means the client can supply a key if they choose, while `required` means they must submit a header key.
+
+When the client submits a duplicate request using the same `Idempotency-Key`, the resource will return the same response as the original request.
+
+The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00) document for Idempotency-Key.
+
+##### Idempotency-Key Rejections
+
+| Status Code                | Explanation                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| `400 Bad Request`          | `Idempotency-Key` header required, but the client did not send one. |
+| `409 Conflict`             | The resource is still processing a previous submission with the same key. The client should try again later. |
+| `422 Unprocessable Entity` | The form body does not match the original submission body sent with this `Idempotency-Key`. |
+
+
+
 # Mixins
 
 ## Representation Mixin
 
 A Form resource can provide the [Representation profile](representation.md) as a mixin so the client can receive the relevant `Location`’s representation in the submission response.
-
-## Entity Mixin
-
-A Form can provide the [Entity profile](entity.md) as a mixin so the client can benefit from cached Form requests as well as a stable submission schema via the [Conditional Operation](entity.md#conditional-operation) flow. If the Form’s schema and requirements have not changed, the client receives a `304 Not Modified` status code.
 
 ## Specifications
 
@@ -79,5 +93,7 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 403 Forbidden: [section 6.5.3](https://tools.ietf.org/html/rfc7231#section-6.5.3)
 - 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
+
+The Idempotency-Key HTTP Header Field: [00](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00)
 
 {% include footer.html %}

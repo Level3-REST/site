@@ -13,6 +13,9 @@ rnote left #lightgreen
   | ""Allow:"" | ""HEAD,GET,POST"" |
   | ""Content-Type:"" | //content-type// |
   | ""Profile:"" | ""<https://level3.rest/profiles/form>"" |
+  | *""Idempotency-Key:"" | ""optional"" //or// ""required"" |
+
+  // *""Idempotency-Key"" support is optional//
 end note
 
 @enduml
