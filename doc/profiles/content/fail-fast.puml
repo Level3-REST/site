@@ -23,8 +23,8 @@ Client -> Content: GET
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
   | ""Range:"" | ""bytes=""//byte-range// |
-  | ""ETag:"" | //entity-tag// |
-  | ""Last-Modified:"" | //HTTP-date// |
+  | ""If-Unmodified-Since:"" | //HTTP-date// |
+  | ""If-Match:"" | //entity-tag// |
 end note
 Content --> Client: 206 Partial Content
 rnote left #lightgreen

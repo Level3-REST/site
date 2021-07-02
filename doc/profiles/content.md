@@ -78,13 +78,13 @@ For both options the client [discovers](#discovery) the range and validator info
 
 ##### Fail-Fast
 
-Fail-Fast gives the client an option to perform range requests without triggering a full download if the client changes. The client follows the Entity [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header as described above. If the content is the same, then the client receives a `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client receives a `409 Conflict` status. In this case, the client may choose to [fetch the content](#fetch-content) without validation headers.
+Fail-Fast gives the client an option to perform range requests without triggering a full download if the content changed. The client follows the Entity [Cache-Aware Fetching](entity.md#cache-aware-fetch) flow with the additional `Range` header. If the content is the same, then the client receives a `206 Partial Content` status and the partial payload defined in the range. If the content has changed, the client receives a `409 Conflict` status. In this case, the client may choose to [fetch the content](#fetch-content) without validation headers.
 
 ![](content/fail-fast.svg){: .center-image}
 
 ##### Refetch
 
-Refetch allows the client to automatically restart a download if the content has changed from a previous attempt, but without processing a `409 Conflict` status code. The client sends the `ETag` value, or `Last-Modified` value if ETag is unavailable, in an `If-Match` header; it can contain either value, but not both. This single header validates the content has not changed. If the content has changed, or if the validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) then the full content is returned instead of the range. In this case, the resource responds as a [Fetch Content](#fetch-content) request.
+Refetch allows the client to automatically restart a download if the content has changed from a previous attempt, but without processing a `409 Conflict` status code. The client sends the `ETag` value, or `Last-Modified` value if ETag is unavailable, in an `If-Range` header; it can contain either value, but not both. This single header validates the content has not changed. If the content has changed, or if the validators are not [strong](https://tools.ietf.org/html/rfc7232#section-2.1) then the full content is returned instead of the range. In this case, the resource responds as a [Fetch Content](#fetch-content) request.
 
 ![](content/refetch.svg){: .center-image}
 
