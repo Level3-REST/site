@@ -29,6 +29,6 @@ A client can only work with a single resource at a time, so the resource’s pro
 
 The Level 3 profiles and patterns utilize HTTP semantics as well as curated concepts from published specifications, selected books and real-world experience in Level 3 API construction. Much work was done to adhere to the specs to achieve broad applicability and technical success with the internet technology we employ today and are transitioning to, like [HTTP/2](https://http2.github.io/). The profiles and patterns contain references to these standards to support their design.
 
-This site also provides comments, and the reader is invited to post their thoughts, especially those that disagree with the content. Specifications, while usually well-written, can be misinterpreted and misunderstood. Please make Level 3 better by identifying errata in the comments sections.
+The reader is invited to post their thoughts, especially those that disagree with the content, on twitter. Specifications, while usually well-written, can be misinterpreted and misunderstood. Please make Level 3 better by identifying errata via my twitter handle [@MattBishopL3](https://twitter.com/MattBishopL3).
 
 {% include footer.html %}

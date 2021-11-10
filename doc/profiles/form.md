@@ -53,11 +53,11 @@ Once the client submits the form, the resource responds with a success message a
 
 ##### Idempotent Submissions
 
-A Form resource may offer Clients the option to submit an `Idempotency-Key` header to uniquely identify a submission request. The client can resubmit the request with the same header value to verify that their submission was accepted. If the resource offers this capability, the GET / HEAD response will contain an `Idempotency-Key` with either `optional` or `required`. `optional` means the client can supply a key if they choose, while `required` means they must submit a header key.
+A Form resource may offer Clients the option to submit an `Idempotency-Key` header to uniquely identify a submission request. The client can resubmit the request with the same header value to verify that their submission was accepted. If the resource offers this capability, the GET / HEAD response will contain an `Idempotency-Key` with either `optional` or `required`. `optional` means the client can supply a key if they choose, while `required` means they must submit an `Idempotency-Key` header.
 
 When the client submits a duplicate request using the same `Idempotency-Key`, the resource will return the same response as the original request.
 
-The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00) document for Idempotency-Key.
+The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00) document for Idempotency-Key. Like ETags, wrap the value in double quotes; for example: `Idempotency-Key: "a7a6dbe0"`.
 
 ##### Idempotency-Key Rejections
 
@@ -94,6 +94,6 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
-The Idempotency-Key HTTP Header Field: [00](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00)
+The Idempotency-Key HTTP Header Field: [section 2](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00#section-2)
 
 {% include footer.html %}
