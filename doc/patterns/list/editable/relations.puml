@@ -7,7 +7,7 @@ rectangle "<&arrow-circle-right> Empty List" as Empty
 
 List 0~~>> Add: "//add-entry//"
 Add 0-->> List: "adds-to-list"
-List 0~~>> Empty: "empty-list"
+List 0~~>> Empty: "//empty-list//"
 Empty 0-->> List: "empties-list"
 
 @enduml

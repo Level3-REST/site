@@ -25,13 +25,13 @@ Profile: <https://level3.rest/patterns/list#list-resource>
 
 See the [List](../list.md#list-resource) resource definition.
 
-### empty-list
+### *empty-list*
 
 ```
 rel="https://level3.rest/patterns/list/editable#empty-list"
 ```
 
-Leads to an [Empty List](#empty-list-resource) action that empties the [List](#list-resource) when triggered.
+Leads to an [Empty List](#empty-list-resource) action that empties the [List](#list-resource) when triggered. This relationship is optional as some resource lists do not have an ‘empty the list’ concept.
 
 ### *add-entry*
 
