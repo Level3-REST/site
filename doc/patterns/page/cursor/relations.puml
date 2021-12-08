@@ -12,7 +12,7 @@ rectangle Entry [
 rectangle Cursor [
   <&eye> Cursor
   ....
-  ""size""
+  ""limit""
   ""before || after""
 ]
 

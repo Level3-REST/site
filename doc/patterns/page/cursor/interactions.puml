@@ -12,7 +12,7 @@ hnote over Client #darkseagreen: ""{ cursor }""
 Client -> Cursor: POST
 hnote over Cursor #lightblue
  ""{""
- ""  size,""
+ ""  limit,""
  ""  before || after""
  ""}""
 end note

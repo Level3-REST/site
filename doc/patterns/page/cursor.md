@@ -11,7 +11,7 @@ permalink: /patterns/page/cursor
 
 The Cursored Page pattern adds cursor-management affordances to the [Page](../page.md) pattern, giving clients control over the pagination of the list’s elements.
 
-The [Paged](#paged-resource) resource retains the cursor-style links to the `previous` and `next` pages. Clients can change the cursor configuration with the [Cursor](#cursor-resource) resource.
+The [Paged](#paged-resource) resource contains cursor-style links to the `previous` and `next` pages. Clients can change the cursor configuration with the [Cursor](#cursor-resource) resource.
 
 ![](cursor/relations.svg){: .center-image}
 
@@ -62,7 +62,7 @@ In a List resource, the cursor entries are individual [List Entry](../list.md#en
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |
-| `cursor` | The Entry’s cursor value. Useful for changing the start or end point of the pagination configuration. |
+| `cursor` | The Entry’s cursor value. Useful for changing the pagination configuration. It contains the same information as the Cursor resource. |
 
 ## Cursor Resource
 
@@ -70,15 +70,15 @@ In a List resource, the cursor entries are individual [List Entry](../list.md#en
 Profile: <https://level3.rest/patterns/page/cursor#cursor-resource>
 ```
 
-The Cursor resource is a form to change the cursor pagination configuration. It is a [Lookup](../../profiles/lookup.md) resource containing the current configuration. The client can specify the page size and either the `before` or `after` cursor to select a different page point to navigate through. Once the client submits the lookup, the redirects to the [Paged](#paged-resource) resource configured with this configuration.
+The Cursor resource is a form to change the cursor pagination configuration. It is a [Lookup](../../profiles/lookup.md) resource containing the current configuration. The client can specify a `limit` on the number of elements per page and either the `before` or `after` cursor to select a different page point to navigate through. Once the client submits the lookup, the redirects to the [Paged](#paged-resource) resource configured with this configuration.
 
 | Property | Purpose                                                      |
 | -------- | ------------------------------------------------------------ |
-| `size`   | The number of elements per page. If not present in the form, the current page size configuration will be used. |
+| `limit`  | The number of elements to consume from the cursor per page. If not present in the form, the current page limit configuration will be used. |
 | `before` | The cursor value to view preceding elements from. The element at this cursor will not be presented. The Paged resource’s `next` and `previous` links will navigate in the same order so that the client will follow the `previous` link to navigate backwards through the list. |
 | `after`  | The cursor value to view proceeding element from. The element at this cursor will not be presented. |
 
-If the client only wants to change the page size, but keep the same cursor position, then they only need to post the `size` field in the form. If they wish to change the position of the cursor, they supply either the `before` or `after` field in the form. This `cursor` value comes from either the [Cursor Entry](#cursor-entry-resource) resource or the `cursor` property of an element in a resource’s list data.
+If the client only wants to change the page limit, but keep the same cursor position, then they only need to post the `limit` field in the form. If they wish to change the position of the cursor, they supply either the `before` or `after` field in the form. This `cursor` value comes from either the [Cursor Entry](#cursor-entry-resource) resource or the `cursor` property of an element in a resource’s list data.
 
 ### paginates
 

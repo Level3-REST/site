@@ -20,7 +20,7 @@ rnote right #lightblue
   | ""Content-Type:"" | //media-type// |
   | *""Idempotency-Key:"" | //unique-key// |
 
-  // *If resource supports ""Idempotency-Key""//
+  // *If form supports ""Idempotency-Key""//
 end note
 hnote over Form #lightsteelblue: ""{ form }""
 Form --> Client: 201 Created / 204 No Content

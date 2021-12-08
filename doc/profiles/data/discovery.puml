@@ -12,7 +12,7 @@ rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
   | ""Content-Type:"" | //media-type// |
   | *""Accept-Patch:"" | //media-types// |
-  | ""Allow:"" | ""HEAD,GET,PUT,""*""PATCH,DELETE"" |
+  | ""Allow:"" | ""HEAD,GET,PUT,DELETE,""*""PATCH"" |
   | ""Profile:"" | ""<https://level3.rest/profiles/data>"" |
 
   // *""PATCH"" support is optional//

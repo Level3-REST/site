@@ -53,9 +53,11 @@ Once the client submits the form, the resource responds with a success message a
 
 ##### Idempotent Submissions
 
-A Form resource may offer Clients the option to submit an `Idempotency-Key` header to uniquely identify a submission request. The client can resubmit the request with the same header value to verify that their submission was accepted. If the resource offers this capability, the GET / HEAD response will contain an `Idempotency-Key` with either `optional` or `required`. `optional` means the client can supply a key if they choose, while `required` means they must submit an `Idempotency-Key` header.
+A Form resource may offer Clients the option to submit an `Idempotency-Key` header to uniquely identify a submission request. The client can resubmit the request with the same header value to verify that their submission was accepted. Subsequent form submissions with the same `Idempotency-Key` and form body can be considered as ignored by the form resource.
 
-When the client submits a duplicate request using the same `Idempotency-Key`, the resource will return the same response as the original request.
+If the resource offers this capability, the GET / HEAD response will contain an `Idempotency-Key` with either `optional` or `required`. `optional` means the client can supply a key if they choose, while `required` means they must submit an `Idempotency-Key` header.
+
+When the client submits a duplicate request using the same `Idempotency-Key`, the resource will return the same response as the original request. If the request has different data than a previous request using the same `Idempotency-KEY`, the resource may choose to respond with a `422 Unprocessable Entity` to indicate the forms are not identical.
 
 The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00) document for Idempotency-Key. Like ETags, wrap the value in double quotes; for example: `Idempotency-Key: "a7a6dbe0"`.
 
@@ -66,8 +68,6 @@ The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc
 | `400 Bad Request`          | `Idempotency-Key` header required, but the client did not send one. |
 | `409 Conflict`             | The resource is still processing a previous submission with the same key. The client should try again later. |
 | `422 Unprocessable Entity` | The form body does not match the original submission body sent with this `Idempotency-Key`. |
-
-
 
 # Mixins
 
