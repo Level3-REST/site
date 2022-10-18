@@ -18,7 +18,7 @@ rectangle Pagination [
 ]
 
 Paged 0-->> PageInfo: "page-info"
-Paged 0-->> Pagination: "paginator"
+PageInfo 0-->> Pagination: "paginator"
 Pagination 0-->> Paged: "paginates"
 
 @enduml

@@ -3,19 +3,32 @@
 
 title Cursored Page Pattern
 
+rectangle CursorInfo [
+  <&info> Cursor Info
+  ....
+  ""cursorMark""
+  ""*limit""
+  ""*size""
+
+  //*optional//
+]
 
 rectangle Entry [
   <&question-mark> Cursor Entry
   ....
-  ""cursor""
+  ""cursorMark""
 ]
 rectangle Cursor [
   <&eye> Cursor
   ....
-  ""limit""
-  ""before || after""
+  ""[before|after]: cursorMark""
+  ""*limit""
+  ""*size""
+
+  //*optional//
 ]
 
+Paged 0-->> CursorInfo: "cursor-info"
 Paged 0~~>> Entry: "list-entry"
 Paged 0-->> Cursor: "cursor"
 Cursor 0-->> Paged: "paginates"

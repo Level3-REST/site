@@ -57,7 +57,7 @@ Profile: <https://level3.rest/patterns/list/editable#empty-list-resource>
 
 [Action](../../profiles/action.md) resource that empties the [List](#list-resource). Triggering the action returns a `Location` pointing to the list.
 
-### empties-list
+### *empties-list*
 
 ```
 rel="https://level3.rest/patterns/list/editable#empties-list"
@@ -73,7 +73,7 @@ Profile: <https://level3.rest/patterns/list/editable#add-entry-resource>
 
 Add Entry resource adds an [Entry](../list.md#entry-resource) to the list. The profile is undefined, but it is often a [Form](../../profiles/form.md) resource.
 
-### adds-to-list
+### *adds-to-list*
 
 ```
 rel="https://level3.rest/patterns/list/editable#adds-to-list"

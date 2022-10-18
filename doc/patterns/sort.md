@@ -12,7 +12,7 @@ The Sort pattern provides sorting affordances. It often complements List and Tre
 
 ![](sort/relations.svg){: .center-image}
 
-The client changes sort configuration by `POST`ing a new configuration form to the [Sorter](#sorter-resource) resource. Sorter returns the updated [Sorted](#sorted-resource) resource URL in its `Location` response header.
+The client changes sort configuration by `POST`ing a new configuration lookup to the [Sorter](#sorter-resource) resource. Sorter returns the updated [Sorted](#sorted-resource) resource URL in its `Location` response header.
 
 ![](sort/interactions.svg){: .center-image}
 
@@ -24,7 +24,7 @@ Profile: <https://level3.rest/patterns/sort#sorted-resource>
 
 The Sorted resource can present any profile. The profile choice does not effect filtering options.
 
-### sort-info
+### *sort-info*
 
 ```
 rel="https://level3.rest/patterns/sort#sort-info"
@@ -43,7 +43,7 @@ The Sort Info resource describes the ordering configuration used in the [Sorted]
 A sorting declaration in the `sort-order` array has these properties:
 
 | Property    | Purpose                       |
-| ----------- | ----------------------------- |
+|-------------|-------------------------------|
 | `property`  | The property being sorted by. |
 | `direction` | Either `ascend` or `descend`. |
 
@@ -69,7 +69,7 @@ The XML representation looks like this:
 </sort-order>
 ```
 
-### sorter
+### *sorter*
 
 ```
 rel="https://level3.rest/patterns/sort#sorter-resource"
@@ -87,7 +87,7 @@ The Sorter resource changes the [Sorted](#sorted-resource) resource’s sort con
 
 A Sorter's content is the same as the [Sort Info](#sort-info-resource) content. Clients edit the configuration to reflect the desired sort configuration. When this new configuration is submitted to the Sorter resource, the lookup redirects to the newly-configured [Sorted](#sorted-resource) resource.
 
-### sorts
+### *sorts*
 
 ```
 rel="https://level3.rest/patterns/sort#sorts"

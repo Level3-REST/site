@@ -12,6 +12,12 @@ The Filter pattern provides filtration affordances. It often complements List an
 
 ![](filter/relations.svg){: .center-image}
 
+### Filter Configuration
+
+The client changes filter configuration by `POST`ing a new configuration lookup to the [Filtration](#filtration-resource) resource. Filtration returns the updated [Filtered](#filtered-resource) resource URL in its `Location` response header.
+
+![](filter/interactions.svg)
+
 ### Operands
 
 Filter declarations use logical operands to describe how to filter the elements by property values. String value comparisons should be case-insensitive if possible, though the resource implementation decides this rule based on the field’s semantics. The resource’s data types guide the applicability of these operands to filtered fields.
@@ -19,7 +25,7 @@ Filter declarations use logical operands to describe how to filter the elements 
 These operands work efficiently with indexed data and should provide quick client responses.
 
 | Operand | Purpose                          |
-| ------- | -------------------------------- |
+|---------|----------------------------------|
 | `eq`    | Equal                            |
 | `ne`    | Not equal                        |
 | `lt`    | Less than                        |
@@ -41,7 +47,7 @@ Profile: <https://level3.rest/patterns/filter#filtered-resource>
 
 The Filtered resource can present any profile. The profile choice does not effect filtering options.
 
-### filter-info
+### *filter-info*
 
 ```
 rel="https://level3.rest/patterns/filter#filter-info"
@@ -60,7 +66,7 @@ The Filter Info resource describes the current filtering configuration used in t
 A filtering declaration in the `filters` array has these properties:
 
 | Property   | Purpose                             |
-| ---------- | ----------------------------------- |
+|------------|-------------------------------------|
 | `property` | The property being filtered.        |
 | `operand`  | The filtering [operand](#operands). |
 | `value`    | The filter value.                   |
@@ -76,7 +82,7 @@ Each filter declaration further filters the elements by that declaration. The ar
 }
 ```
 
-The filtered resource contains elements filtered by `age` (>= 30) and a `team` of either “Bruins” or “Canucks.”
+The filtered resource contains elements filtered by `age` (>= 30) and a `team` of either “Bruins” or “Canucks”.
 
 The XML representation looks like this:
 
@@ -90,7 +96,7 @@ The XML representation looks like this:
 </filters>
 ```
 
-### filter
+### *filter*
 
 ```
 rel="https://level3.rest/patterns/filter#filter"
@@ -108,7 +114,7 @@ The Filtration resource changes the [Filtered](#filtered-resource) resource’s 
 
 A Filtration's content is the same as the [Filter Info](#filter-info-resource) content. Clients edit the configuration to reflect the desired filtration configuration. When this new configuration is submitted to the Filtration resource, the lookup redirects to the newly-configured [Filtered](#filtered-resource) resource.
 
-### filters
+### *filters*
 
 ```
 rel="https://level3.rest/patterns/filter#filters"

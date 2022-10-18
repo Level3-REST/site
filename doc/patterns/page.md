@@ -10,7 +10,7 @@ permalink: /patterns/page
 ---
 # Page Pattern
 
-The Page pattern adds pagination links to resources that have multiple elements. The [List](list.md) pattern often applies the Page pattern to give clients the ability to page through the list’s entries. However, another type of data-providing resource, like an [Info](../profiles/info.md) resource, may contain a large list of elements that can page its data with this pattern.
+The Page pattern adds pagination links to resources that have multiple elements. The [List](list.md) pattern often applies the Page pattern to give clients the ability to page through the list’s entries. However, another type of data-providing resource, like an [Info](../profiles/info.md) resource, may contain a large sequence of elements that can page its data with this pattern.
 
 A [Paged](#paged-resource) resource has links to the previous and next pages. An API may add additional pagination links to specific page markers, like “first” and “last,” if their experience requires them.
 
@@ -29,7 +29,7 @@ Profile: <https://level3.rest/patterns/page#paged-resource>
 
 The Paged resource can present any profile. The profile choice does not affect pagination.
 
-### next
+### *next*
 
 ```
 rel="https://level3.rest/patterns/page#next"
@@ -37,7 +37,7 @@ rel="https://level3.rest/patterns/page#next"
 
 Points to another [Paged](#paged-resource) resource that contains the next page of elements. This relationship is similar in concept to IANA’s `next` link relation, which is defined by HTML 5 as the next document in a sequence.
 
-### previous
+### *previous*
 
 ```
 rel="https://level3.rest/patterns/page#previous"

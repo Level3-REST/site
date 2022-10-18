@@ -1,5 +1,5 @@
 @startuml
-!include ../../copyright2020.iuml
+!include ../../copyright.iuml
 
 title Toggle Pattern
 

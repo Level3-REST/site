@@ -32,7 +32,7 @@ Profile: <https://level3.rest/patterns/tree#node-resource>
 
 A Node resource has no required profile. If the node’s profile supports the `DELETE` operation, a client can remove the node from the tree by deleting the node. This operation deletes all `child` nodes and their children as well.
 
-### top
+### *top*
 
 ```
 rel="https://level3.rest/patterns/tree#top"
@@ -40,7 +40,7 @@ rel="https://level3.rest/patterns/tree#top"
 
 The `top` link points to the [Tree](#tree-resource) of which the node is a member.
 
-### child
+### *child*
 
 ```
 rel="https://level3.rest/patterns/tree#child"
@@ -48,7 +48,7 @@ rel="https://level3.rest/patterns/tree#child"
 
 Tree and Node resources have 0 or more `child` links pointing to direct child [Node](#node-resource) resources. The ordering of the links is intentional, meaning they should be considered the sibling order. [HTTP header sequence rules](https://tools.ietf.org/html/rfc7230#section-3.2.2) ensure the client can rely on this order to be consistent with the resource’s ordering intentions.
 
-### parent
+### *parent*
 
 ```
 rel="https://level3.rest/patterns/tree#parent"

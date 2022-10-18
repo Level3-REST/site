@@ -35,12 +35,12 @@ Profile: <https://level3.rest/patterns/list#list-resource>
 The List resource presents the [Nexus](../profiles/nexus.md) or [Home](../profiles/home.md) profile.
 
 | Property | Purpose                            |
-| -------- | ---------------------------------- |
+|----------|------------------------------------|
 | `count`  | The number of Entries in the list. |
 
 If the List resource may choose to support the `DELETE` operation. When deleted, the entries in the list are deleted as well if they are part of the same domain. See [List Entry Domain Considerations](#list-entry-domain-considerations) for details.
 
-### list-entry
+### *list-entry*
 
 ```
 rel="https://level3.rest/patterns/list#list-entry"

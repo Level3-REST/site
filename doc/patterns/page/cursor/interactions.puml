@@ -1,5 +1,5 @@
 @startuml
-!include ../../../copyright2020.iuml
+!include ../../../copyright.iuml
 
 title Configure Cursor
 actor Client
@@ -8,13 +8,16 @@ participant "<&question-mark> Cursor Entry" as CursorEntry
 
 Client -> CursorEntry: GET
 CursorEntry --> Client: 200 OK
-hnote over Client #darkseagreen: ""{ cursor }""
+hnote over Client #darkseagreen: ""{ cursorMark }""
 Client -> Cursor: POST
 hnote over Cursor #lightblue
  ""{""
- ""  limit,""
- ""  before || after""
+ ""  [before|after]: cursorMark,""
+ ""  *limit,""
+ ""  *size""
  ""}""
+
+ //*optional//
 end note
 Cursor --> Client: 303 See Other
 rnote left #lightgreen
