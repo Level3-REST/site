@@ -22,7 +22,7 @@ Profile: <https://level3.rest/patterns/stepper#stepper-resource>
 
 A [Data](../profiles/data.md) resource that contains the value being incremented and decremented. This value can be a field in the data object, or it can be a single value. A Stepper resource can have multiple [Incrementers](#incrementer-resource) and [Decrementers](#decrementer-resource), one per field. The links may contain an [anchor](https://tools.ietf.org/html/rfc8288#section-3.2) property indicating the field to be stepped.
 
-### increment
+### *increment*
 
 ```
 rel="https://level3.rest/patterns/stepper#increment";anchor="#field-path"
@@ -30,7 +30,7 @@ rel="https://level3.rest/patterns/stepper#increment";anchor="#field-path"
 
 Points to an [Incrementer](#incrementer-resource) resource that increases the value of the [Stepper](#stepper-resource) resource by a single step. This relationship only appears if the value can be incremented, meaning the value has no range or it is below its maximum value. If present, the anchor property contains a field path to the property being incremented.
 
-### decrement
+### *decrement*
 
 ```
 rel="https://level3.rest/patterns/stepper#decrement";anchor="#field-path"
@@ -46,7 +46,7 @@ Profile: <https://level3.rest/patterns/stepper#incrementer-resource>
 
 An [Action](../profiles/action.md) resource that increments the value (or field) of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its maximum, `POST` to this resource is ignored.
 
-### increments
+### *increments*
 
 ```
 rel="https://level3.rest/patterns/stepper#increments";anchor="#field-path"
@@ -62,7 +62,7 @@ Profile: <https://level3.rest/patterns/stepper#decrementer-resource>
 
 An [Action](../profiles/action.md) resource that decrements the value (or field) of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its minimum, `POST` to this resource is ignored.
 
-### decrements
+### *decrements*
 
 ```
 rel="https://level3.rest/patterns/stepper#decrements";anchor="#field-path"

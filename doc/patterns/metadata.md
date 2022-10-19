@@ -24,7 +24,7 @@ Profile: <https://level3.rest/patterns/metadata#content-resource>
 
 The Content resource presents the [Content profile](../profiles/content.md). It is the image, document or other content data described by the [Metadata](#metadata-resource) resource.
 
-### metadata
+### *metadata*
 
 ```
 rel="https://level3.rest/patterns/metadata#metadata"
@@ -42,7 +42,7 @@ The Metadata resource presents the [Info profile](../profiles/info.md) and conta
 
 Metadata should be used in other API contexts like search results or directory listings as they provide useful information for the client to select a Content resource. The `content` link gives the client navigability to the actual Content data should they choose to consume it.
 
-### content
+### *content*
 
 ```
 rel="https://level3.rest/patterns/metadata#content"

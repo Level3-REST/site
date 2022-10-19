@@ -42,7 +42,7 @@ Like the Radio Chooser, the Multi Chooser presents either the [Info](../profiles
 
 If the Chooser resource presents the [Nexus](../profiles/nexus.md) profile, then it can be deleted with a `DELETE` operation. The Choice resources are deleted as well. The Description resources may not be part of the domain, and if they are not, then they are not deleted.
 
-### choice
+### *choice*
 
 ```
 rel="https://level3.rest/patterns/chooser#choice"
@@ -50,7 +50,7 @@ rel="https://level3.rest/patterns/chooser#choice"
 
 Link to a possible [Choice](#choice-resource) for the Chooser. The state of the choice is unselected.
 
-### Chosen
+### *chosen*
 
 ```
 rel="https://level3.rest/patterns/chooser#chosen"
@@ -66,7 +66,7 @@ Profile: <https://level3.rest/patterns/chooser#choice-resource>
 
 The Choice resource presents the [Action](../profiles/action.md) profile. `POST`ing to this resource will trigger an appropriate state change in the Chooser.
 
-### choice-for
+### *choice-for*
 
 ```
 rel="https://level3.rest/patterns/chooser#choice-for"
@@ -74,7 +74,7 @@ rel="https://level3.rest/patterns/chooser#choice-for"
 
 This link points to either a [Radio](#radio-chooser-resource) or [Multi](#multi-chooser-resource) Chooser to which this Choice belongs.
 
-### description
+### *description*
 
 ```
 rel="https://level3.rest/patterns/chooser#description"

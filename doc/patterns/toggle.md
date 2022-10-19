@@ -20,7 +20,7 @@ Profile: <https://level3.rest/patterns/toggle#toggle-resource>
 
 A [Data](../profiles/data.md) resource that contains the value being toggled. This value can be a field in the data object, or it can be a single value. A Toggle resource can have multiple [Togglers](#toggler-resource), one per field. The links may contain an [anchor](https://tools.ietf.org/html/rfc8288#section-3.2) property indicating the field to be toggled.
 
-### toggle
+### *toggle*
 
 ```
 rel="https://level3.rest/patterns/toggle#toggle";anchor="#field-path"
@@ -36,7 +36,7 @@ Profile: <https://level3.rest/patterns/toggle#toggler-resource>
 
 An [Action](../profiles/action.md) resource that toggles the value (or field) of the [Toggle](#toggle-resource) resource to its opposite value.
 
-### toggles
+### *toggles*
 
 ```
 rel="https://level3.rest/patterns/toggle#toggles";anchor="#field-path"
