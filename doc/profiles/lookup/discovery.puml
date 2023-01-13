@@ -10,9 +10,9 @@ Client -> Lookup: HEAD
 Lookup --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow:"" | ""HEAD,GET,POST"" |
-  | ""Content-Type:"" | //content-type// |
-  | ""Profile:"" | ""<https://level3.rest/profiles/lookup>"" |
+  | ""allow:"" | ""HEAD,GET,POST"" |
+  | ""content-type:"" | //content-type// |
+  | ""profile:"" | ""<https://level3.rest/profiles/lookup>"" |
 end note
 
 @enduml

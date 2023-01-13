@@ -10,12 +10,12 @@ Client -> Form: HEAD
 Form --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow:"" | ""HEAD,GET,POST"" |
-  | ""Content-Type:"" | //content-type// |
-  | ""Profile:"" | ""<https://level3.rest/profiles/form>"" |
-  | *""Idempotency-Key:"" | ""optional"" //or// ""required"" |
+  | ""allow:"" | ""HEAD,GET,POST"" |
+  | ""content-type:"" | //content-type// |
+  | ""profile:"" | ""<https://level3.rest/profiles/form>"" |
+  | *""idempotency-key:"" | ""optional"" //or// ""required"" |
 
-  // *""Idempotency-Key"" support is optional//
+  // *""idempotency-key"" support is optional//
 end note
 
 @enduml

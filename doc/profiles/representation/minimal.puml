@@ -9,13 +9,13 @@ participant "<&transfer> Representation" as Representation
 Client -> Representation: PUT / POST / PATCH
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Prefer:"" | ""return=minimal"" |
+  | ""prefer:"" | ""return=minimal"" |
 end note
 Representation --> Client: 201 Created / 204 No Content / 3xx redirect
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Preference-Applied:"" | ""return=minimal"" |
-  | *""Location:""   | //URL to the full representation// |
+  | ""preference-applied:"" | ""return=minimal"" |
+  | *""location:""   | //URI to the full representation// |
   | | |
   | *//for POST operations//| |
 end note

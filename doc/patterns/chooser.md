@@ -10,13 +10,13 @@ permalink: /patterns/chooser
 
 Chooser is a hypermedia control that presents one or more choices for clients to select. A Chooser has two types that determine how many selections are possible. The types are patterned after HTML’s selection `<input>` formats. The [Radio](#radio-chooser-resource) type accepts a single selection. The [Multi](#multi-chooser-resource) type can accept multiple choices.
 
-A client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice’s Action resource. The result of this `POST` changes the state of the Choice, depending on the type of chooser. The client can determine the chooser type by looking at the `Profile` header.
+A client examines the [Description](#description-resource) resource of each [Choice](#choice-resource) and makes their selection by triggering the Choice’s Action resource. The result of this `POST` changes the state of the Choice, depending on the type of chooser. The client can determine the chooser type by looking at the `profile` header.
 
 The list of choices in the Link header list maintains the application’s desired ordering so choice ordering does not change during selection actions.
 
 ![](chooser/relations.svg){: .center-image}
 
-The Choice’s state is changed on the action, as is the state of the Chooser overall. For a `radio` chooser, selecting a choice deselects a previously-selected choice. For a `multi` chooser, the overall chooser’s state may change, depending on the business rules the chooser is representing. For this reason, the `Location` response header from choice actions points to the Chooser resource so that the client can fetch the overall chooser state again.
+The Choice’s state is changed on the action, as is the state of the Chooser overall. For a `radio` chooser, selecting a choice deselects a previously-selected choice. For a `multi` chooser, the overall chooser’s state may change, depending on the business rules the chooser is representing. For this reason, the `location` response header from choice actions points to the Chooser resource so that the client can fetch the overall chooser state again.
 
 This behavior is consistent with how UI elements like radio button groups, dropdown menus, and checkboxes operate in a user experience. Clients can associate `POST` requests directly to the choice elements and trigger them from user events.
 
@@ -25,7 +25,7 @@ This behavior is consistent with how UI elements like radio button groups, dropd
 ## Radio Chooser Resource
 
 ```
-Profile: <https://level3.rest/patterns/chooser#radio-chooser-resource>
+profile: <https://level3.rest/patterns/chooser#radio-chooser-resource>
 ```
 
 The Radio Chooser resource presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile. A Chooser resource has 0 or more `choice/chosen` links pointing to [Choice](#choice-resource) resources in its list. The ordering of the links is intentional, meaning they should be considered the presentation order of the choices. The HTTP specifications require [header order](https://tools.ietf.org/html/rfc7230#section-3.2.2) to be maintained so clients can expect consistent link order.
@@ -35,7 +35,7 @@ If the Chooser resource presents the [Nexus](../profiles/nexus.md) profile, then
 ## Multi Chooser Resource
 
 ```
-Profile: <https://level3.rest/patterns/chooser#multi-chooser-resource>
+profile: <https://level3.rest/patterns/chooser#multi-chooser-resource>
 ```
 
 Like the Radio Chooser, the Multi Chooser presents either the [Info](../profiles/info.md) or [Nexus](../profiles/nexus.md) profile.
@@ -61,7 +61,7 @@ Link to a selected [Choice](#choice-resource) for the Chooser.
 ## Choice Resource
 
 ```
-Profile: <https://level3.rest/patterns/chooser#choice-resource>
+profile: <https://level3.rest/patterns/chooser#choice-resource>
 ```
 
 The Choice resource presents the [Action](../profiles/action.md) profile. `POST`ing to this resource will trigger an appropriate state change in the Chooser.

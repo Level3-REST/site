@@ -17,16 +17,16 @@ end note
 Client -> Form: POST
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Type:"" | //media-type// |
-  | *""Idempotency-Key:"" | //unique-key// |
+  | ""content-type:"" | //media-type// |
+  | *""idempotency-key:"" | //unique-key// |
 
-  // *If form supports ""Idempotency-Key""//
+  // *If form supports ""idempotency-key""//
 end note
 hnote over Form #lightsteelblue: ""{ form }""
 Form --> Client: 201 Created / 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location:"" | //Resource URL// |
+  | ""location:"" | //Resource URI// |
 end note
 group failure: form rejected
   Form -->o Client: 400 Bad Request

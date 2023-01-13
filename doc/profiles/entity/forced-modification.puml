@@ -9,7 +9,7 @@ participant "<&badge> Entity" as Entity
 Client -> Entity: PUT / DELETE
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""If-Match:"" | ""*"" |
+  | ""if-match:"" | ""*"" |
 end note
 hnote over Entity #lightsteelblue
   ""    payload""
@@ -18,8 +18,8 @@ end note
 Entity --> Client: 204 No Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag:"" | //entity-tag// |
-  | ""Last-Modified:"" | //HTTP-date// |
+  | ""etag:"" | //entity-tag// |
+  | ""last-modified:"" | //HTTP-date// |
 
   // omitted for DELETE//
 end note

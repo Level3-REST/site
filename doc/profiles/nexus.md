@@ -9,7 +9,7 @@ permalink: /profiles/nexus
 # Nexus Profile
 
 ```
-Profile: <https://level3.rest/profiles/nexus>
+profile: <https://level3.rest/profiles/nexus>
 ```
 
 A Nexus resource is a central “meeting point” for related resources. It is often identified by a shared business identifier, like invoice number or a book’s ISBN. A Nexus resource may have state information, but it is read-only and should reflect an overall business state. For instance, an order resource can have the states `open` or `closed`.
@@ -20,7 +20,7 @@ A Nexus resource offers the `DELETE` operation which removes the Nexus resource 
 
 ### Discovery
 
-The Nexus profile presents the required `Profile` and `Allow` headers. If the resources offers state data, it must include the `Content-Type` header indicating the mime type of the representation.
+The Nexus profile presents the required `profile` and `allow` headers. If the resources offers state data, it must include the `content-type` header indicating the mime type of the representation.
 
 ![](nexus/discovery.svg){: .center-image}
 

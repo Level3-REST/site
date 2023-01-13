@@ -9,20 +9,20 @@ permalink: /profiles/home
 # Home Profile
 
 ```
-Profile: <https://level3.rest/profiles/home>
+profile: <https://level3.rest/profiles/home>
 ```
 
 The Home resource is the top resource for a graph of related resources. Homes cannot be deleted or edited in any way. A Home resource typically has no ID data in its URI, which is a stable location for clients to access directly.
 
 ### Discovery
 
-The Home profile presents the required `Profile` and `Allow` headers.
+The Home profile presents the required `profile` and `allow` headers.
 
 ![](home/discovery.svg){: .center-image}
 
 ### Fetch Home
 
-A client can fetch the Home with a `GET` request. The `Link` header will contain links to other resources.
+A client can fetch the Home with a `GET` request. The `link` header will contain links to other resources.
 
 ![](home/fetch.svg){: .center-image}
 

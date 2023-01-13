@@ -9,9 +9,9 @@ participant "<&data-transfer-upload> Upload" as Upload
 Client -> Upload: POST
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Length:"" | //byte-count// |
-  | ""Content-Type:"" | //media-type// |
-  | *""Slug:"" | //slugtext// |
+  | ""content-length:"" | //byte-count// |
+  | ""content-type:"" | //media-type// |
+  | *""slug:"" | //slugtext// |
 
   // *optional//
 end note
@@ -19,9 +19,9 @@ hnote over Upload #lightsteelblue: ""...bytes...""
 Upload --> Client: 201 Created
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""ETag:"" | //entity-tag// |
-  | ""Location:"" | //Content URL// |
-  | ""Last-Modified:"" | //HTTP-date// |
+  | ""etag:"" | //entity-tag// |
+  | ""location:"" | //Content URI// |
+  | ""last-modified:"" | //HTTP-date// |
 end note
 group failure: Upload rejected
   Upload -->o Client: 400 Bad Request

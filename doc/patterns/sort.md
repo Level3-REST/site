@@ -12,14 +12,14 @@ The Sort pattern provides sorting affordances. It often complements List and Tre
 
 ![](sort/relations.svg){: .center-image}
 
-The client changes sort configuration by `POST`ing a new configuration lookup to the [Sorter](#sorter-resource) resource. Sorter returns the updated [Sorted](#sorted-resource) resource URL in its `Location` response header.
+The client changes sort configuration by `POST`ing a new configuration lookup to the [Sorter](#sorter-resource) resource. Sorter returns the updated [Sorted](#sorted-resource) resource URI in its `location` response header.
 
 ![](sort/interactions.svg){: .center-image}
 
 ## Sorted Resource
 
 ```
-Profile: <https://level3.rest/patterns/sort#sorted-resource>
+profile: <https://level3.rest/patterns/sort#sorted-resource>
 ```
 
 The Sorted resource can present any profile. The profile choice does not effect filtering options.
@@ -35,7 +35,7 @@ Points to a [Sort Info](#sort-info-resource) resource that describes the configu
 ## Sort Info Resource
 
 ```
-Profile: <https://level3.rest/patterns/sort#sort-info>
+profile: <https://level3.rest/patterns/sort#sort-info>
 ```
 
 The Sort Info resource describes the ordering configuration used in the [Sorted](#sorted-resource) resource. This configuration consists of an array of sorting declarations, which Sort Info’s representation assigns to a top-level `sort-order` element.
@@ -80,7 +80,7 @@ Points to a [Sorter](#sorter-resource) resource that can configure the element o
 ## Sorter Resource
 
 ```
-Profile: <https://level3.rest/patterns/sort#sorter-resource>
+profile: <https://level3.rest/patterns/sort#sorter-resource>
 ```
 
 The Sorter resource changes the [Sorted](#sorted-resource) resource’s sort configuration. It is a [Lookup](../profiles/lookup.md) resource that starts with the current configuration in its schema representation, or its template object if the lookup does not use a schema. If only a subset of the properties are sortable, then the Sorter resource should present a schema to help the client submit a successful sorting change.

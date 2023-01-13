@@ -9,7 +9,7 @@ participant "<&code> Data" as Data
 Client -> Data: PATCH
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Type:"" | //media-type// |
+  | ""content-type:"" | //media-type// |
 end note
 hnote over Data #lightsteelblue: ""+ patch -""
 Data --> Client: 204 No Content

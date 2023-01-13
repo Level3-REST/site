@@ -24,7 +24,7 @@ Clients manage Page size and placement in the list with either the [Offset Page]
 ## Paged Resource
 
 ```
-Profile: <https://level3.rest/patterns/page#paged-resource>
+profile: <https://level3.rest/patterns/page#paged-resource>
 ```
 
 The Paged resource can present any profile. The profile choice does not affect pagination.

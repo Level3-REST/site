@@ -9,7 +9,7 @@ Client -> Choice: POST
 Choice --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location:"" | //Chooser URL// |
+  | ""location:"" | //Chooser URI// |
 end note
 
 @enduml

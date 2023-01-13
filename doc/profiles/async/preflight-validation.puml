@@ -9,7 +9,7 @@ participant "<&project> Async + <&check> Preflight" as Async
 Client -> Async: PUT / POST / PATCH / DELETE
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Expect:"" | ""100-continue"" |
+  | ""expect:"" | ""100-continue"" |
   // Headers to preflight//
 end note
 group Preflight: header validation failed
@@ -23,7 +23,7 @@ Async --> Client: 100 Continue
 Client -> Async: PUT / POST / PATCH / DELETE
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Prefer:"" | *""respond=async"" |
+  | ""prefer:"" | *""respond=async"" |
   // *Can include wait time //
 end note
 hnote over Async #lightsteelblue
@@ -33,8 +33,8 @@ end note
 Async --> Client: 202 Accepted
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | *""Location:"" | //URL// |
-  | ""Preference-Applied:"" | ""respond=async"" |
+  | *""location:"" | //URI// |
+  | ""preference-applied:"" | ""respond=async"" |
 
   // *""POST"" only//
 end note

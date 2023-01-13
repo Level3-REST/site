@@ -8,7 +8,7 @@ permalink: /patterns/stepper
 ---
 # Stepper Pattern
 
-Stepper is a hypermedia control that presents a small-range value, such as item quantity or meeting duration, and offers affordances to increment and decrement that value. The Stepper pattern has a [Stepper](#stepper-resource) resource that contains the value to modify. Two [Action](../profiles/action.md) resources increment or decrement the value when they are triggered. These return a `Location` header pointing back to the modified Stepper resource.
+Stepper is a hypermedia control that presents a small-range value, such as item quantity or meeting duration, and offers affordances to increment and decrement that value. The Stepper pattern has a [Stepper](#stepper-resource) resource that contains the value to modify. Two [Action](../profiles/action.md) resources increment or decrement the value when they are triggered. These return a `location` header pointing back to the modified Stepper resource.
 
 ![](stepper/relations.svg){: .center-image}
 
@@ -17,10 +17,10 @@ The [increment](#increment) and [decrement](#decrement) links are present when t
 ## Stepper Resource
 
 ```
-Profile: <https://level3.rest/patterns/stepper#stepper-resource>
+profile: <https://level3.rest/patterns/stepper#stepper-resource>
 ```
 
-A [Data](../profiles/data.md) resource that contains the value being incremented and decremented. This value can be a field in the data object, or it can be a single value. A Stepper resource can have multiple [Incrementers](#incrementer-resource) and [Decrementers](#decrementer-resource), one per field. The links may contain an [anchor](https://tools.ietf.org/html/rfc8288#section-3.2) property indicating the field to be stepped.
+A [Data](../profiles/data.md) resource that contains the value being incremented and decremented. This value can be a field in the data object, or it can be a single value. A Stepper resource can have multiple [Incrementers](#incrementer-resource) and [Decrementers](#decrementer-resource), one per field. The links may contain an [anchor](https://httpwg.org/specs/rfc8288.html#rfc.section.3.2) property indicating the field to be stepped.
 
 ### *increment*
 
@@ -41,7 +41,7 @@ Points to a [Decrementer](#decrementer-resource) resource that decreases the val
 ## Incrementer Resource
 
 ```
-Profile: <https://level3.rest/patterns/stepper#incrementer-resource>
+profile: <https://level3.rest/patterns/stepper#incrementer-resource>
 ```
 
 An [Action](../profiles/action.md) resource that increments the value (or field) of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its maximum, `POST` to this resource is ignored.
@@ -57,7 +57,7 @@ Points to the [Stepper](#stepper-resource) resource that will be incremented. Th
 ## Decrementer Resource
 
 ```
-Profile: <https://level3.rest/patterns/stepper#decrementer-resource>
+profile: <https://level3.rest/patterns/stepper#decrementer-resource>
 ```
 
 An [Action](../profiles/action.md) resource that decrements the value (or field) of the [Stepper](#stepper-resource) resource by a single step. If the value is already at its minimum, `POST` to this resource is ignored.
@@ -72,6 +72,6 @@ Points to the [Stepper](#stepper-resource) resource that will be decremented. Th
 
 ## Specifications
 
-Web Link Context (anchor): RFC 8288, [section 3.2](https://tools.ietf.org/html/rfc8288#section-3.2)
+Web Link Context (anchor): RFC 8288, [section 3.2](https://httpwg.org/specs/rfc8288.html#rfc.section.3.2)
 
 {% include footer.html %}

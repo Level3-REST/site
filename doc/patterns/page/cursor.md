@@ -31,7 +31,7 @@ In this model, the Paged Resource has no `size` concept; each Page is an element
 
 ### Changing Cursor Configuration
 
-The client changes cursor configuration by `POST`ing a new configuration to the [Cursor](#cursor-resource) resource. Cursor returns the newly-configured [Paged](#paged-resource) resource URL in its `Location` response header.
+The client changes cursor configuration by `POST`ing a new configuration to the [Cursor](#cursor-resource) resource. Cursor returns the newly-configured [Paged](#paged-resource) resource URI in its `location` response header.
 
 If the Paged resource follows the List pattern, then each list entry is a [Cursor Entry](#cursor-entry-resource) resource, containing a `cursorMark` field that identifies that element’s position in the list. This value can be passed to the Cursor resource as a `befor` or `after` value to change the cursor position.
 
@@ -44,7 +44,7 @@ See the [Cursor](#cursor-resource) resource reference for more details on how to
 ## Paged Resource
 
 ```
-Profile: <https://level3.rest/patterns/page#paged-resource>
+profile: <https://level3.rest/patterns/page#paged-resource>
 ```
 
 See the documentation for [Paged resource](../page.md).
@@ -60,7 +60,7 @@ Points to a [Cursor Info](#cursor-info-resource) resource that describes the [Pa
 ## Cursor Info Resource
 
 ```
-Profile: <https://level3.rest/patterns/page/cursor#cursor-info-resource>
+profile: <https://level3.rest/patterns/page/cursor#cursor-info-resource>
 ```
 
 The Cursor Info resource describes the cursor configuration used in the [Paged](#paged-resource) resource. This resource has the current `cursorMark` and the limit set for the current cursor.
@@ -90,20 +90,20 @@ Points to individual [Cursor Entry](#cursor-entry-resource) resources in the Lis
 ## Cursor Entry Resource
 
 ```
-Profile: <https://level3.rest/patterns/page/cursor#cursor-entry-resource>,
+profile: <https://level3.rest/patterns/page/cursor#cursor-entry-resource>,
          <https://level3.rest/patterns/list#entry-resource>
 ```
 
 In a List resource, the cursor entries are individual [List Entry](../list.md#entry-resource) resources that contain a field with the entry’s cursor value. This value is used to change the cursor’s position via the [Cursor](#cursor-resource) resource. Data lists that use the Cursored Page resource must provide Cursor Entry resources with the `cursor` property.
 
-| Property     | Purpose                                                      |
-| ------------ | ------------------------------------------------------------ |
+| Property     | Purpose                                                                                                                  |
+|--------------|--------------------------------------------------------------------------------------------------------------------------|
 | `cursorMark` | The Entry’s cursor value. Useful for changing the pagination configuration with the [Cursor](#cursor-resource) resource. |
 
 ## Cursor Resource
 
 ```
-Profile: <https://level3.rest/patterns/page/cursor#cursor-resource>
+profile: <https://level3.rest/patterns/page/cursor#cursor-resource>
 ```
 
 The Cursor resource changes the cursor pagination configuration. It is a [Lookup](../../profiles/lookup.md) resource containing the current configuration. The client can specify a `limit` on the number of elements fetched for the cursor and either the `before` or `after` cursorMark to select a different cursor point to navigate through. They can also set the `size` of each page to manage the number of elements to present per page. Once the client submits the lookup, the client redirects to the [Paged](#paged-resource) resource configured with this configuration.

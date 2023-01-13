@@ -9,7 +9,7 @@ Client -> Action: HEAD / GET
 Action --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow:"" | ""HEAD,GET,POST"" |
-  | ""Profile:"" | ""<https://level3.rest/profiles/action>"" |
+  | ""allow:"" | ""HEAD,GET,POST"" |
+  | ""profile:"" | ""<https://level3.rest/profiles/action>"" |
 end note
 @enduml

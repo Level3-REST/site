@@ -10,7 +10,7 @@ Client -> Representation: HEAD
 Representation --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Profile:"" | ""<https://level3.rest/profiles/mixins/representation>"", |
+  | ""profile:"" | ""<https://level3.rest/profiles/mixins/representation>"", |
   | | ""<other-profile>"" |
 end note
 

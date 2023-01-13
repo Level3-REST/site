@@ -1,58 +1,58 @@
 HTTP header order:
 
 - General:
-Cache-Control
-Connection
-Date
-Pragma
-Trailer
-Transfer-Encoding
-Upgrade
-Via
-Warning
+cache-control
+connection
+date
+pragma
+trailer
+transfer-encoding
+upgrade
+via
+warning
 
 - Request:
-Accept
-Accept-Charset
-Accept-Encoding
-Accept-Language
-Authorization
-Expect
-From
-Host
-If-Match
-If-Modified-Since
-If-None-Match
-If-Range
-If-Unmodified-Since
-Max-Forwards
-Proxy-Authorization
-Range
-Referer
-TE
-User-Agent
+accept
+accept-charset
+accept-encoding
+accept-language
+authorization
+expect
+from
+host
+if-match
+if-modified-since
+if-none-match
+if-range
+if-unmodified-since
+max-forwards
+proxy-authorization
+range
+referer
+te
+user-agent
 
 - Response:
-Accept-Ranges
-Age
-ETag
-Location
-Proxy-Authenticate
-Retry-After
-Server
-Vary
-WWW-Authenticate
+accept-ranges
+age
+etag
+location
+proxy-authenticate
+retry-after
+server
+vary
+www-authenticate
 
 - Entity:
-Allow
-Content-Encoding
-Content-Language
-Content-Length
-Content-Location
-Content-MD5
-Content-Range
-Content-Type
-Expires
-Last-Modified
-Link
-Profile
+allow
+content-encoding
+content-language
+content-length
+content-location
+content-md5
+content-range
+content-type
+expires
+last-modified
+link
+profile

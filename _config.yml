@@ -4,5 +4,5 @@ url: https://level3.rest
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 aux_links:
-  "DRAFT 2022":
+  "DRAFT 2023":
     - "https://github.com/level3-rest/site"

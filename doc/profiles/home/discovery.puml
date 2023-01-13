@@ -10,8 +10,8 @@ Client -> Home: HEAD
 Home --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow:"" | ""HEAD,GET"" |
-  | ""Profile:"" | ""<https://level3.rest/profiles/home>"" |
+  | ""allow:"" | ""HEAD,GET"" |
+  | ""profile:"" | ""<https://level3.rest/profiles/home>"" |
 end note
 
 @enduml

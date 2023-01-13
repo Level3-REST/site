@@ -17,7 +17,7 @@ The Nodes in a tree have one `parent` link to their parent Node as well as a `to
 ## Tree Resource
 
 ```
-Profile: <https://level3.rest/patterns/tree#tree-resource>
+profile: <https://level3.rest/patterns/tree#tree-resource>
 ```
 
 The Tree resource presents either the [Home](../profiles/home.md) or [Nexus](../profiles/nexus.md) profile and it can choose to support the `DELETE` operation. The node resources in the tree are also deleted. For instance, if the tree represents a file system, then deleting the Tree resource also deletes the child file and directory resources because the individual files have no context to exist outside of their directory.
@@ -27,7 +27,7 @@ The Tree resource shares the [`child`](#child) relationship with Node resource.
 ## Node Resource
 
 ```
-Profile: <https://level3.rest/patterns/tree#node-resource>
+profile: <https://level3.rest/patterns/tree#node-resource>
 ```
 
 A Node resource has no required profile. If the node’s profile supports the `DELETE` operation, a client can remove the node from the tree by deleting the node. This operation deletes all `child` nodes and their children as well.

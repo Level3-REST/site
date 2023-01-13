@@ -10,10 +10,10 @@ Client -> Data: HEAD
 Data --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Content-Type:"" | //media-type// |
-  | *""Accept-Patch:"" | //media-types// |
-  | ""Allow:"" | ""HEAD,GET,PUT,DELETE,""*""PATCH"" |
-  | ""Profile:"" | ""<https://level3.rest/profiles/data>"" |
+  | ""content-type:"" | //media-type// |
+  | *""accept-patch:"" | //media-types// |
+  | ""allow:"" | ""HEAD,GET,PUT,DELETE,""*""PATCH"" |
+  | ""profile:"" | ""<https://level3.rest/profiles/data>"" |
 
   // *""PATCH"" support is optional//
 end note

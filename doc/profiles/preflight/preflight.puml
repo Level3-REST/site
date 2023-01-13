@@ -10,7 +10,7 @@ participant "<&check> Preflight" as Preflight
 Client -> Preflight: POST / PUT / PATCH
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Expect:"" | ""100-continue"" |
+  | ""expect:"" | ""100-continue"" |
   // Headers to preflight//
 end note
 Preflight --> Client: 100 Continue
@@ -19,7 +19,7 @@ group ""Expect"" header not supported
   Preflight --> Client: 417 Expectation Failed
   note left
     Client sends full request
-    without ""Expect"" header
+    without ""expect"" header
   end note
   Client -> Preflight: Send full request
 end

@@ -10,12 +10,12 @@ Client -> Content: HEAD
 Content --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Accept-Ranges:"" | ""bytes"" //or// ""none"" |
-  | ""Allow:"" | ""HEAD,GET,""*""PUT,""*""DELETE"" |
-  | ""Content-Length:"" | //byte-count// |
-  | ""Content-Type:"" | //media-type// |
-  | ""Content-Disposition:"" | //disposition// |
-  | ""Profile:"" | ""<https://level3.rest/profiles/content>"" |
+  | ""accept-ranges:"" | ""bytes"" //or// ""none"" |
+  | ""allow:"" | ""HEAD,GET,""*""PUT,""*""DELETE"" |
+  | ""content-length:"" | //byte-count// |
+  | ""content-type:"" | //media-type// |
+  | ""content-disposition:"" | //disposition// |
+  | ""profile:"" | ""<https://level3.rest/profiles/content>"" |
   | | |
   | | //*optional//|
 end note

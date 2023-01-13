@@ -10,7 +10,7 @@ hnote over Sorter #lightsteelblue: ""{ sort-order }""
 Sorter --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location:"" | //Sorted Resource URL// |
+  | ""location:"" | //Sorted Resource URI// |
 end note
 
 @enduml

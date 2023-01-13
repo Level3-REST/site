@@ -9,24 +9,24 @@ permalink: /profiles/upload
 # Upload Profile
 
 ```
-Profile: <https://level3.rest/profiles/upload>
+profile: <https://level3.rest/profiles/upload>
 ```
 
 The Upload profile accepts byte-based payload submissions. The Upload resource can be thought to create a [Content](content.md) resource representing the submitted content.
 
 ### Discovery
 
-The Upload profile presents the required `Profile` and `Allow` headers.
+The Upload profile presents the required `profile` and `allow` headers.
 
 ![](upload/discovery.svg){: .center-image}
 
 ### Submit Content
 
-Submit a content request to the resource. Clients are encouraged to send the `Content-Length` and `Content-Type` headers if known. The resource may require `Content-Length` and send back `411 Length Required` to the client if a request omits it. The resource may respond with rejection status codes for size and media type failures.
+Submit a content request to the resource. Clients are encouraged to send the `content-length` and `content-type` headers if known. The resource may require `content-length` and send back `411 Length Required` to the client if a request omits it. The resource may respond with rejection status codes for size and media type failures.
 
-Clients can optionally send a `Slug` header that can be used to identify the submitted content later. The slug can be a file name, a title, or anything that helps identify the content. The slug’s text may show up in the Content’s URL, and possibly the `Content-Disposition` header. For more details on the [Slug header](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7), please refer to the Atom publishing protocol.
+Clients can optionally send a `slug` header that can be used to identify the submitted content later. The slug can be a file name, a title, or anything that helps identify the content. The slug’s text may show up in the Content’s URL, and possibly the `content-disposition` header. For more details on the [`slug` header](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7), please refer to the Atom publishing protocol.
 
-The `POST` response headers include the newly-created [Content](content.md) resource’s URL in `Location` as well as its Entity validation headers (`ETag`, `Last-Modified`) if available.
+The `POST` response headers include the newly-created [Content](content.md) resource’s URL in `location` as well as its Entity validation headers (`etag`, `last-modified`) if available.
 
 ![](upload/submit.svg){: .center-image}
 
@@ -41,32 +41,32 @@ The `POST` response headers include the newly-created [Content](content.md) reso
 
 ## Preflight Mixin
 
-The [Preflight profile](preflight.md) mixin allows a client to validate content submission before sending a payload. The client must send `Content-Length` and `Content-Type` as preflight headers.
+The [Preflight profile](preflight.md) mixin allows a client to validate content submission before sending a payload. The client must send `content-length` and `content-type` as preflight headers.
 
 ## Specifications
 
 HTTP/1.1 Message Syntax and Routing: [RFC 7230](https://tools.ietf.org/html/rfc7230)
 
-- Content-Length: [section 3.3.2](https://tools.ietf.org/html/rfc7230#section-3.3.2)
+- `content-length`: [section 3.3.2](https://tools.ietf.org/html/rfc7230#section-3.3.2)
 
 HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 
-- Content-Type: [section 3.1.1.5](https://tools.ietf.org/html/rfc7231#section-3.1.1.5)
+- `content-type`: [section 3.1.1.5](https://tools.ietf.org/html/rfc7231#section-3.1.1.5)
 - 200 OK: [section 6.3.1](https://tools.ietf.org/html/rfc7231#section-6.3.1)
 - 201 Created: [section 6.3.2](https://tools.ietf.org/html/rfc7231#section-6.3.2)
 - 411 Length Required: [section 6.5.10](https://tools.ietf.org/html/rfc7231#section-6.5.10)
 - 413 Payload Too Large: [section 6.5.11](https://tools.ietf.org/html/rfc7231#section-6.5.11)
 - 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - HTTP-date: [section 7.1.1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1)
-- Location: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
+- `location`: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
 Conditional Requests: [RFC 7232](https://tools.ietf.org/html/rfc7232)
 
-- Last-Modified: [section 2.2](https://tools.ietf.org/html/rfc7232#section-2.2)
-- ETag: [section 2.3](https://tools.ietf.org/html/rfc7232#section-2.3)
+- `last-modified`: [section 2.2](https://tools.ietf.org/html/rfc7232#section-2.2)
+- `etag`: [section 2.3](https://tools.ietf.org/html/rfc7232#section-2.3)
 
 The Atom Publishing Protocol: [RFC 5023](https://bitworking.org/projects/atom/rfc5023.html)
 
-- Slug: [section 9.7](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7)
+- `slug`: [section 9.7](https://bitworking.org/projects/atom/rfc5023.html#rfc.section.9.7)
 
 {% include footer.html %}

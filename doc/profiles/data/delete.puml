@@ -8,5 +8,8 @@ participant "<&code> Data" as Data
 
 Client -> Data: DELETE
 Data --> Client: 204 No Content
+group failure: rejected
+  Data -->o Client: 403 Forbidden
+end
 
 @enduml

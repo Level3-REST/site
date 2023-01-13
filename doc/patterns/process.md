@@ -30,12 +30,12 @@ The same checkout process can present a sequence of activities by chaining the `
 
 Activities can reactivate previous `blocked-by` activities on the process. For instance, in our commerce example above, a shopper can select a “cash” payment option that only works with "pick up in store" shipping addresses. If the user selects a shipping address that is their home, rather than a retail location, the "cash" payment method blocks the "complete order" activity until the shopper resolves the conflict.
 
-A Process finishes when all the blocking activities complete. The last activity may produce a `Location` to the a result resource, or the process itself is the completed resource.
+A Process finishes when all the blocking activities complete. The last activity may produce a `location` to the a result resource, or the process itself is the completed resource.
 
 ## Process Resource
 
 ```
-Profile: <https://level3.rest/patterns/process#process-resource>
+profile: <https://level3.rest/patterns/process#process-resource>
 ```
 
 The Process resource presents the [Nexus](../profiles/nexus.md) profile and may choose to support the `DELETE` operation. When the process instance is deleted, he activity resources in the process are also deleted.
@@ -55,7 +55,7 @@ The last Activity in the activity list completes the process when executed.
 ## Activity Resource
 
 ```
-Profile: <https://level3.rest/patterns/process#activity-resource>
+profile: <https://level3.rest/patterns/process#activity-resource>
 ```
 
 An Activity resource has no required profile. It is often another pattern that presents the activity’s state and a hypermedia control to change that state.

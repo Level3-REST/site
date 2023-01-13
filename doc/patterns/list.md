@@ -29,7 +29,7 @@ For example, consider a product wish list. A wish list entry would reference a p
 ## List Resource
 
 ```
-Profile: <https://level3.rest/patterns/list#list-resource>
+profile: <https://level3.rest/patterns/list#list-resource>
 ```
 
 The List resource presents the [Nexus](../profiles/nexus.md) or [Home](../profiles/home.md) profile.
@@ -51,7 +51,7 @@ A [List](#list-resource) resource has 0 or more `list-entry` links pointing to [
 ## Entry Resource
 
 ```
-Profile: <https://level3.rest/patterns/list#entry-resource>
+profile: <https://level3.rest/patterns/list#entry-resource>
 ```
 
 An Entry resource has no required profile. If the Entry’s profile supports the `DELETE` operation, a client can remove the entry from the list by deleting the entry.

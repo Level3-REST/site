@@ -18,21 +18,21 @@ end note
 Client -> Lookup: POST
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""Content-Type:"" | //media-type// |
+  | ""content-type:"" | //media-type// |
 end note
 hnote over Lookup #lightsteelblue: ""{ Lookup }""
 Lookup --> Client: 303 See Other / 404 Not Found
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location:"" | //Resource URL// |
+  | ""location:"" | //Resource URI// |
 end note
 group failure: Lookup rejected
   Lookup -->o Client: 400 Bad Request
   Lookup -->o Client: 415 Unsupported Media Type
   Lookup -->o Client: 422 Unprocessable Entity
 end
-group 303: Redirect to Location URL
+...
+group 303: Redirect to ""location"" URI
   Client -> Other: GET
-  ...
 end
 @enduml

@@ -10,7 +10,7 @@ hnote over Pagination #lightblue: ""{ size, start }""
 Pagination --> Client: 303 See Other
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Location:"" | //Paged Resource URL// |
+  | ""location:"" | //Paged Resource URI// |
 end note
 
 @enduml

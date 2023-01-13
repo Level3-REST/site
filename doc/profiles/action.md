@@ -9,20 +9,20 @@ permalink: /profiles/action
 # Action Profile
 
 ```
-Profile: <https://level3.rest/profiles/action>
+profile: <https://level3.rest/profiles/action>
 ```
 
 An Action resource is a hypermedia control that triggers a state change. They act like buttons to execute an action on the server. Actions do not accept a payload; the URL contains all the Action’s identifying information.
 
 ### Discovery
 
-The Action profile presents the required `Profile` and `Allow` headers.
+The Action profile presents the required `profile` and `allow` headers.
 
 ![](action/discovery.svg){: .center-image}
 
 ### Trigger Action
 
-Clients trigger an Action by `POST`ing to it. The resource responds with `303 See Other` and the `Location` header points to the state that was changed by the triggered action. The resource returns a `403 Forbidden` status if the action cannot be completed because the business state will not accept it.
+Clients trigger an Action by `POST`ing to it. The resource responds with `303 See Other` and the `location` header points to the state that was changed by the triggered action. The resource returns a `403 Forbidden` status if the action cannot be completed because the business state will not accept it.
 
 ![](action/trigger.svg){: .center-image}
 
@@ -30,7 +30,7 @@ Clients trigger an Action by `POST`ing to it. The resource responds with `303 Se
 
 ## Representation Mixin
 
-The [Representation profile](representation.md) mixin enables the client to receive the target representation in the Action response instead of a redirect to the `Location` URL.
+The [Representation profile](representation.md) mixin enables the client to receive the target representation in the Action response instead of a redirect to the `location` URL.
 
 ## Specifications
 

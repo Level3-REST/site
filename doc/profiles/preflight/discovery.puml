@@ -10,7 +10,7 @@ Client -> Preflight: HEAD
 Preflight --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Profile:"" | ""<https://level3.rest/profiles/mixins/preflight>,"" |
+  | ""profile:"" | ""<https://level3.rest/profiles/mixins/preflight>,"" |
   | | ""<other-profile>"" |
   // Headers to preflight//
 end note

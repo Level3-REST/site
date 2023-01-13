@@ -10,8 +10,8 @@ Client -> Upload: HEAD / GET
 Upload --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Allow:"" | ""HEAD,GET,POST"" |
-  | ""Profile:"" | ""<https://level3.rest/profiles/upload>"" |
+  | ""allow:"" | ""HEAD,GET,POST"" |
+  | ""profile:"" | ""<https://level3.rest/profiles/upload>"" |
 end note
 
 @enduml

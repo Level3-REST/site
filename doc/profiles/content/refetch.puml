@@ -10,13 +10,13 @@ Client -> Content: GET / HEAD
 Content --> Client: 200 OK
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Accept-Ranges:"" | ""bytes"" |
-  | ""ETag:"" | //entity-tag// |
-  | ""Content-Length:"" | //byte-count// |
-  | ""Content-Type:"" | //media-type// |
-  | ""Last-Modified:"" | //HTTP-date// |
-  | ""Content-Disposition:"" | //disposition// |
-  | ""Profile:"" | ""<https://level3.rest/profiles/content>,"" |
+  | ""accept-ranges:"" | ""bytes"" |
+  | ""etag:"" | //entity-tag// |
+  | ""content-length:"" | //byte-count// |
+  | ""content-type:"" | //media-type// |
+  | ""last-modified:"" | //HTTP-date// |
+  | ""content-disposition:"" | //disposition// |
+  | ""profile:"" | ""<https://level3.rest/profiles/content>,"" |
   | | ""<https://level3.rest/profiles/mixins/entity>"" |
 end note
 |||
@@ -27,21 +27,21 @@ note left
 end note
 rnote right #lightblue
   <#lightblue,lightblue>|= Header |= Value |
-  | ""If-Range:"" | //entity-tag or HTTP-date// |
-  | ""Range:"" | ""bytes=""//byte-range// |
+  | ""if-range:"" | //entity-tag or HTTP-date// |
+  | ""range:"" | ""bytes=""//byte-range// |
 end note
 Content --> Client: 206 Partial Content
 rnote left #lightgreen
   <#lightgreen,lightgreen>|= Header |= Value |
-  | ""Content-Length:"" | //byte-count// |
-  | ""Content-Range:"" | ""bytes"" //byte-range//""/""//total// |
+  | ""content-length:"" | //byte-count// |
+  | ""content-range:"" | ""bytes"" //byte-range//""/""//total// |
 end note
 hnote over Client #darkseagreen: ""...partial bytes...""
 group changed: refetch
   Content --> Client: 200 OK
   rnote left #lightgreen
     <#lightgreen,lightgreen>|= Header |= Value |
-    | ""Content-Length:"" | //byte-count// |
+    | ""content-length:"" | //byte-count// |
   end note
   hnote over Client #darkseagreen: ""...all bytes...""
 end
@@ -49,7 +49,7 @@ group failure: rejected
   Content -->o Client: 416 Range Not Satisfiable
   rnote left #lightgreen
     <#lightgreen,lightgreen>|= Header |= Value |
-    | ""Content-Range:"" | ""bytes */""//total// |
+    | ""content-range:"" | ""bytes */""//total// |
   end note
 end
 

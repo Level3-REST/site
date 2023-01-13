@@ -14,7 +14,7 @@ The Filter pattern provides filtration affordances. It often complements List an
 
 ### Filter Configuration
 
-The client changes filter configuration by `POST`ing a new configuration lookup to the [Filtration](#filtration-resource) resource. Filtration returns the updated [Filtered](#filtered-resource) resource URL in its `Location` response header.
+The client changes filter configuration by `POST`ing a new configuration lookup to the [Filtration](#filtration-resource) resource. Filtration returns the updated [Filtered](#filtered-resource) resource URI in its `location` response header.
 
 ![](filter/interactions.svg)
 
@@ -42,7 +42,7 @@ These operands work efficiently with indexed data and should provide quick clien
 ## Filtered Resource
 
 ```
-Profile: <https://level3.rest/patterns/filter#filtered-resource>
+profile: <https://level3.rest/patterns/filter#filtered-resource>
 ```
 
 The Filtered resource can present any profile. The profile choice does not effect filtering options.
@@ -58,7 +58,7 @@ Points to a [Filter Info](#filter-info-resource) resource that describes the fil
 ## Filter Info Resource
 
 ```
-Profile: <https://level3.rest/patterns/filter#filter-info-resource>
+profile: <https://level3.rest/patterns/filter#filter-info-resource>
 ```
 
 The Filter Info resource describes the current filtering configuration used in the [Filtered](#filtered-resource) resource. The configuration representation consists of an array of filter declarations assigned to a top-level `filters` element.
@@ -107,7 +107,7 @@ Points to a [Filtration](#filtration-resource) resource that configures the filt
 ## Filtration Resource
 
 ```
-Profile: <https://level3.rest/patterns/filter#filtration-resource>
+profile: <https://level3.rest/patterns/filter#filtration-resource>
 ```
 
 The Filtration resource changes the [Filtered](#filtered-resource) resource’s filtration configuration. It is a [Lookup](../profiles/lookup.md) resource that starts with the current configuration in its schema representation, or its template object if the lookup does not use a schema. If only a subset of the properties are filterable, then the Filtration resource should present a schema to help the client submit a successful filtration change.
