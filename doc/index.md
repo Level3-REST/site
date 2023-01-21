@@ -21,7 +21,7 @@ The term “Level 3” refers to Leonard Richardson’s [Richardson Maturity Mod
 
 ### Level 3 Profiles and Patterns
 
-A Level 3 API delivers [Profile resources](profiles/profiles.md) that work together to present repeatable interaction [Patterns](patterns/patterns.md). These resource patterns provide rich experiences that are consistent across the different domains in an API. When a client discovers the same profiles and Patterns in a different part of the API, they can immediately interact with the new domain because the experiences are the same.
+A Level 3 API delivers [Profile resources](profiles/profiles.md) that work together to present repeatable interaction [Patterns](patterns/patterns.md). These resource patterns provide rich experiences that are consistent across the different domains in an API. When a client discovers the same profiles and patterns in a different part of the API, they can immediately interact with the new domain because the resource-interaction experiences are the same.
 
 A client can only work with a single resource at a time, so the resource’s profile is their contextual workspace. That workspace contains links to other resources in the pattern and links to related resources across the ecosystem. The overall effect is a connected, easy-to-navigate graph of information and capabilities.
 

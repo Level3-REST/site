@@ -11,7 +11,7 @@ Software designs communicate their architectural qualities and the technical con
 
 Hypermedia _linking_ is the key to a successful Level 3 API. [Links](https://httpwg.org/specs/rfc8288.html#header) bind resources together and give them relationships to each other. These relationships help the client understand how an API works and how it connects to other APIs in the ecosystem. The client learns about and consumes an API through the links rather than extensive documentation. They “follow their nose” and discover the possibilities an API provides them.
 
-## Architectural Qualities
+## Architectural Qualities of Linking
 
 Links bring four architectural qualities to API design: *Discoverability, Contextuality, Extensibility* and *Stability.*
 
