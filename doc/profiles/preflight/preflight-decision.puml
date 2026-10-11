@@ -1,11 +1,11 @@
 @startuml
-!include ../../copyright.iuml
+!include ../../shared.iuml
 
 title Preflight Request
 
 start
-#lightblue:""Expect: 100-continue""
-//Headers to preflight// ]
+:""Expect: 100-continue""
+//Headers to preflight//;<<#lightblue>>
 
 if (Response) then (acceptance)
   fork

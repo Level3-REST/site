@@ -1,5 +1,5 @@
 @startuml
-!include ../copyright.iuml
+!include ../shared.iuml
 
 rectangle "<&home> Home" as Home
 rectangle "<&aperture> Nexus" as Nexus
@@ -7,6 +7,7 @@ rectangle "<&info> Info" as Info
 rectangle "<&code> Data" as Data
 rectangle "<&data-transfer-download> Content" as Content
 rectangle "<&spreadsheet> Form" as Form
+rectangle "<&magnifying-glass> Query" as Query
 rectangle "<&eye> Lookup" as Lookup
 rectangle "<&arrow-circle-right> Action" as Action
 rectangle "<&data-transfer-upload> Upload" as Upload

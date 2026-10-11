@@ -1,5 +1,5 @@
 @startuml
-!include ../../copyright.iuml
+!include ../../shared.iuml
 
 title Sort Pattern
 rectangle "<&question-mark> Sorted" as Sorted

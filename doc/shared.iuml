@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing true
+skinparam sequence {
+    ArrowColor #A80036
+    LifeLineBorderColor #A80036
+
+    ActorBorderColor #A80036
+    ActorBackgroundColor #FFFFCC
+    ActorBorderThickness 2
+
+    ParticipantBorderColor #A80036
+    ParticipantBackgroundColor #FFFFCC
+    ParticipantBorderThickness 2
+}
+skinparam activity {
+    BackgroundColor #FFFFCC
+    BorderColor #A80036
+    DiamondBackgroundColor #FFFFCC
+    DiamondBorderColor #A80036
+    ArrowColor #A80036
+}
+center footer Level3.rest  © 2019-2026 Matt Bishop  <img:/Users/matt/Projects/Level3-REST/site/doc/CC-By-ND.png>
+@enduml
