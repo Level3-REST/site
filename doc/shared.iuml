@@ -1,4 +1,23 @@
 @startuml
+!pragma svgRemoveLengthAdjust true
+<style>
+svg {
+  text {
+    textLength: none !important;
+    lengthAdjust: none !important;
+  }
+}
+</style>
+sprite $cc_by_nd [80x15/8] {
+_uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu_
+_099999VwW0000000u_F890w______________________________________________________0_
+_09998_w00777077700_V990f____uuu__u___u______u___u_uuu________________________0_
+_0999I_00_n0WN_0GG0I_0990____0uu7__7u7__uuu__07u_0_0__0_______________________0_
+_0999G_20vl7_O_7dG0N_1981____0uu7___0________0__70_0uu7_______________________0_
+_09999v_20000000007_O982l_____________________________________________________0_
+_088888GuW0000000uu8880uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu0_
+uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+}
 skinparam shadowing true
 skinparam sequence {
     ArrowColor #A80036
@@ -19,5 +38,5 @@ skinparam activity {
     DiamondBorderColor #A80036
     ArrowColor #A80036
 }
-center footer Level3.rest  © 2019-2026 Matt Bishop  <img:/Users/matt/Projects/Level3-REST/site/doc/CC-By-ND.png>
+footer Level3.rest © 2019-2026 Matt Bishop <$cc_by_nd,color=#000000>
 @enduml
