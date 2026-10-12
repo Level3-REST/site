@@ -1,6 +1,7 @@
 title: Level 3 REST
 description: Reusable, Client-Centric Hypermedia Patterns for any REST API
 url: https://level3.rest
+baseurl: ""
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 aux_links:
