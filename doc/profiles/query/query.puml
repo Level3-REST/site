@@ -1,0 +1,30 @@
+@startuml
+!include ../../shared.iuml
+
+title Execute Query
+
+actor Client
+participant "<&magnifying-glass> Query" as Query
+
+Client -> Query: GET
+Query --> Client: 200 OK
+hnote over Client #darkseagreen: schema or ""{ template }""
+note over Client
+  //Client constructs query with//
+  //schema or fills in template//
+end note
+...
+Client -> Query: QUERY
+rnote right #lightblue
+  <#lightblue,lightblue>|= Header |= Value |
+  | ""content-type:"" | //media-type// |
+end note
+hnote over Query #lightsteelblue: ""{ query }""
+Query --> Client: 200 OK
+hnote over Client #darkseagreen: ""{ results }""
+group failure: Query rejected
+  Query -->o Client: 400 Bad Request
+  Query -->o Client: 415 Unsupported Media Type
+  Query -->o Client: 422 Unprocessable Entity
+end
+@enduml

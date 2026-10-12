@@ -1,0 +1,18 @@
+@startuml
+!include ../../shared.iuml
+
+title Discovery
+
+actor Client
+participant "<&magnifying-glass> Query" as Query
+
+Client -> Query: HEAD
+Query --> Client: 200 OK
+rnote left #lightgreen
+  <#lightgreen,lightgreen>|= Header |= Value |
+  | ""allow:"" | ""HEAD,GET,QUERY"" |
+  | ""content-type:"" | //content-type// |
+  | ""profile:"" | ""<https://level3.rest/profiles/query>"" |
+end note
+
+@enduml

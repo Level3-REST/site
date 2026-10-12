@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Lookup
-description: Looks up another resource with a query form
+description: Looks up another resource with a search form
 parent: Profiles
-nav_order: 8
+nav_order: 9
 permalink: /profiles/lookup
 ---
 # Lookup Profile
@@ -12,33 +12,35 @@ permalink: /profiles/lookup
 profile: <https://level3.rest/profiles/lookup>
 ```
 
-Lookup resources give clients a way to look up a resource with search parameters. This profile is similar to [Form](form.md) but will not create a new resource. Lookup provides a query object for the client to fill in and then accepts that query back in a `POST` request. The lookup responds with the location of the found resource or a not found status. 
+Lookup resources give clients a way to find a resource with search parameters. Lookup provides a search object for the client to fill in and then accepts that object back in a `POST` request. The lookup responds with the location of the found resource or a not found status.
 
-A Lookup query returns a single resource result. The result can be a unique resource that matches the query, such as a product for a product code lookup or a user profile for an account id lookup. If the lookup resource operates as a search resource, like a facet or keyword search, then the result resource could be a [List pattern](../patterns/list.md) resource of matching results.
+A Lookup request returns a single resource result. The result can be a unique resource that matches the search terms, such as a product for a product code lookup or a user profile for an account id lookup. If the Lookup resource operates as a search resource, like a facet or keyword search, then the result resource could be a [List pattern](../patterns/list.md) resource of matching results.
 
-##### Lookup Query
+##### Similarities
+
+This profile is similar to [Form](form.md) but will not create a new resource. Lookup is also similar to [Query](query.md), but differs in that Lookup returns a link to an existing resource, rather than return information from the Query request.
+
+##### Lookup Request
 
 Lookups in Level 3 supply their lookup representation in two ways. One is to deliver a simple object template with fields that are either empty or pre-populated. The other is to provide a schema that the client uses to construct a payload to submit as a lookup query. The client can learn the lookup representation format by reviewing the `content-type` header.
 
 ### Discovery
 
-The Lookup profile presents the required `profile` and `allow` headers as well as a `content-type` header indicating the request payload type. The resource may provide a `content-type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html), [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a lookup query payload. The client must understand the content type and how to use the schema to produce a query payload.
+The Lookup profile presents the required `profile` and `allow` headers as well as a `content-type` header indicating the request payload type. The resource may provide a `content-type` like [`application/schema+json`](https://json-schema.org/latest/json-schema-core.html), [`application/prs.hal-forms+json`](https://rwcbook.github.io/hal-forms/) or [`application/xml-dtd`](https://www.w3.org/2006/02/son-of-3023/draft-murata-kohn-lilley-xml-04.html) that can be used to construct a lookup payload. The client must understand the content type and how to use the schema to produce a lookup payload.
 
 Alternately the Lookup can send a template object with empty fields, which is a sufficient approach for most lookups. In this case the `Content-Type` will reflect the format of the template object, like `application/json` or `application/xml`.
 
 ![](lookup/discovery.svg){: .center-image}
 
-### Lookup Query Execution
+### Lookup Execution
 
 Lookup resources follow the long-standing [POST/Redirect/GET](https://en.wikipedia.org/wiki/Post/Redirect/Get) design pattern to simplify the client’s lookup requests. Successful Lookup requests automatically redirect the client to the result URL, saving them the effort of inspecting the response and making a second call in their code. 
 
-First, a client `GET`s the query representation from the Lookup resource. The representation could be a schema definition or a template object with empty fields. Both the schema and lookup template can include default values.
+First, a client `GET`s the lookup representation from the Lookup resource. The representation could be a schema definition or a template object with empty fields. Both the schema and lookup template can include default values.
 
-If the representation is a schema, then the client uses it to construct a lookup query object. If the representation is a template object, then it should be filled in by the client. The completed object is then POSTed back to the Lookup resource.
+If the representation is a schema, then the client uses it to construct a lookup object. If the representation is a template object, then it should be filled in by the client. The completed object is then POSTed back to the Lookup resource.
 
-Clients should always `GET` the representation for every request rather than reusing the schema or query template from a previous request. The Lookup's query format may have changed since the client last fetched the representation.
-
-Once the client submits the query, the resource responds with a `303 See Other` status and a `location` header pointing to the found resource. The client will then `GET` this resource if configured to follow redirects automatically and return the response to the application. If the submission was unacceptable, then the resource responds with a client error status code and error messages indicating the problem. Common problems include missing required fields or incorrect data in the fields.
+Once the client submits the lookup request, the resource responds with a `303 See Other` status and a `location` header pointing to the found resource. The client will then `GET` this resource if configured to follow redirects automatically and return the response to the application. If the submission was unacceptable, then the resource responds with a client error status code and error messages indicating the problem. Common problems include missing required fields or incorrect data in the fields.
 
 ##### Rejections
 

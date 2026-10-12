@@ -3,7 +3,7 @@ layout: default
 title: Mixins
 parent: Profiles
 description: Mixins extend a resource’s Profile with new capabilities.
-nav_order: 11
+nav_order: 12
 has_children: true
 has_toc: false
 permalink: /profiles/mixins

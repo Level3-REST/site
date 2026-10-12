@@ -3,7 +3,7 @@ layout: default
 title: Alias
 description: Redirects Clients to Another Resource
 parent: Profiles
-nav_order: 10
+nav_order: 11
 permalink: /profiles/alias
 ---
 # Alias Profile

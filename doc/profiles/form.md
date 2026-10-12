@@ -59,7 +59,7 @@ If the resource offers this capability, the GET / HEAD response will contain an 
 
 When the client submits a duplicate request using the same `idempotency-key`, the resource will return the same response as the original request. If the request has different data than a previous request using the same `idempotency-key`, the resource may choose to respond with a `422 Unprocessable Entity` to indicate the forms are not identical.
 
-The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00) document for `idempotency-key`. Like `etag`, wrap the value in double quotes; for example: `idempotency-key: "a7a6dbe0"`.
+The key format is described in the [IETF Draft](https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/) document for `idempotency-key`. Like `etag`, wrap the value in double quotes; for example: `idempotency-key: "a7a6dbe0"`.
 
 ##### `idempotency-key` Rejections
 
@@ -94,6 +94,6 @@ HTTP/1.1 Semantics and Content: [RFC 7231](https://tools.ietf.org/html/rfc7231)
 - 415 Unsupported Media Type: [section 6.5.13](https://tools.ietf.org/html/rfc7231#section-6.5.13)
 - `location`: [section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2)
 
-The `idempotency-key` HTTP Header Field: [section 2](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00#section-2)
+The `idempotency-key` HTTP Header Field: [section 2](https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header)
 
 {% include footer.html %}
